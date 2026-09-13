@@ -101,6 +101,11 @@
       "sha256": "3dacc011f60fb74e9834a77591462fbd00a121181605f2d6d48bc4fa808b0839"
     },
     {
+      "bytes": 1427,
+      "path": "scripts/build_rdagent_composition_binding.py",
+      "sha256": "199b5a464094e230392d1fb92354d1d8a157be8b152ddf7138b960567ac24e07"
+    },
+    {
       "bytes": 1361,
       "path": "scripts/build_rdagent_evaluation_spec.py",
       "sha256": "8f4adfc8057db2092a35f041274d229d33e856c48e0204dc4f7491593f38be3e"
@@ -206,6 +211,11 @@
       "sha256": "e1a434e1049a7c5888f61d62d6ee2496d3db9d6fc342cf842630f0e957e42c95"
     },
     {
+      "bytes": 17794,
+      "path": "src/agent_alpha_audit/composition_binding.py",
+      "sha256": "e1338cbe82f7730c3d7bab04e555e7f07c77699a855ea596fdd810f779894760"
+    },
+    {
       "bytes": 8572,
       "path": "src/agent_alpha_audit/config_audit.py",
       "sha256": "7b659ad39b81b4b091f4ff90f8f408aaecb754117ce4eba3a9a8563faf02b120"
@@ -284,6 +294,11 @@
       "bytes": 6239,
       "path": "tests/test_artifact_recovery.py",
       "sha256": "52fc60e61162b3bdcf8a2ca9d916c557751b4b5f3725257779c3424e056333df"
+    },
+    {
+      "bytes": 10870,
+      "path": "tests/test_composition_binding.py",
+      "sha256": "30f60cacc7ae8c6de1511a18f32d240fafe4e232dab7ba5b16d518537bc6d74c"
     },
     {
       "bytes": 1462,
