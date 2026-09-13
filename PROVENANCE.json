@@ -26,9 +26,14 @@
       "sha256": "081902bc6b1ab0df310efb909889565fd5fbec3055d3e9be8ffb2f2b5fc4d1f6"
     },
     {
-      "bytes": 16433,
+      "bytes": 1069,
+      "path": "LICENSE",
+      "sha256": "32ebd293537ba273591c3db8c7ae1d75bb28850c920be76a1f1be2555cfcd953"
+    },
+    {
+      "bytes": 18361,
       "path": "README.md",
-      "sha256": "d60123ebb4234e3bb7d7480313382569c89211e8d6d7c7f1ab6f99bdea27c5e4"
+      "sha256": "d40243d0dff7e7362d51962bc4369419fcfa5d22d491eabdfbd1812636a0c7c6"
     },
     {
       "bytes": 144256,
@@ -36,9 +41,9 @@
       "sha256": "9e4abd141d61564f4ccc474ce115f8ba65b801f384471d529f80a5564484e8f4"
     },
     {
-      "bytes": 1841,
+      "bytes": 4287,
       "path": "case_studies/rdagent_q_30loop/summary.json",
-      "sha256": "a2b04b55be799ff1950138886521c8c71a4aa21a17b18e4026d25cf8f5c3f2bf"
+      "sha256": "e05c1f21b378d43558cd1d8af0587a3f9f45bbe58964449292906b52a490603c"
     },
     {
       "bytes": 1167,
@@ -191,9 +196,9 @@
       "sha256": "dbd6ba967ce5f4c6c35f28e69dd18cf4a544688a63f3e3f49c06db82a034097b"
     },
     {
-      "bytes": 10667,
+      "bytes": 12539,
       "path": "src/agent_alpha_audit/audit/report.py",
-      "sha256": "2544289893f22cd9f52a9a240eb588cd561a37158ee9829d91ba25fd44b858e9"
+      "sha256": "48428e43d37da5e2f1ee07d126382bd57a31dbac7c750f5bad8ba7e877070f24"
     },
     {
       "bytes": 2141,
@@ -381,9 +386,9 @@
       "sha256": "8fa03bd71b04d81740534797b001dc9c25736e85dbbd234de865c97cd60e1986"
     },
     {
-      "bytes": 1366,
+      "bytes": 2318,
       "path": "tests/test_report_winner.py",
-      "sha256": "41f325156375ea8ae281909cb28e13e2c21b63b062b2c84f22fe4b21a2f16ad1"
+      "sha256": "39bc589efcf24ab7fa5e09d71626b31364a21cafb5ed48f51b6c688ebd5f95f9"
     },
     {
       "bytes": 5396,

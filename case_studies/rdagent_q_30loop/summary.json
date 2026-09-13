@@ -1,5 +1,5 @@
 {
-  "schema": "agent-alpha-audit.real-case-study.v1",
+  "schema": "agent-alpha-audit.real-case-study.v2",
   "target": {
     "agent": "Microsoft RD-Agent(Q)",
     "rdagent_version": "0.8.0",
@@ -23,14 +23,80 @@
     "canonical_attempt_policy": "latest distinct proposal attempt",
     "public_artifact": "reconciliation.json"
   },
+  "artifact_recovery": {
+    "schema": "agent-alpha-audit.artifact-recovery.v1",
+    "logical_trial_count": 30,
+    "coder_trial_count": 28,
+    "runner_trial_count": 21,
+    "recovered_artifact_count": 79,
+    "checkpoint_exact_artifact_count": 79,
+    "runner_current_successful_artifact_count": 64,
+    "final_cumulative_library_factor_count": 12,
+    "artifact_tree_sha256": "ca510f739c2acfbdbd982133db5f8bdfd02510024a789fbf8e3f92b74c729230"
+  },
+  "evaluation_spec": {
+    "schema": "agent-alpha-audit.rdagent-evaluation-spec.v1",
+    "spec_sha256": "2782672f305fe600f1dac14fc778a189e0cd9b5445a4c3b9c842567f5e1f2e84",
+    "train_period": [
+      "2008-01-01",
+      "2014-12-31"
+    ],
+    "model_validation_period": [
+      "2015-01-01",
+      "2016-12-31"
+    ],
+    "agent_visible_selection_period": [
+      "2017-01-01",
+      "2020-08-01"
+    ],
+    "frozen_oos_period": [
+      "2020-08-03",
+      "2026-09-10"
+    ],
+    "strict_one_way_cost_bps": 10
+  },
+  "composition_binding": {
+    "schema": "agent-alpha-audit.composition-binding.v1",
+    "status": "COMPOSITION_BINDING_COMPLETE",
+    "binding_sha256": "9f331237b334ad672d8c35b5651fcc5db86da913cd3a25d0d542ee66b4491606",
+    "trial_experiment_binding_count": 21,
+    "trial_experiment_unbound_count": 9,
+    "bound_current_successful_artifact_count": 64,
+    "cumulative_library_binding_count": 21,
+    "final_cumulative_library_trial_id": 29,
+    "final_cumulative_library_factor_count": 12
+  },
   "strict_eval_targets": {
-    "manifest_schema": "agent-alpha-audit.strict-eval-manifest.v3",
+    "manifest_schema": "agent-alpha-audit.strict-eval-manifest.v4",
+    "manifest_sha256": "750b328faf5e6150ae7510f179208491073e9941cccf144eebf45dc7b6eb90ce",
     "trial_items": 30,
-    "cumulative_library_states": 30,
+    "cumulative_library_timeline_items": 30,
     "trial_factor_representation_count": 30,
     "observed_runner_snapshot_count": 21,
-    "strict_replay_ready_trials": 0,
-    "strict_replay_ready_cumulative_states": 0
+    "strict_replay_ready_trials": 21,
+    "strict_replay_unready_trials": 9,
+    "strict_replay_ready_observed_cumulative_states": 21,
+    "unready_trial_ids": [
+      16,
+      17,
+      21,
+      22,
+      23,
+      24,
+      26,
+      27,
+      28
+    ],
+    "readiness_semantics": "Replay-input evidence is hash-verified and bound. This does not assert that strict replay execution has already succeeded."
+  },
+  "selection_calendar": {
+    "schema": "agent-alpha-audit.selection-calendar.v1",
+    "trading_day_count": 871,
+    "first_trading_day": "2017-01-03",
+    "last_trading_day": "2020-07-31",
+    "selection_calendar_csv_sha256": "5aa6530ce392387eb66cdc1bdb5981f1680d9b091343c164cf60e75b796d3e20",
+    "provider_calendar_sha256": "471939103643b442eabbbd53616c1d5201ec6a38af6e03b18d3b1ccccb98773f",
+    "provider_snapshot_sha256": "202d28f908f93a78eaec105c0519d12049783ff0fe08d59e36d73aaeab2590fc"
   },
   "primary_outcome": {
     "unit": "cumulative_factor_library_at_loop_k",
@@ -38,8 +104,9 @@
     "state_source": "runner_successful_factor_state",
     "factor_count": 12,
     "state_observed": true,
-    "strict_replay_ready": false
+    "strict_replay_ready": true,
+    "strict_replay_completed": false
   },
-  "audit_status": "STRICT_EVALUATION_PENDING",
-  "important_note": "The 30-loop autonomous search and evidence capture are complete. The v3 audit manifest separates captured factor representations from deterministic replay readiness. Executable implementation artifacts and the complete strict-evaluation specification still need to be bound before frozen-OOS, uniform-cost and selection-adjusted results can be reported."
+  "audit_status": "STRICT_REPLAY_INPUTS_READY_EVALUATION_PENDING",
+  "important_note": "The 30-loop autonomous search, reconciliation, checkpoint-backed artifact recovery, evaluation-spec binding, exact runner-state composition binding, v4 replay-input readiness gate and locked selection calendar are complete. Actual strict selection replay and frozen-OOS evaluation have not yet been completed, so no final audited performance is claimed."
 }

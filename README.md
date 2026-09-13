@@ -32,14 +32,22 @@ The first confirmatory case study audits a **30-loop Microsoft RD-Agent(Q) v0.8.
 - reconciliation v2 validates the locked protocol across all **7** resume streams and reconstructs execution attempts by distinct proposal boundaries rather than independently choosing the latest event per tag
 - reconciliation arithmetic is explicit: **169 raw rows = 7 run-config observations + 162 trial-event observations; 162 trial observations -> 160 canonical trial events (one exact duplicate group and one superseded Trial 18 proposal attempt); + 1 canonical run-config = 161 logical events across 30 trials**
 - **21/30** loop states contain an observed runner snapshot; failed/no-runner loops carry the last successful cumulative state forward rather than adding unimplemented proposals
-- exported **30 trial** and **30 cumulative-library** audit targets; the v3 manifest explicitly separates captured evidence from deterministic replay readiness
-- recovered the final primary outcome directly from the **Loop 29 RD-Agent runner state**: a **12-factor cumulative library**
+- exported **30 trial** and **30 cumulative-library timeline** audit targets while preserving all failed/no-runner loops in the search denominator
+- recovered **79 executable factor implementations**, all with exact coding-checkpoint source matches; **64** correspond to runner `current_successful` artifacts
+- bound the recovered artifacts to the locked evaluation specification and exact RD-Agent runner-defined compositions rather than reconstructing libraries by historical union
+- strict-eval manifest v4 marks **21/30 trial experiments** replay-input ready; the remaining 9 have no canonical runner result and remain explicitly non-ready
+- **21/21 observed cumulative-library runner snapshots** are replay-input ready; carried-forward states remain visible in the 30-loop chronology but are not counted as new observed states
+- recovered the final primary outcome directly from the **Loop 29 RD-Agent runner state**: a **12-factor cumulative library**, with all 12 artifact hashes verified
+- locked the agent-visible search/selection calendar to **871 trading days (2017-01-03 through 2020-07-31)** from the physically truncated research provider
 - physical research-data cutoff enforced before the frozen OOS period
 
-The confirmatory search is complete. **Strict frozen-OOS, uniform-cost and search-adjusted reevaluation is still in progress**, so upstream RD-Agent metrics are not presented as final audited performance. The v3 manifest intentionally marks replay readiness false until executable implementation artifacts and a complete evaluation specification are explicitly bound.
+The confirmatory search and replay-input evidence binding are complete. **Actual strict selection replay, frozen-OOS, uniform-cost and search-adjusted reevaluation are still in progress**, so upstream RD-Agent metrics are not presented as final audited performance. `strict_replay_ready` means that the implementation artifacts, exact runner composition and evaluation specification have been hash-verified and bound; it does **not** mean that strict replay has already succeeded.
 
-Machine-readable case-study metadata:
-[`case_studies/rdagent_q_30loop/summary.json`](case_studies/rdagent_q_30loop/summary.json)
+Machine-readable case-study evidence:
+[`summary.json`](case_studies/rdagent_q_30loop/summary.json) ·
+[`reconciliation.json`](case_studies/rdagent_q_30loop/reconciliation.json)
+
+The reproducible environment is intentionally pinned to **Python 3.11** (`>=3.11,<3.12`) because that is the tested compatibility surface for the locked RD-Agent/Qlib stack; Python 3.12 compatibility is not claimed.
 
 ### Why this matters
 
@@ -300,10 +308,14 @@ Confirmatory runs first reconcile **all installed RD-Agent Qlib execution-templa
 ## Current status
 
 - **Confirmatory search:** complete — 30/30 RD-Agent(Q) factor-mining loops finished.
-- **Evidence reconciliation:** complete — raw execution history has been reconciled into a logical trial ledger while preserving duplicate/resume provenance.
-- **Strict-evaluation export:** complete as an audit-target manifest; implementation/evaluation eligibility is being tightened before reruns.
-- **Strict deterministic reevaluation:** in progress.
+- **Evidence reconciliation:** complete — 169 raw events across 7 streams reconcile to 161 logical events and 30 logical trials with retry/supersession provenance preserved.
+- **Artifact recovery:** complete — 79/79 recovered implementations have exact coding-checkpoint source matches.
+- **Evaluation specification:** complete — train, model-validation, agent-visible selection and frozen-OOS periods, providers, costs and evaluator-side determinism controls are locked.
+- **Composition binding:** complete — 21 runner-observed trial compositions and 21 observed cumulative-library snapshots are bound to immutable artifacts.
+- **Strict replay-input readiness:** complete — 21/30 trial experiments and 21/21 observed cumulative-library snapshots satisfy the v4 evidence gate.
+- **Selection calendar:** complete — 871 research-provider trading days, 2017-01-03 through 2020-07-31, are hash-bound to the evaluation contract.
+- **Strict deterministic reevaluation:** not yet completed.
 - **Frozen-OOS performance:** **not claimed yet**.
 - **Selection-adjusted / final audited performance:** **not claimed yet**.
 
-The public case study therefore documents a completed autonomous-agent search and its captured audit evidence, not a completed frozen-OOS performance audit.
+The public case study therefore documents a completed autonomous-agent search and a completed replay-input evidence chain. It does **not** yet claim completed strict replay or frozen-OOS performance.

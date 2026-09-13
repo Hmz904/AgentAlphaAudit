@@ -39,7 +39,7 @@ def _last_accepted(trials, columns: list[str]) -> tuple[str | None, str]:
     return None, f"last accepted trial {tid} has no aligned return column"
 
 
-def _highest_validation_sharpe(df: pd.DataFrame, columns: list[str], periods_per_year: int) -> tuple[str | None, str]:
+def _highest_selection_sharpe(df: pd.DataFrame, columns: list[str], periods_per_year: int) -> tuple[str | None, str]:
     scored = []
     for c in columns:
         x = pd.to_numeric(df[c], errors="coerce").to_numpy(float)
@@ -49,7 +49,7 @@ def _highest_validation_sharpe(df: pd.DataFrame, columns: list[str], periods_per
             pass
     if not scored:
         return None, "no valid return series"
-    return max(scored)[1], "highest_strict_validation_sharpe"
+    return max(scored)[1], "highest_strict_selection_sharpe"
 
 
 def _highest_upstream_metric(trials, columns: list[str]) -> tuple[str | None, str]:
@@ -196,7 +196,7 @@ def build_run_report(
     # outcome; that is the cumulative factor library.
     selections = {
         "last_agent_accepted": _last_accepted(trials, numeric_cols),
-        "highest_strict_validation_sharpe": _highest_validation_sharpe(df, numeric_cols, periods_per_year),
+        "highest_strict_selection_sharpe": _highest_selection_sharpe(df, numeric_cols, periods_per_year),
         "highest_upstream_reported_metric": _highest_upstream_metric(trials, numeric_cols),
     }
     if winner_column is not None:
@@ -204,27 +204,89 @@ def build_run_report(
             raise ValueError("manual --winner-column requires --winner-override-reason so the auditor's selection is itself recorded")
         selections["manual_override"] = (winner_column, f"manual_override: {winner_override_reason}")
 
+    dsr_policy = {
+        "last_agent_accepted": {
+            "applicable": False,
+            "reason": (
+                "The selected trial is defined by agent chronology/acceptance, "
+                "not by maximizing strict selection-period Sharpe; the "
+                "expected-maximum DSR benchmark is therefore not applicable."
+            ),
+        },
+        "highest_strict_selection_sharpe": {
+            "applicable": True,
+            "reason": (
+                "The selected trial is the argmax of Sharpe over the aligned "
+                "strict selection-period return series, matching the "
+                "expected-maximum interpretation used by this DSR diagnostic."
+            ),
+        },
+        "highest_upstream_reported_metric": {
+            "applicable": False,
+            "reason": (
+                "The selected trial maximizes an upstream-reported metric "
+                "rather than strict selection-period Sharpe; applying the "
+                "Sharpe expected-maximum benchmark would mismatch the "
+                "selection rule."
+            ),
+        },
+    }
+
+    if "manual_override" in selections:
+        dsr_policy["manual_override"] = {
+            "applicable": False,
+            "reason": (
+                "A manual override is not guaranteed to be the Sharpe argmax "
+                "over the audited trial set, so expected-maximum DSR is not "
+                "assigned to it."
+            ),
+        }
+
     sensitivity = {}
-    if sigma_sr is not None and sigma_ci is not None:
-        for rule, (selected, why) in selections.items():
-            rec = {"column": selected, "inference": why}
-            if selected in df.columns:
-                try:
-                    rec["dsr"] = _dsr_for_column(
-                        df, selected, sigma_sr, sigma_ci, raw_n, periods_per_year, len(trial_srs)
-                    )
-                except ValueError as exc:
-                    rec["error"] = str(exc)
-            sensitivity[rule] = rec
-    else:
-        for rule, (selected, why) in selections.items():
-            sensitivity[rule] = {"column": selected, "inference": why, "dsr": None}
+
+    for rule, (selected, why) in selections.items():
+        policy = dsr_policy[rule]
+
+        rec = {
+            "column": selected,
+            "inference": why,
+            "dsr_applicable": policy["applicable"],
+            "dsr_applicability_reason": policy["reason"],
+            "dsr": None,
+        }
+
+        if (
+            policy["applicable"]
+            and sigma_sr is not None
+            and sigma_ci is not None
+            and selected in df.columns
+        ):
+            try:
+                rec["dsr"] = _dsr_for_column(
+                    df,
+                    selected,
+                    sigma_sr,
+                    sigma_ci,
+                    raw_n,
+                    periods_per_year,
+                    len(trial_srs),
+                )
+            except ValueError as exc:
+                rec["error"] = str(exc)
+
+        sensitivity[rule] = rec
+
     out["trial_selection_sensitivity"] = sensitivity
 
     if coverage < 1.0:
         warnings.append("trial Sharpe dispersion covers only trials with strict-evaluator return series; missing/failed trials remain in raw N")
     warnings.append("raw trial count is a lower bound because alternatives considered inside one RD-Agent LLM call are not observable")
-    warnings.append("DSR is a secondary single-trial selection diagnostic; the primary RD-Agent factor audit unit is the cumulative factor library")
+    warnings.append(
+        "DSR is reported only for the strict selection-period Sharpe argmax; "
+        "chronological, upstream-metric and manual selection rules remain "
+        "sensitivity diagnostics but are marked DSR-inapplicable. The primary "
+        "RD-Agent factor audit unit is the cumulative factor library"
+    )
     warnings.append("DSR cross-trial dispersion may be conservative because it includes genuine between-strategy heterogeneity as well as search noise")
     out["trial_return_evidence"] = evidence
     out["warnings"] = warnings
