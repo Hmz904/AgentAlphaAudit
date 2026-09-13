@@ -21,6 +21,27 @@ Upstream references:
 - https://github.com/microsoft/RD-Agent/tree/v0.8.0/rdagent/scenarios/qlib/experiment
 - https://github.com/microsoft/RD-Agent/blob/v0.8.0/rdagent/scenarios/qlib/developer/factor_runner.py
 
+
+## Real RD-Agent(Q) case study
+
+The first confirmatory case study audits a **30-loop Microsoft RD-Agent(Q) v0.8.0 factor-mining run** under a locked research protocol.
+
+- **169 raw execution events** captured across the original run and resumed continuations
+- reconciled into **161 logical events and 30 logical research trials**
+- preserved retry and failure provenance rather than silently treating resumes as new trials
+- exported **30/30 trial-level** and **30/30 cumulative-library** states for deterministic strict reevaluation
+- recovered the final primary outcome directly from the RD-Agent runner state: a **12-factor cumulative library**
+- physical research-data cutoff enforced before the frozen OOS period
+
+The confirmatory search is complete. **Strict frozen-OOS, uniform-cost and search-adjusted reevaluation is still in progress**, so upstream RD-Agent metrics are not presented as final audited performance.
+
+Machine-readable case-study metadata:
+[`case_studies/rdagent_q_30loop/summary.json`](case_studies/rdagent_q_30loop/summary.json)
+
+### Why this matters
+
+Agent failures are not only model failures. Long-running agentic workflows can fail through implementation bugs, timeouts, resource exhaustion, interrupted sessions, contaminated resumes and evaluation inconsistencies. AgentAlphaAudit keeps those events visible while separating **execution history** from the **logical research trajectory**, so reliability and selection effects can be audited rather than hidden.
+
 ## What this repository audits
 
 ```text
