@@ -297,62 +297,297 @@ def assemble_trial_returns(
     out_csv: str | Path,
     coverage_json: str | Path | None = None,
     require_identical_dates: bool = True,
+    reference_calendar_csv: str | Path | None = None,
+    evaluation_spec_path: str | Path | None = None,
 ) -> dict[str, Any]:
-    """Assemble trial-level validation returns, rejecting unequal sample windows.
+    """Assemble trial-level selection-period returns.
 
-    Different date supports make cross-trial Sharpe dispersion incomparable because
-    short series have noisier Sharpe estimates. The confirmatory default is therefore
-    strict identical date coverage rather than an outer join.
+    ``validation_returns.csv`` is retained only as a compatibility filename.
+    For strict-eval-manifest.v4, its semantic role is
+    ``selection_period_returns``.
+
+    V4 strict-identical assembly requires an explicit locked reference
+    calendar plus the exact evaluation specification bound into the manifest.
+    It never infers the reference calendar from the first successful trial.
+
+    Legacy manifests retain the historical first-trial fallback so existing
+    callers remain backward compatible.
     """
-    manifest = json.loads(Path(manifest_path).read_text(encoding="utf-8"))
+    manifest_path = Path(manifest_path)
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     root = Path(eval_dir)
-    series: list[pd.Series] = []
-    details = []
-    reference_index: pd.DatetimeIndex | None = None
-    for item in manifest.get("trial_items", manifest.get("items", [])):
-        tid = str(item["trial_id"])
-        p = root / f"trial_{tid}" / "validation_returns.csv"
-        if not p.exists():
-            details.append({"trial_id": tid, "status": "missing_returns"})
-            continue
-        df = pd.read_csv(p)
-        if not {"date", "return"}.issubset(df.columns):
-            details.append({"trial_id": tid, "status": "invalid_schema"})
-            continue
-        s = pd.Series(pd.to_numeric(df["return"], errors="coerce").values, index=pd.to_datetime(df["date"]), name=f"trial_{tid}")
-        s = s[~s.index.duplicated(keep="last")].sort_index().dropna()
-        if reference_index is None:
-            reference_index = pd.DatetimeIndex(s.index)
-        elif require_identical_dates and not pd.DatetimeIndex(s.index).equals(reference_index):
+
+    strict_v4 = manifest.get("schema") == "agent-alpha-audit.strict-eval-manifest.v4"
+
+    if strict_v4 and require_identical_dates:
+        if reference_calendar_csv is None:
             raise ValueError(
-                f"trial {tid} validation dates differ from the reference trial; confirmatory Sharpe dispersion requires identical coverage"
+                "strict-eval-manifest.v4 requires reference_calendar_csv for identical-date assembly"
             )
+        if evaluation_spec_path is None:
+            raise ValueError(
+                "strict-eval-manifest.v4 requires evaluation_spec_path for selection-period assembly"
+            )
+
+    semantic_name = "legacy_unspecified_return_series"
+    compatibility_filename = "validation_returns.csv"
+    selection_start = None
+    selection_end = None
+    spec_file_sha256 = None
+
+    if evaluation_spec_path is not None:
+        spec_path = Path(evaluation_spec_path)
+        spec = json.loads(spec_path.read_text(encoding="utf-8"))
+
+        if spec.get("schema") != ("agent-alpha-audit.rdagent-evaluation-spec.v1"):
+            raise ValueError("unexpected evaluation specification schema")
+
+        spec_file_sha256 = sha256_file(spec_path)
+
+        if strict_v4:
+            bound_spec = manifest.get("evidence", {}).get("evaluation_spec", {})
+
+            expected_file_sha = bound_spec.get("file_sha256")
+            expected_spec_sha = bound_spec.get("spec_sha256")
+
+            if not expected_file_sha:
+                raise ValueError("v4 manifest lacks bound evaluation-spec file hash")
+
+            if expected_file_sha != spec_file_sha256:
+                raise ValueError("evaluation specification file hash does not match v4 manifest binding")
+
+            if expected_spec_sha and expected_spec_sha != spec.get("spec_sha256"):
+                raise ValueError("evaluation specification semantic hash does not match v4 manifest binding")
+
+        try:
+            selection = spec["periods"]["agent_visible_selection"]
+            output_contract = spec["phases"]["strict_selection_replay"]["required_trial_output"]
+        except KeyError as exc:
+            raise ValueError("evaluation specification lacks locked selection-period contract") from exc
+
+        semantic_name = output_contract.get("semantic_name")
+        compatibility_filename = output_contract.get("compatibility_filename")
+
+        if semantic_name != "selection_period_returns":
+            raise ValueError(
+                "strict selection replay output must have semantic_name='selection_period_returns'"
+            )
+
+        if compatibility_filename != "validation_returns.csv":
+            raise ValueError("unexpected strict selection replay compatibility filename")
+
+        selection_start = pd.Timestamp(selection["start"])
+        selection_end = pd.Timestamp(selection["end"])
+
+        if selection_start > selection_end:
+            raise ValueError("invalid locked selection-period bounds")
+
+    reference_index: pd.DatetimeIndex | None = None
+    reference_source = None
+    reference_calendar_sha256 = None
+
+    if reference_calendar_csv is not None:
+        calendar_path = Path(reference_calendar_csv)
+
+        if not calendar_path.is_file():
+            raise ValueError("reference calendar file does not exist")
+
+        calendar_df = pd.read_csv(calendar_path)
+
+        if "date" not in calendar_df.columns:
+            raise ValueError("reference calendar must contain a date column")
+
+        parsed = pd.to_datetime(
+            calendar_df["date"],
+            errors="coerce",
+        )
+
+        if parsed.isna().any():
+            raise ValueError("reference calendar contains invalid dates")
+
+        reference_index = pd.DatetimeIndex(parsed)
+
+        if reference_index.empty:
+            raise ValueError("reference calendar is empty")
+
+        if reference_index.has_duplicates:
+            raise ValueError("reference calendar contains duplicate dates")
+
+        if not reference_index.is_monotonic_increasing:
+            raise ValueError("reference calendar must be strictly chronological")
+
+        if selection_start is not None and reference_index.min() < selection_start:
+            raise ValueError("reference calendar begins before locked selection period")
+
+        if selection_end is not None and reference_index.max() > selection_end:
+            raise ValueError("reference calendar ends after locked selection period")
+
+        reference_source = "explicit_locked_calendar"
+        reference_calendar_sha256 = sha256_file(calendar_path)
+
+    series: list[pd.Series] = []
+    details: list[dict[str, Any]] = []
+
+    items = manifest.get(
+        "trial_items",
+        manifest.get("items", []),
+    )
+
+    for item in items:
+        tid = str(item["trial_id"])
+
+        if strict_v4 and not item.get(
+            "strict_replay_ready",
+            False,
+        ):
+            details.append(
+                {
+                    "trial_id": tid,
+                    "status": "not_strict_replay_ready",
+                }
+            )
+            continue
+
+        p = root / f"trial_{tid}" / compatibility_filename
+
+        if not p.exists():
+            details.append(
+                {
+                    "trial_id": tid,
+                    "status": "missing_returns",
+                }
+            )
+            continue
+
+        df = pd.read_csv(p)
+
+        if not {"date", "return"}.issubset(df.columns):
+            details.append(
+                {
+                    "trial_id": tid,
+                    "status": "invalid_schema",
+                }
+            )
+            continue
+
+        dates = pd.to_datetime(
+            df["date"],
+            errors="coerce",
+        )
+
+        values = pd.to_numeric(
+            df["return"],
+            errors="coerce",
+        )
+
+        if dates.isna().any():
+            details.append(
+                {
+                    "trial_id": tid,
+                    "status": "invalid_dates",
+                }
+            )
+            continue
+
+        s = pd.Series(
+            values.values,
+            index=dates,
+            name=f"trial_{tid}",
+        )
+
+        s = s[~s.index.duplicated(keep="last")].sort_index().dropna()
+
+        trial_index = pd.DatetimeIndex(s.index)
+
+        if require_identical_dates and reference_index is None:
+            # Legacy-only behavior. V4 cannot reach this
+            # branch because it requires an explicit
+            # reference_calendar_csv above.
+            reference_index = trial_index
+            reference_source = "legacy_first_included_trial"
+
+        elif require_identical_dates and not trial_index.equals(reference_index):
+            raise ValueError(f"trial {tid} return dates differ from the locked reference calendar")
+
         series.append(s)
-        details.append({
-            "trial_id": tid,
-            "status": "included",
-            "sha256": sha256_file(p),
-            "n": int(s.size),
-            "start": s.index.min().date().isoformat() if len(s) else None,
-            "end": s.index.max().date().isoformat() if len(s) else None,
-        })
-    aligned = pd.concat(series, axis=1, join="inner" if require_identical_dates else "outer").sort_index() if series else pd.DataFrame()
+
+        details.append(
+            {
+                "trial_id": tid,
+                "status": "included",
+                "sha256": sha256_file(p),
+                "n": int(s.size),
+                "start": (s.index.min().date().isoformat() if len(s) else None),
+                "end": (s.index.max().date().isoformat() if len(s) else None),
+            }
+        )
+
+    aligned = (
+        pd.concat(
+            series,
+            axis=1,
+            join=("inner" if require_identical_dates else "outer"),
+        ).sort_index()
+        if series
+        else pd.DataFrame()
+    )
+
     aligned.index.name = "date"
     aligned.to_csv(out_csv)
-    raw_n = int(manifest.get("raw_trials_lower_bound", len(manifest.get("trial_items", manifest.get("items", [])))))
+
+    raw_n = int(
+        manifest.get(
+            "raw_trials_lower_bound",
+            len(items),
+        )
+    )
     included = len(series)
+
     summary = {
-        "schema": "agent-alpha-audit.return-coverage.v2",
+        "schema": "agent-alpha-audit.return-coverage.v3",
+        "return_semantic_name": semantic_name,
+        "compatibility_filename": (compatibility_filename),
         "raw_trials_lower_bound": raw_n,
         "trials_with_aligned_returns": included,
-        "coverage": included / raw_n if raw_n else 0.0,
-        "date_alignment_policy": "strict_identical" if require_identical_dates else "outer_union",
+        "coverage": (included / raw_n if raw_n else 0.0),
+        "date_alignment_policy": (
+            "locked_reference_calendar"
+            if (require_identical_dates and reference_source == "explicit_locked_calendar")
+            else ("strict_identical" if require_identical_dates else "outer_union")
+        ),
+        "reference_calendar_source": (reference_source),
+        "reference_calendar_sha256": (reference_calendar_sha256),
+        "reference_calendar_n": (len(reference_index) if reference_index is not None else 0),
+        "reference_calendar_start": (
+            reference_index.min().date().isoformat()
+            if (reference_index is not None and len(reference_index))
+            else None
+        ),
+        "reference_calendar_end": (
+            reference_index.max().date().isoformat()
+            if (reference_index is not None and len(reference_index))
+            else None
+        ),
+        "selection_period_start": (
+            selection_start.date().isoformat() if selection_start is not None else None
+        ),
+        "selection_period_end": (selection_end.date().isoformat() if selection_end is not None else None),
+        "evaluation_spec_file_sha256": (spec_file_sha256),
         "aligned_n": len(aligned),
-        "aligned_start": aligned.index.min().date().isoformat() if len(aligned) else None,
-        "aligned_end": aligned.index.max().date().isoformat() if len(aligned) else None,
+        "aligned_start": (aligned.index.min().date().isoformat() if len(aligned) else None),
+        "aligned_end": (aligned.index.max().date().isoformat() if len(aligned) else None),
         "output": str(out_csv),
         "details": details,
     }
+
     if coverage_json:
-        Path(coverage_json).write_text(json.dumps(summary, indent=2, sort_keys=True), encoding="utf-8")
+        Path(coverage_json).write_text(
+            json.dumps(
+                summary,
+                indent=2,
+                sort_keys=True,
+            ),
+            encoding="utf-8",
+        )
+
     return summary

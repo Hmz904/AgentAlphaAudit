@@ -116,6 +116,11 @@
       "sha256": "8f4adfc8057db2092a35f041274d229d33e856c48e0204dc4f7491593f38be3e"
     },
     {
+      "bytes": 4784,
+      "path": "scripts/export_rdagent_selection_calendar.py",
+      "sha256": "6742043cf693c1a032981d302abac1060f0da48b208c24e14f0a0a307c498c1b"
+    },
+    {
       "bytes": 108,
       "path": "scripts/reconcile_rdagent_events.py",
       "sha256": "ed6cd107bc17a3474250e1e272b2a2a47a3d2f1ec6d8e7855caa68248d38faee"
@@ -261,9 +266,9 @@
       "sha256": "d5d2e72338101b70d960f8defa8f8b265a65c06749754a94b6d710d5e36f7be7"
     },
     {
-      "bytes": 14460,
+      "bytes": 21737,
       "path": "src/agent_alpha_audit/strict_eval.py",
-      "sha256": "5a85a88e380a31cd8611fd259d4300680f23fef02f580016d929a69e55ad42f1"
+      "sha256": "6490c759164f6f8e653ca05a5c04055e1c23be3590b4b1ff736923e3abaf3806"
     },
     {
       "bytes": 16206,
@@ -379,6 +384,11 @@
       "bytes": 1366,
       "path": "tests/test_report_winner.py",
       "sha256": "41f325156375ea8ae281909cb28e13e2c21b63b062b2c84f22fe4b21a2f16ad1"
+    },
+    {
+      "bytes": 5396,
+      "path": "tests/test_return_calendar_contract.py",
+      "sha256": "2ca00c43e7053c865a2981232ed3408a559be31bb9917fa048750bbb0c983b30"
     },
     {
       "bytes": 633,
