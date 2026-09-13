@@ -1,4 +1,20 @@
 {
+  "cumulative_library_scope": {
+    "all_cumulative_snapshots_replayed": false,
+    "endpoint_loop": 29,
+    "note": "This public confirmatory result strictly replays the final cumulative-library endpoint. It does not claim replay of all 21 replay-ready cumulative snapshots.",
+    "primary_cumulative_library_audit": "endpoint_survival_audit",
+    "replay_ready_cumulative_snapshots": 21
+  },
+  "effective_sample_support": {
+    "configured_training_segment": [
+      "2008-01-01",
+      "2014-12-31"
+    ],
+    "effective_factor_complete_support_start": "2010-04-01",
+    "explanation": "The configured Qlib training segment starts in 2008, but the custom factors require history and warm-up. The final 12-factor complete-case matrix begins on 2010-04-01. Selection and frozen-OOS replays use identical locked training, validation, and factor-construction semantics.",
+    "rdagent_daily_pv_start": "2008-12-29"
+  },
   "evidence_sha256": {
     "frozen_oos_primary_result": "9c02f0a87833ea549ce7206b45fef6edb1bacaa0d5b0a8078529125e3e729e1c",
     "frozen_oos_qlib_metrics": "d6d6e6304da7aa3f495c1e0c228f920d3bcbf3a7ff39207f591f591f73dd4ccf",
@@ -20,6 +36,18 @@
     "start": "2008-12-29"
   },
   "interpretation": "The final 12-factor cumulative library retained positive frozen-OOS predictive and trading value, but selection-period performance materially overstated its OOS strength. Net Sharpe fell from about 0.906 to 0.307.",
+  "metric_conventions": {
+    "audit_absolute_portfolio_metrics": {
+      "annualization_days": 252,
+      "description": "AgentAlphaAudit explicitly uses 252 trading days/year for its absolute portfolio return and Sharpe summaries."
+    },
+    "qlib_native_cn_portfolio_analysis": {
+      "annualization_days": 238,
+      "description": "Qlib native CN portfolio-analysis metrics in the locked environment use 238 trading days/year.",
+      "frozen_oos_scale_verified": 238.00000000000531,
+      "selection_scale_verified": 238.00000000000026
+    }
+  },
   "primary_performance": {
     "decay": {
       "annualized_return_change": -0.1375149292075834,
@@ -69,8 +97,9 @@
       }
     },
     "primary_outcome": {
-      "composition_sha256_frozen_oos": null,
-      "composition_sha256_selection": null,
+      "composition_identity_verified": true,
+      "composition_sha256_frozen_oos": "0690448c1acfee63f0d67e71918499e24b15dc11cd39a6ce69fd048162591926",
+      "composition_sha256_selection": "0690448c1acfee63f0d67e71918499e24b15dc11cd39a6ce69fd048162591926",
       "factor_count": 12,
       "frozen_oos_phase": "strict_frozen_oos",
       "selection_phase": "strict_selection_replay",
@@ -148,8 +177,23 @@
     ],
     "effective_trial_count_status": "suppressed_low_coverage",
     "expected_max_sharpe": 0.163,
+    "interpretation_limit": "DSR is a secondary diagnostic using raw search count N=30 and Sharpe dispersion estimated from 20 replayed trials. Return coverage is only 66.7%, candidate dependence is not formally resolved, and the usable trial count is exactly the minimum threshold for reporting a point estimate. It should not be interpreted as a standalone significance claim.",
+    "minimum_trials_for_point_dsr": 20,
     "observed_annualized_sharpe": 0.920305,
+    "observed_trial_sharpe_distribution": {
+      "bootstrap_std_ci95": [
+        0.057,
+        0.094
+      ],
+      "max": 0.9203050155723685,
+      "mean": 0.7638619679901487,
+      "median": 0.7666304877032298,
+      "min": 0.6419328955084389,
+      "sample_std": 0.07858459847206757,
+      "usable_trial_count": 20
+    },
     "point_estimate_status": "reported",
+    "point_estimate_threshold_margin": 0,
     "raw_trial_count": 30,
     "role": "secondary trial-level search diagnostic; not the primary cumulative-library outcome",
     "selected_trial_id": 4,
@@ -177,6 +221,7 @@
     "agent": "Microsoft RD-Agent(Q)",
     "confirmatory_loops": 30,
     "factor_count": 12,
+    "primary_composition_sha256": "0690448c1acfee63f0d67e71918499e24b15dc11cd39a6ce69fd048162591926",
     "primary_outcome": "cumulative_factor_library_at_loop_29",
     "rdagent_version": "0.8.0"
   }

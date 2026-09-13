@@ -873,6 +873,45 @@ def _run_logged_process(
     return duration
 
 
+def _finalize_qrun_phase_outputs(
+    *,
+    phase_name: str,
+    ret_path: str | Path,
+    metrics_path: str | Path,
+    reference_calendar_csv: str | Path | None,
+    root: str | Path,
+) -> dict[str, Any]:
+    """Finalize qrun outputs according to evaluation phase."""
+    root = Path(root)
+
+    if phase_name == "strict_selection_replay":
+        if reference_calendar_csv is None:
+            raise StrictReplayError(
+                "selection_calendar_missing",
+                "strict_selection_replay requires a reference calendar",
+            )
+
+        return finalize_selection_returns(
+            ret_path=ret_path,
+            qlib_metrics_path=metrics_path,
+            reference_calendar_csv=reference_calendar_csv,
+            out_csv=root / "validation_returns.csv",
+            contract_json=(root / "selection_return_contract_v1.json"),
+        )
+
+    if phase_name == "strict_frozen_oos":
+        return {
+            "return_semantic_name": ("frozen_oos_portfolio_report"),
+            "validation_returns_written": False,
+            "selection_return_contract_written": False,
+        }
+
+    raise StrictReplayError(
+        "unsupported_qrun_phase",
+        f"unsupported qrun phase: {phase_name}",
+    )
+
+
 def run_strict_selection_qrun(
     *,
     out_dir: str | Path,
@@ -1030,33 +1069,13 @@ def run_strict_selection_qrun(
         metrics_path,
     )
 
-    if phase_name == "strict_selection_replay":
-        if reference_calendar_csv is None:
-            raise StrictReplayError(
-                "selection_calendar_missing",
-                "strict_selection_replay requires a reference calendar",
-            )
-
-        return_summary = finalize_selection_returns(
-            ret_path=ret_path,
-            qlib_metrics_path=(metrics_path),
-            reference_calendar_csv=(reference_calendar_csv),
-            out_csv=(root / "validation_returns.csv"),
-            contract_json=(root / "selection_return_contract_v1.json"),
-        )
-
-    elif phase_name == "strict_frozen_oos":
-        return_summary = {
-            "return_semantic_name": "frozen_oos_portfolio_report",
-            "validation_returns_written": False,
-            "selection_return_contract_written": False,
-        }
-
-    else:
-        raise StrictReplayError(
-            "unsupported_qrun_phase",
-            f"unsupported qrun phase: {phase_name}",
-        )
+    return_summary = _finalize_qrun_phase_outputs(
+        phase_name=phase_name,
+        ret_path=ret_path,
+        metrics_path=metrics_path,
+        reference_calendar_csv=(reference_calendar_csv),
+        root=root,
+    )
 
     return {
         "qrun_completed": True,

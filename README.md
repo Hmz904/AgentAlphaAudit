@@ -59,9 +59,15 @@ The primary RD-Agent outcome is the **Loop 29 cumulative library of 12 factors**
 
 The library therefore survives frozen OOS with positive signal, but with substantial decay: net Sharpe falls by **0.599** and retains only **33.9%** of its selection-period level. Qlib's benchmark-relative, cost-adjusted annualized excess return remains positive, declining from **8.53% to 5.86%**, while information ratio declines from **0.921 to 0.558**. IC and Rank IC fall materially as well, so the deterioration is not merely a benchmark or transaction-cost effect.
 
-The fixed secondary trial-level search diagnostic selects Trial 4 by `highest_strict_selection_sharpe`. Its observed annualized Sharpe is 0.920 versus an expected-search maximum of about 0.163. The Deflated Sharpe probability is **0.916**, with bootstrap 95% interval **[0.907, 0.928]**, using raw search count 30 and 20 usable trial Sharpe estimates. Effective-trial estimation is suppressed because return coverage is below the locked 80% threshold. This DSR is a **secondary search diagnostic**, not a significance test for the final cumulative library.
+The fixed secondary trial-level search diagnostic selects Trial 4 by `highest_strict_selection_sharpe`. Its observed annualized Sharpe is 0.920 versus an expected-search maximum of about 0.163. The Deflated Sharpe probability is **0.916**, with bootstrap 95% interval **[0.907, 0.928]**, but it is deliberately treated as a **secondary diagnostic rather than a standalone significance claim**. Only 20/30 captured trials have aligned strict-replay return series, exactly the minimum count required for reporting the point estimate. Across those 20 trials the annualized Sharpe distribution is narrow: mean **0.764**, sample SD **0.079** (bootstrap 95% CI **[0.057, 0.094]**), median about **0.767**, min **0.642**, max **0.920**. Effective-trial estimation remains suppressed because return coverage is 66.7%, below the locked 80% threshold, and candidate dependence is therefore not claimed to be resolved.
+
+**Metric convention.** AgentAlphaAudit's absolute portfolio return and Sharpe summaries use an explicit **252 trading days/year** convention. Qlib's native CN portfolio-analysis output in this locked environment uses **238 trading days/year**; this is verified directly because its reported annualized return equals daily mean ? 238 in both selection and frozen OOS. The two sets of metrics are therefore intentionally not numerically identical.
+
+**Effective sample support.** The Qlib configuration declares a nominal training segment beginning 2008-01-01, while RD-Agent's `daily_pv` begins 2008-12-29 and the final 12-factor complete-case combined matrix first has usable support on **2010-04-01** after factor-history/warm-up requirements. Both selection and frozen-OOS replays use the same locked train/validation configuration and factor construction.
 
 Frozen-OOS Ridge-factor construction preserves the original RD-Agent all-market `D.instruments()` semantics rather than recomputing only within CSI300. The full factor input spans 2008-12-29–2026-09-10, contains **15,114,871 rows across 6,093 instruments**, and reproduces the original data **bit-for-bit through 2020-07-31**.
+
+**Audit scope note.** The completed public confirmatory case is an **endpoint survival audit** of the final cumulative library. Although 21 cumulative-library snapshots are replay-input ready, this release does not claim strict replay of the entire cumulative-library trajectory. Likewise, the full stagewise `reported ? exact reproduction ? PIT ? lag ? costs ? frozen OOS` waterfall remains a planned v2 analysis rather than a completed public result.
 
 Machine-readable final evidence is in [`case_studies/rdagent_q_30loop/audited_results.json`](case_studies/rdagent_q_30loop/audited_results.json).
 
@@ -336,8 +342,8 @@ Confirmatory runs first reconcile **all installed RD-Agent Qlib execution-templa
 - **Composition binding:** complete — 21 runner-observed trial compositions and 21 observed cumulative-library snapshots are bound to immutable artifacts.
 - **Strict replay-input readiness:** complete — 21/30 trial experiments and 21/21 observed cumulative-library snapshots satisfy the v4 evidence gate.
 - **Selection calendar:** complete — 871 research-provider trading days, 2017-01-03 through 2020-07-31, are hash-bound to the evaluation contract.
-- **Strict deterministic reevaluation:** not yet completed.
-- **Frozen-OOS performance:** **not claimed yet**.
-- **Selection-adjusted / final audited performance:** **not claimed yet**.
+- Strict deterministic reevaluation: **complete** ? 20/21 replay-ready trials completed; Trial 20 timed out during factor execution.
+- Frozen-OOS performance: **complete** ? the final Loop 29 12-factor cumulative library was evaluated over 1,483 held-out trading days.
+- Selection-adjusted diagnostics: **complete** ? DSR is reported as a secondary trial-level diagnostic; the primary result is the cumulative-library frozen-OOS endpoint audit.
 
 The public case study therefore documents a completed autonomous-agent search, exact replay-input evidence chain, strict selection replay, secondary search-adjustment diagnostic, and primary frozen-OOS evaluation. The final library retains positive OOS signal, but its selection-period performance materially overstates OOS strength.

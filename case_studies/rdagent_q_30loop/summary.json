@@ -105,7 +105,8 @@
     "factor_count": 12,
     "state_observed": true,
     "strict_replay_ready": true,
-    "strict_replay_completed": true
+    "strict_replay_completed": true,
+    "composition_sha256": "0690448c1acfee63f0d67e71918499e24b15dc11cd39a6ce69fd048162591926"
   },
   "audit_status": "STRICT_REPLAY_COMPLETE_FROZEN_OOS_COMPLETE",
   "important_note": "The 30-loop search, evidence reconciliation, artifact recovery, evaluation-spec and composition binding, strict trial replay, secondary search adjustment, and primary frozen-OOS evaluation are complete. The final 12-factor cumulative library retains positive OOS signal but shows substantial selection-to-OOS decay: net Sharpe falls from 0.906 to 0.307, retaining about 33.9%.",
@@ -137,7 +138,22 @@
     "selected_trial_id": 4,
     "selector": "highest_strict_selection_sharpe",
     "source_report_sha256": "d8a64fb4ec0ab65a43db0bcf6d88b5553b83cbbd1802bc0c24ccbc095a7dd128",
-    "usable_trial_sharpe_count": 20
+    "usable_trial_sharpe_count": 20,
+    "observed_trial_sharpe_distribution": {
+      "usable_trial_count": 20,
+      "mean": 0.7638619679901487,
+      "sample_std": 0.07858459847206757,
+      "bootstrap_std_ci95": [
+        0.057,
+        0.094
+      ],
+      "min": 0.6419328955084389,
+      "median": 0.7666304877032298,
+      "max": 0.9203050155723685
+    },
+    "minimum_trials_for_point_dsr": 20,
+    "point_estimate_threshold_margin": 0,
+    "interpretation_limit": "DSR is a secondary diagnostic using raw search count N=30 and Sharpe dispersion estimated from 20 replayed trials. Return coverage is only 66.7%, candidate dependence is not formally resolved, and the usable trial count is exactly the minimum threshold for reporting a point estimate. It should not be interpreted as a standalone significance claim."
   },
   "frozen_oos_factor_input": {
     "end": "2026-09-10",
@@ -184,5 +200,33 @@
       "net_sharpe_retention_ratio": 0.3390532520003521
     }
   },
-  "audited_results_artifact": "case_studies/rdagent_q_30loop/audited_results.json"
+  "audited_results_artifact": "case_studies/rdagent_q_30loop/audited_results.json",
+  "metric_conventions": {
+    "audit_absolute_portfolio_metrics": {
+      "annualization_days": 252,
+      "description": "AgentAlphaAudit explicitly uses 252 trading days/year for its absolute portfolio return and Sharpe summaries."
+    },
+    "qlib_native_cn_portfolio_analysis": {
+      "annualization_days": 238,
+      "selection_scale_verified": 238.00000000000026,
+      "frozen_oos_scale_verified": 238.00000000000531,
+      "description": "Qlib native CN portfolio-analysis metrics in the locked environment use 238 trading days/year."
+    }
+  },
+  "effective_sample_support": {
+    "configured_training_segment": [
+      "2008-01-01",
+      "2014-12-31"
+    ],
+    "rdagent_daily_pv_start": "2008-12-29",
+    "effective_factor_complete_support_start": "2010-04-01",
+    "explanation": "The configured Qlib training segment starts in 2008, but the custom factors require history and warm-up. The final 12-factor complete-case matrix begins on 2010-04-01. Selection and frozen-OOS replays use identical locked training, validation, and factor-construction semantics."
+  },
+  "cumulative_library_scope": {
+    "primary_cumulative_library_audit": "endpoint_survival_audit",
+    "endpoint_loop": 29,
+    "replay_ready_cumulative_snapshots": 21,
+    "all_cumulative_snapshots_replayed": false,
+    "note": "This public confirmatory result strictly replays the final cumulative-library endpoint. It does not claim replay of all 21 replay-ready cumulative snapshots."
+  }
 }
