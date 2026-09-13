@@ -1,5 +1,5 @@
 {
-  "schema": "agent-alpha-audit.real-case-study.v2",
+  "schema": "agent-alpha-audit.real-case-study.v3",
   "target": {
     "agent": "Microsoft RD-Agent(Q)",
     "rdagent_version": "0.8.0",
@@ -105,8 +105,84 @@
     "factor_count": 12,
     "state_observed": true,
     "strict_replay_ready": true,
-    "strict_replay_completed": false
+    "strict_replay_completed": true
   },
-  "audit_status": "STRICT_REPLAY_INPUTS_READY_EVALUATION_PENDING",
-  "important_note": "The 30-loop autonomous search, reconciliation, checkpoint-backed artifact recovery, evaluation-spec binding, exact runner-state composition binding, v4 replay-input readiness gate and locked selection calendar are complete. Actual strict selection replay and frozen-OOS evaluation have not yet been completed, so no final audited performance is claimed."
+  "audit_status": "STRICT_REPLAY_COMPLETE_FROZEN_OOS_COMPLETE",
+  "important_note": "The 30-loop search, evidence reconciliation, artifact recovery, evaluation-spec and composition binding, strict trial replay, secondary search adjustment, and primary frozen-OOS evaluation are complete. The final 12-factor cumulative library retains positive OOS signal but shows substantial selection-to-OOS decay: net Sharpe falls from 0.906 to 0.307, retaining about 33.9%.",
+  "strict_replay_execution": {
+    "captured_trials": 30,
+    "strict_replay_ready_trials": 21,
+    "strict_replay_completed_trials": 20,
+    "strict_replay_failed_ready_trials": 1,
+    "strict_replay_unready_trials": 9,
+    "aligned_trial_return_coverage": 0.6666666666666666,
+    "aligned_selection_trading_days": 871,
+    "failed_ready_trial_id": 20,
+    "failed_ready_trial_reason": "factor_timeout:LGBMAlphaTech_5d",
+    "primary_selection_replay_completed": true,
+    "primary_frozen_oos_replay_completed": true
+  },
+  "search_adjustment": {
+    "dsr_probability": 0.916,
+    "dsr_probability_ci95": [
+      0.907,
+      0.928
+    ],
+    "effective_trial_count_status": "suppressed_low_coverage",
+    "expected_max_sharpe": 0.163,
+    "observed_annualized_sharpe": 0.920305,
+    "point_estimate_status": "reported",
+    "raw_trial_count": 30,
+    "role": "secondary trial-level search diagnostic; not the primary cumulative-library outcome",
+    "selected_trial_id": 4,
+    "selector": "highest_strict_selection_sharpe",
+    "source_report_sha256": "d8a64fb4ec0ab65a43db0bcf6d88b5553b83cbbd1802bc0c24ccbc095a7dd128",
+    "usable_trial_sharpe_count": 20
+  },
+  "frozen_oos_factor_input": {
+    "end": "2026-09-10",
+    "historical_overlap_bit_exact": true,
+    "historical_overlap_through": "2020-07-31",
+    "historical_overlap_validation_sha256": "cbd8ea6b537389b2c6e4573498f5cb021ef7c61f7a8c6e616d1cda38afd715b7",
+    "instrument_count": 6093,
+    "rows": 15114871,
+    "semantics": "RD-Agent v0.8.0 D.instruments() all-market daily OHLCV+factor input",
+    "sha256": "7728df5664cc7d8bc951983b699d42740bdbd30e69bf7ba2f46e02eae117aee8",
+    "start": "2008-12-29"
+  },
+  "primary_performance": {
+    "selection_period": {
+      "start": "2017-01-03",
+      "end": "2020-07-31",
+      "trading_days": 871,
+      "net_annualized_return": 0.2105625036365746,
+      "net_cagr": 0.20125467139358544,
+      "net_sharpe": 0.9059163293908478,
+      "max_drawdown": -0.31619061910759216,
+      "IC": 0.0322849996162858,
+      "Rank_IC": 0.0368505156529972,
+      "benchmark_relative_excess_return_with_cost": 0.0853031399177595,
+      "benchmark_relative_information_ratio": 0.9211740749811796
+    },
+    "frozen_oos": {
+      "start": "2020-08-03",
+      "end": "2026-09-10",
+      "trading_days": 1483,
+      "net_annualized_return": 0.07304757442899121,
+      "net_cagr": 0.04588148856346708,
+      "net_sharpe": 0.3071538775201891,
+      "max_drawdown": -0.44788245143686933,
+      "IC": 0.013895669978322,
+      "Rank_IC": 0.0114632901677203,
+      "benchmark_relative_excess_return_with_cost": 0.0586248835708381,
+      "benchmark_relative_information_ratio": 0.5578551309908076
+    },
+    "decay": {
+      "annualized_return_change": -0.1375149292075834,
+      "annualized_return_retention_ratio": 0.34691634629814916,
+      "net_sharpe_change": -0.5987624518706587,
+      "net_sharpe_retention_ratio": 0.3390532520003521
+    }
+  },
+  "audited_results_artifact": "case_studies/rdagent_q_30loop/audited_results.json"
 }

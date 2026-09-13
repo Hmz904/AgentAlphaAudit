@@ -31,9 +31,14 @@
       "sha256": "32ebd293537ba273591c3db8c7ae1d75bb28850c920be76a1f1be2555cfcd953"
     },
     {
-      "bytes": 18361,
+      "bytes": 20517,
       "path": "README.md",
-      "sha256": "d40243d0dff7e7362d51962bc4369419fcfa5d22d491eabdfbd1812636a0c7c6"
+      "sha256": "0a40b12ad31cec7b8dc43192fab212f10479927c566dcb5677e3fb0774f1126b"
+    },
+    {
+      "bytes": 7319,
+      "path": "case_studies/rdagent_q_30loop/audited_results.json",
+      "sha256": "ff6905f6d04ebe10b8f0f149ab8f4009021ad41efb1b1c53bc2febb89d7338c0"
     },
     {
       "bytes": 144256,
@@ -41,9 +46,9 @@
       "sha256": "9e4abd141d61564f4ccc474ce115f8ba65b801f384471d529f80a5564484e8f4"
     },
     {
-      "bytes": 4287,
+      "bytes": 7327,
       "path": "case_studies/rdagent_q_30loop/summary.json",
-      "sha256": "e05c1f21b378d43558cd1d8af0587a3f9f45bbe58964449292906b52a490603c"
+      "sha256": "241799d02e2c8702664f31af93fd2159222de8341cea6240429af2cb40efb13b"
     },
     {
       "bytes": 1167,
@@ -124,6 +129,11 @@
       "bytes": 4784,
       "path": "scripts/export_rdagent_selection_calendar.py",
       "sha256": "6742043cf693c1a032981d302abac1060f0da48b208c24e14f0a0a307c498c1b"
+    },
+    {
+      "bytes": 5316,
+      "path": "scripts/rdagent_strict_evaluator.py",
+      "sha256": "b516554afe8bad3d2a97e1ebf95312c155cf1febe024eb041c9fbc6e51073476"
     },
     {
       "bytes": 108,
@@ -261,6 +271,11 @@
       "sha256": "1e81add444bb85fef13e573206c8e52734dc9ea495272e967a852a95f613efa1"
     },
     {
+      "bytes": 30922,
+      "path": "src/agent_alpha_audit/rdagent_evaluator.py",
+      "sha256": "23c9f5b99098836ae5b2e35aeb5602c4da49be1bfc306f6ec38b200f0ec1c53d"
+    },
+    {
       "bytes": 17102,
       "path": "src/agent_alpha_audit/reconcile.py",
       "sha256": "8fd2dab8593b90675e441fa3d8e214d28b5d0b21f3549fc922ac96a32710df1c"
@@ -369,6 +384,16 @@
       "bytes": 469,
       "path": "tests/test_rdagent_adapter.py",
       "sha256": "06f1132747e483df300bf9ceb02853eea18a1abb36ed9560ba3f305e95ac7d64"
+    },
+    {
+      "bytes": 14144,
+      "path": "tests/test_rdagent_evaluator.py",
+      "sha256": "a5d1281e00afaad16fec379dcd3cb5a4ef9d3f6bf02fc8e533ff2f1ea20965b1"
+    },
+    {
+      "bytes": 897,
+      "path": "tests/test_rdagent_frozen_oos_qrun_contract.py",
+      "sha256": "0827736e8eba27802ed051d02cd167f11d3b206d0e1c95fcd1a6632966fddd7a"
     },
     {
       "bytes": 1809,

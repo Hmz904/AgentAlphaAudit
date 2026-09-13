@@ -98,11 +98,14 @@ def main() -> int:
     if args.run_qrun and not args.execute_factors:
         p.error("--run-qrun requires --execute-factors")
 
-    if args.run_qrun and (args.phase != "strict_selection_replay"):
-        p.error("qrun integration currently supports strict_selection_replay only")
+    if args.run_qrun and args.phase not in {
+        "strict_selection_replay",
+        "strict_frozen_oos",
+    }:
+        p.error("qrun integration supports strict_selection_replay and strict_frozen_oos only")
 
-    if args.run_qrun and not args.reference_calendar:
-        p.error("--run-qrun requires --reference-calendar")
+    if args.run_qrun and args.phase == "strict_selection_replay" and not args.reference_calendar:
+        p.error("--run-qrun requires --reference-calendar for strict_selection_replay")
 
     out = Path(args.outdir)
     out.mkdir(
@@ -136,6 +139,7 @@ def main() -> int:
                 template_config_path=(args.template_config),
                 reference_calendar_csv=(args.reference_calendar),
                 qrun_timeout_seconds=(args.qrun_timeout_seconds),
+                phase_name=args.phase,
             )
 
             result.update(qrun_result)

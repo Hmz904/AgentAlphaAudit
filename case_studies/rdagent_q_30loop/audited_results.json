@@ -1,0 +1,183 @@
+{
+  "evidence_sha256": {
+    "frozen_oos_primary_result": "9c02f0a87833ea549ce7206b45fef6edb1bacaa0d5b0a8078529125e3e729e1c",
+    "frozen_oos_qlib_metrics": "d6d6e6304da7aa3f495c1e0c228f920d3bcbf3a7ff39207f591f591f73dd4ccf",
+    "primary_performance": "0426a96b074c340a8f145acf4085a0a3b25c44bae2070b3bad6819e37e3723de",
+    "selection_primary_result": "5caf879bf2e8c4abbe1672603be3aac6e803db5a046e3cefc53aa75bd238f4a4",
+    "selection_qlib_metrics": "09875ae3d383552681605a6a8a01854de013942ea56fbf8ff7c451c74b7a8df7",
+    "selection_return_coverage": "e3e66cfa53718540b1739f614c23cd933fe91d6964ebf9c0ed3eed4e0fa68c7c",
+    "trial_run_summary": "def93f4c2c3b16dd211084d984505902424b13595cf09dee3fa6ce29b2577ce2"
+  },
+  "frozen_oos_factor_input": {
+    "end": "2026-09-10",
+    "historical_overlap_bit_exact": true,
+    "historical_overlap_through": "2020-07-31",
+    "historical_overlap_validation_sha256": "cbd8ea6b537389b2c6e4573498f5cb021ef7c61f7a8c6e616d1cda38afd715b7",
+    "instrument_count": 6093,
+    "rows": 15114871,
+    "semantics": "RD-Agent v0.8.0 D.instruments() all-market daily OHLCV+factor input",
+    "sha256": "7728df5664cc7d8bc951983b699d42740bdbd30e69bf7ba2f46e02eae117aee8",
+    "start": "2008-12-29"
+  },
+  "interpretation": "The final 12-factor cumulative library retained positive frozen-OOS predictive and trading value, but selection-period performance materially overstated its OOS strength. Net Sharpe fell from about 0.906 to 0.307.",
+  "primary_performance": {
+    "decay": {
+      "annualized_return_change": -0.1375149292075834,
+      "annualized_return_retention_ratio": 0.34691634629814916,
+      "net_sharpe_change": -0.5987624518706587,
+      "net_sharpe_retention_ratio": 0.3390532520003521
+    },
+    "frozen_oos": {
+      "account_reconciliation": {
+        "max_abs_account_pct_change_minus_return_minus_cost": 1.1102230246251565e-16
+      },
+      "benchmark": {
+        "annualized_return_arithmetic": 0.01097416877746582,
+        "annualized_sharpe": 0.060630109161138535,
+        "cagr": -0.005378317563015211,
+        "cumulative_return": -0.031238079071044922
+      },
+      "cost": {
+        "annualized_arithmetic": 0.04999058313294207,
+        "mean_daily": 0.00019837532989262728
+      },
+      "end": "2026-09-10",
+      "net_excess_vs_benchmark": {
+        "annualized_information_ratio": 0.5740281940764747,
+        "annualized_return_arithmetic": 0.062073406133828654
+      },
+      "observations": 1483,
+      "portfolio_gross": {
+        "annualized_return_arithmetic": 0.12303815756193331,
+        "annualized_sharpe": 0.5173743591456179,
+        "cagr": 0.0994865210685203
+      },
+      "portfolio_net": {
+        "annualized_return_arithmetic": 0.07304757442899121,
+        "annualized_sharpe": 0.3071538775201891,
+        "annualized_volatility": 0.23782077901389942,
+        "cagr": 0.04588148856346708,
+        "cumulative_return": 0.30212544914540684,
+        "daily_sd": 0.014981300901772063,
+        "max_drawdown": -0.44788245143686933,
+        "mean_daily": 0.00028987132709917146
+      },
+      "ret_pkl_sha256": "7b5c5763603938b646d316512a2d7a908e0348d3b55c2e77f6b0362fa66732ff",
+      "start": "2020-08-03",
+      "turnover": {
+        "mean_daily": 0.19837532989262693
+      }
+    },
+    "primary_outcome": {
+      "composition_sha256_frozen_oos": null,
+      "composition_sha256_selection": null,
+      "factor_count": 12,
+      "frozen_oos_phase": "strict_frozen_oos",
+      "selection_phase": "strict_selection_replay",
+      "unit": "cumulative_factor_library_at_loop_29"
+    },
+    "schema": "agent-alpha-audit.loop29-primary-performance.v1",
+    "selection_period": {
+      "account_reconciliation": {
+        "max_abs_account_pct_change_minus_return_minus_cost": 1.1102230246251565e-16
+      },
+      "benchmark": {
+        "annualized_return_arithmetic": 0.12024153769016266,
+        "annualized_sharpe": 0.6160561442375183,
+        "cagr": 0.1064188557737118,
+        "cumulative_return": 0.4184086322784424
+      },
+      "cost": {
+        "annualized_arithmetic": 0.048247949194288126,
+        "mean_daily": 0.0001914601158503497
+      },
+      "end": "2020-07-31",
+      "net_excess_vs_benchmark": {
+        "annualized_information_ratio": 0.9478803031753902,
+        "annualized_return_arithmetic": 0.09032097167762783
+      },
+      "observations": 871,
+      "portfolio_gross": {
+        "annualized_return_arithmetic": 0.25881045283086274,
+        "annualized_sharpe": 1.1132671668976168,
+        "cagr": 0.2605747120736168
+      },
+      "portfolio_net": {
+        "annualized_return_arithmetic": 0.2105625036365746,
+        "annualized_sharpe": 0.9059163293908478,
+        "annualized_volatility": 0.2324304097467369,
+        "cagr": 0.20125467139358544,
+        "cumulative_return": 0.8847193030055682,
+        "daily_sd": 0.01464173955520736,
+        "max_drawdown": -0.31619061910759216,
+        "mean_daily": 0.0008355654906213278
+      },
+      "ret_pkl_sha256": "ae7d46484e86d9dcff101d6443384f7529548e4a96f7f7e451656bfb7b0fe6f8",
+      "start": "2017-01-03",
+      "turnover": {
+        "mean_daily": 0.19146011585034883
+      }
+    }
+  },
+  "qlib_recorded_metrics": {
+    "frozen_oos": {
+      "IC": 0.013895669978322,
+      "ICIR": 0.1004284641286262,
+      "Rank_IC": 0.0114632901677203,
+      "Rank_ICIR": 0.0838470833159811,
+      "excess_return_with_cost_annualized_return": 0.0586248835708381,
+      "excess_return_with_cost_information_ratio": 0.5578551309908076,
+      "excess_return_with_cost_max_drawdown": -0.1914349823483105
+    },
+    "selection_period": {
+      "IC": 0.0322849996162858,
+      "ICIR": 0.2615457047332215,
+      "Rank_IC": 0.0368505156529972,
+      "Rank_ICIR": 0.3012324957952532,
+      "excess_return_with_cost_annualized_return": 0.0853031399177595,
+      "excess_return_with_cost_information_ratio": 0.9211740749811796,
+      "excess_return_with_cost_max_drawdown": -0.1448727318855187
+    }
+  },
+  "schema": "agent-alpha-audit.rdagent-q-audited-results.v1",
+  "search_adjustment": {
+    "dsr_probability": 0.916,
+    "dsr_probability_ci95": [
+      0.907,
+      0.928
+    ],
+    "effective_trial_count_status": "suppressed_low_coverage",
+    "expected_max_sharpe": 0.163,
+    "observed_annualized_sharpe": 0.920305,
+    "point_estimate_status": "reported",
+    "raw_trial_count": 30,
+    "role": "secondary trial-level search diagnostic; not the primary cumulative-library outcome",
+    "selected_trial_id": 4,
+    "selector": "highest_strict_selection_sharpe",
+    "source_report_sha256": "d8a64fb4ec0ab65a43db0bcf6d88b5553b83cbbd1802bc0c24ccbc095a7dd128",
+    "usable_trial_sharpe_count": 20
+  },
+  "strict_trial_replay": {
+    "aligned_return_trials": 20,
+    "aligned_trading_days": 871,
+    "captured_trials": 30,
+    "completed_trials": 20,
+    "failed_ready_trials": 1,
+    "failed_trial": {
+      "error": "factor_timeout:LGBMAlphaTech_5d:3600.164s",
+      "failure_class": "RuntimeError",
+      "status": "failed",
+      "trial_id": 20
+    },
+    "not_replay_ready_trials": 9,
+    "selection_return_coverage": 0.6666666666666666,
+    "strict_replay_ready_trials": 21
+  },
+  "target": {
+    "agent": "Microsoft RD-Agent(Q)",
+    "confirmatory_loops": 30,
+    "factor_count": 12,
+    "primary_outcome": "cumulative_factor_library_at_loop_29",
+    "rdagent_version": "0.8.0"
+  }
+}

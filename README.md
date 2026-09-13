@@ -41,7 +41,29 @@ The first confirmatory case study audits a **30-loop Microsoft RD-Agent(Q) v0.8.
 - locked the agent-visible search/selection calendar to **871 trading days (2017-01-03 through 2020-07-31)** from the physically truncated research provider
 - physical research-data cutoff enforced before the frozen OOS period
 
-The confirmatory search and replay-input evidence binding are complete. **Actual strict selection replay, frozen-OOS, uniform-cost and search-adjusted reevaluation are still in progress**, so upstream RD-Agent metrics are not presented as final audited performance. `strict_replay_ready` means that the implementation artifacts, exact runner composition and evaluation specification have been hash-verified and bound; it does **not** mean that strict replay has already succeeded.
+The confirmatory audit is complete. Of **30 captured trials**, 21 had exact runner-backed compositions ready for deterministic replay; **20 replayed successfully**, Trial 20 failed by factor-execution timeout, and nine remained non-replay-ready. Missing and failed trials remain in the raw search denominator.
+
+### Final audited result
+
+The primary RD-Agent outcome is the **Loop 29 cumulative library of 12 factors**, not the best individual trial. The exact same library was evaluated on the agent-visible selection period and then unchanged on the frozen OOS period, using the locked 10 bps one-way cost convention.
+
+| Primary 12-factor library | Selection 2017-01-03–2020-07-31 | Frozen OOS 2020-08-03–2026-09-10 |
+| --- | ---: | ---: |
+| Trading days | 871 | 1,483 |
+| Net annualized return | 21.06% | **7.30%** |
+| Net CAGR | 20.13% | **4.59%** |
+| Net Sharpe | 0.906 | **0.307** |
+| Max drawdown | -31.62% | **-44.79%** |
+| IC | 0.0323 | **0.0139** |
+| Rank IC | 0.0369 | **0.0115** |
+
+The library therefore survives frozen OOS with positive signal, but with substantial decay: net Sharpe falls by **0.599** and retains only **33.9%** of its selection-period level. Qlib's benchmark-relative, cost-adjusted annualized excess return remains positive, declining from **8.53% to 5.86%**, while information ratio declines from **0.921 to 0.558**. IC and Rank IC fall materially as well, so the deterioration is not merely a benchmark or transaction-cost effect.
+
+The fixed secondary trial-level search diagnostic selects Trial 4 by `highest_strict_selection_sharpe`. Its observed annualized Sharpe is 0.920 versus an expected-search maximum of about 0.163. The Deflated Sharpe probability is **0.916**, with bootstrap 95% interval **[0.907, 0.928]**, using raw search count 30 and 20 usable trial Sharpe estimates. Effective-trial estimation is suppressed because return coverage is below the locked 80% threshold. This DSR is a **secondary search diagnostic**, not a significance test for the final cumulative library.
+
+Frozen-OOS Ridge-factor construction preserves the original RD-Agent all-market `D.instruments()` semantics rather than recomputing only within CSI300. The full factor input spans 2008-12-29–2026-09-10, contains **15,114,871 rows across 6,093 instruments**, and reproduces the original data **bit-for-bit through 2020-07-31**.
+
+Machine-readable final evidence is in [`case_studies/rdagent_q_30loop/audited_results.json`](case_studies/rdagent_q_30loop/audited_results.json).
 
 Machine-readable case-study evidence:
 [`summary.json`](case_studies/rdagent_q_30loop/summary.json) ·
@@ -229,7 +251,7 @@ python -m agent_alpha_audit report \
   --out /path/to/audit_run/audit_report.json
 ```
 
-There is no single-trial “winner” in the primary waterfall: the primary outcome is the final cumulative factor library. The report still computes a fixed secondary sensitivity set—last accepted trial, strict-validation Sharpe maximum, and upstream-reported-metric maximum. Manual `--winner-column` remains a recorded override only. The headline count is `raw_trials_lower_bound`; effective N is secondary and suppressed under low return-series coverage.
+There is no single-trial “winner” in the primary waterfall: the primary outcome is the final cumulative factor library. The report still computes a fixed secondary sensitivity set—last accepted trial, strict-selection Sharpe maximum, and upstream-reported-metric maximum. Manual `--winner-column` remains a recorded override only. The headline count is `raw_trials_lower_bound`; effective N is secondary and suppressed under low return-series coverage.
 
 ### 6. Re-evaluate waterfall stages with the strict engine
 
@@ -318,4 +340,4 @@ Confirmatory runs first reconcile **all installed RD-Agent Qlib execution-templa
 - **Frozen-OOS performance:** **not claimed yet**.
 - **Selection-adjusted / final audited performance:** **not claimed yet**.
 
-The public case study therefore documents a completed autonomous-agent search and a completed replay-input evidence chain. It does **not** yet claim completed strict replay or frozen-OOS performance.
+The public case study therefore documents a completed autonomous-agent search, exact replay-input evidence chain, strict selection replay, secondary search-adjustment diagnostic, and primary frozen-OOS evaluation. The final library retains positive OOS signal, but its selection-period performance materially overstates OOS strength.
