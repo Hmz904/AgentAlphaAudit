@@ -26,14 +26,14 @@
       "sha256": "081902bc6b1ab0df310efb909889565fd5fbec3055d3e9be8ffb2f2b5fc4d1f6"
     },
     {
-      "bytes": 15513,
+      "bytes": 15915,
       "path": "README.md",
-      "sha256": "3b8a9e4e00bdec35d6ed39e80064809edf5b0d03c5c86f4723c4f5a0940d0474"
+      "sha256": "a1ccb1782724c03583ef4ba6bde0487ce938bb8a2e36f34aadb1cbd7e58b53c6"
     },
     {
-      "bytes": 956,
+      "bytes": 1404,
       "path": "case_studies/rdagent_q_30loop/summary.json",
-      "sha256": "4ecfea9d05f0752542d8524b2343825e0ebeca0b3117555e875d73b46c8ed0aa"
+      "sha256": "05ebbbafec8b4722e7484e25de1da1105394fd3088a59ffee16976b3bc915c98"
     },
     {
       "bytes": 1167,
@@ -216,9 +216,9 @@
       "sha256": "d5d2e72338101b70d960f8defa8f8b265a65c06749754a94b6d710d5e36f7be7"
     },
     {
-      "bytes": 10119,
+      "bytes": 14460,
       "path": "src/agent_alpha_audit/strict_eval.py",
-      "sha256": "21c07f260368bbb7f2fb476920aaf666f7895e1730f75eb172c8f51fa46f5231"
+      "sha256": "5a85a88e380a31cd8611fd259d4300680f23fef02f580016d929a69e55ad42f1"
     },
     {
       "bytes": 4008,
@@ -331,9 +331,9 @@
       "sha256": "cd3a0c49218704ab480a0c0575a032db32426db8ec0df4ba2266dfed082872aa"
     },
     {
-      "bytes": 3587,
+      "bytes": 8393,
       "path": "tests/test_strict_eval.py",
-      "sha256": "86e4a1086988bbc83bf175067a1a6d9b13e81cddb9515157c495f1aef4bb2dac"
+      "sha256": "e305646c360041f4cce674c977487f53a49638c5c6e0bcb23c27ff808005b551"
     },
     {
       "bytes": 273,

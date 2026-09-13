@@ -29,11 +29,12 @@ The first confirmatory case study audits a **30-loop Microsoft RD-Agent(Q) v0.8.
 - **169 raw execution events** captured across the original run and resumed continuations
 - reconciled into **161 logical events and 30 logical research trials**
 - preserved retry and failure provenance rather than silently treating resumes as new trials
-- exported **30/30 trial-level** and **30/30 cumulative-library** states for deterministic strict reevaluation
-- recovered the final primary outcome directly from the RD-Agent runner state: a **12-factor cumulative library**
+- **21/30** loop states contain an observed runner snapshot; failed/no-runner loops carry the last successful cumulative state forward rather than adding unimplemented proposals
+- exported **30 trial** and **30 cumulative-library** audit targets; the v3 manifest explicitly separates captured evidence from deterministic replay readiness
+- recovered the final primary outcome directly from the **Loop 29 RD-Agent runner state**: a **12-factor cumulative library**
 - physical research-data cutoff enforced before the frozen OOS period
 
-The confirmatory search is complete. **Strict frozen-OOS, uniform-cost and search-adjusted reevaluation is still in progress**, so upstream RD-Agent metrics are not presented as final audited performance.
+The confirmatory search is complete. **Strict frozen-OOS, uniform-cost and search-adjusted reevaluation is still in progress**, so upstream RD-Agent metrics are not presented as final audited performance. The v3 manifest intentionally marks replay readiness false until executable implementation artifacts and a complete evaluation specification are explicitly bound.
 
 Machine-readable case-study metadata:
 [`case_studies/rdagent_q_30loop/summary.json`](case_studies/rdagent_q_30loop/summary.json)

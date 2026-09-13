@@ -14,17 +14,22 @@
     "superseded_variant_groups": 1
   },
   "strict_eval_targets": {
+    "manifest_schema": "agent-alpha-audit.strict-eval-manifest.v3",
     "trial_items": 30,
     "cumulative_library_states": 30,
-    "evaluable_trials": 30,
-    "evaluable_cumulative_states": 30
+    "trial_factor_representation_count": 30,
+    "observed_runner_snapshot_count": 21,
+    "strict_replay_ready_trials": 0,
+    "strict_replay_ready_cumulative_states": 0
   },
   "primary_outcome": {
     "unit": "cumulative_factor_library_at_loop_k",
+    "constructed_at_loop_k": 29,
     "state_source": "runner_successful_factor_state",
     "factor_count": 12,
-    "evaluable": true
+    "state_observed": true,
+    "strict_replay_ready": false
   },
   "audit_status": "STRICT_EVALUATION_PENDING",
-  "important_note": "Upstream RD-Agent metrics are not final audit results. Frozen-OOS, uniform-cost, all-trial and cumulative-library strict reevaluation remains pending."
+  "important_note": "The 30-loop autonomous search and evidence capture are complete. The v3 audit manifest separates captured factor representations from deterministic replay readiness. Executable implementation artifacts and the complete strict-evaluation specification still need to be bound before frozen-OOS, uniform-cost and selection-adjusted results can be reported."
 }

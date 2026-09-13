@@ -17,86 +17,223 @@ def _trial_sort_key(t):
     return (not s.isdigit(), int(s) if s.isdigit() else s)
 
 
-def export_strict_eval_manifest(ledger_path: str | Path, run_id: str, out_path: str | Path) -> dict[str, Any]:
-    """Export both search units and the cumulative factor-library outcome path.
+def export_strict_eval_manifest(
+    ledger_path: str | Path,
+    run_id: str,
+    out_path: str | Path,
+) -> dict[str, Any]:
+    """Export captured search units and cumulative-library outcome states.
 
-    Search unit: every captured emitted trial (for search accounting / DSR / redundancy).
-    Primary outcome unit: cumulative factor library at loop k (for the RD-Agent factor
-    mining outcome/waterfall). This avoids pretending that one 'winner factor' is the
-    object RD-Agent actually reports.
+    Important distinction:
+
+    * captured / has_factor_representation:
+      evidence exists in the sidecar/ledger.
+    * strict_replay_ready:
+      enough executable implementation + evaluation-contract evidence exists
+      to claim deterministic strict reevaluation.
+
+    A factor expression or proposal alone is NOT treated as deterministic
+    replay readiness.
     """
     ledger = TrialLedger(ledger_path)
     trials = sorted(ledger.trials(run_id), key=_trial_sort_key)
     ledger.close()
 
-    trial_items = []
-    cumulative_items = []
+    def artifact_present(t, key: str) -> bool:
+        value = (t.artifacts or {}).get(key)
+        if value is None:
+            return False
+        if isinstance(value, str):
+            value = value.strip()
+            return value not in {"", "null", "None", "[]", "{}"}
+        return bool(value)
+
+    def observed_tags(t) -> set[str]:
+        raw = (t.artifacts or {}).get("id_sources")
+        if not raw:
+            return set()
+        try:
+            parsed = json.loads(raw) if isinstance(raw, str) else raw
+        except (TypeError, json.JSONDecodeError):
+            return set()
+        return set(parsed) if isinstance(parsed, dict) else set()
+
+    def runtime_cumulative_state(t) -> list[str]:
+        raw = (t.artifacts or {}).get("cumulative_factor_expressions")
+        if not raw:
+            return []
+        try:
+            parsed = json.loads(raw) if isinstance(raw, str) else raw
+        except (TypeError, json.JSONDecodeError):
+            return []
+        if not isinstance(parsed, list):
+            return []
+
+        out: list[str] = []
+        seen: set[str] = set()
+        for value in parsed:
+            if not value:
+                continue
+            value = str(value)
+            if value not in seen:
+                seen.add(value)
+                out.append(value)
+        return out
+
+    trial_items: list[dict[str, Any]] = []
+    cumulative_items: list[dict[str, Any]] = []
+
+    # This state changes ONLY when a real runner snapshot is observed.
+    # Failed/no-runner loops carry the previous successful state forward.
     cumulative_exprs: list[str] = []
-    seen: set[str] = set()
+
     for t in trials:
         exprs = list(t.factor_expressions or [])
-        trial_items.append({
-            "run_id": run_id,
-            "trial_id": t.trial_id,
-            "evaluation_unit": "trial_experiment",
-            "action": t.action,
-            "hypothesis": t.hypothesis,
-            "factor_expressions": exprs,
-            "strict_evaluator_required": True,
-            "evaluable": bool(exprs),
-            "reason_if_not_evaluable": None if exprs else "no factor expression captured",
-        })
-        # Prefer the runtime runner snapshot of successfully implemented cumulative
-        # factors. Fall back to a deterministic union only for synthetic/legacy ledgers.
-        runtime_cumulative = []
-        raw_cum = (t.artifacts or {}).get("cumulative_factor_expressions")
-        if raw_cum:
-            try:
-                parsed = json.loads(raw_cum)
-                if isinstance(parsed, list):
-                    runtime_cumulative = [str(x) for x in parsed if x]
-            except json.JSONDecodeError:
-                runtime_cumulative = []
-        if runtime_cumulative:
-            cumulative_exprs = []
-            seen = set()
-            for e in runtime_cumulative:
-                if e not in seen:
-                    seen.add(e)
-                    cumulative_exprs.append(e)
-            cumulative_source = "runner_successful_factor_state"
-        else:
-            for e in exprs:
-                if e not in seen:
-                    seen.add(e)
-                    cumulative_exprs.append(e)
-            cumulative_source = "fallback_union_of_captured_trial_expressions"
-        cumulative_items.append({
-            "run_id": run_id,
-            "loop_k": t.trial_id,
-            "evaluation_unit": "cumulative_factor_library_at_loop_k",
-            "factor_expressions": list(cumulative_exprs),
-            "cumulative_state_source": cumulative_source,
-            "strict_evaluator_required": True,
-            "evaluable": bool(cumulative_exprs),
-            "reason_if_not_evaluable": None if cumulative_exprs else "no cumulative factor expressions captured yet",
-        })
+        tags = observed_tags(t)
 
-    primary = cumulative_items[-1] if cumulative_items else None
+        implementation_artifact_present = artifact_present(
+            t, "implementation_artifact"
+        )
+        evaluation_spec_present = artifact_present(
+            t, "evaluation_spec"
+        )
+
+        strict_replay_ready = bool(
+            exprs
+            and implementation_artifact_present
+            and evaluation_spec_present
+        )
+
+        if not exprs:
+            replay_reason = "no factor representation captured"
+        elif not implementation_artifact_present:
+            replay_reason = "implementation artifact not captured"
+        elif not evaluation_spec_present:
+            replay_reason = "evaluation spec not bound"
+        else:
+            replay_reason = None
+
+        trial_items.append(
+            {
+                "run_id": run_id,
+                "trial_id": t.trial_id,
+                "evaluation_unit": "trial_experiment",
+                "action": t.action,
+                "hypothesis": t.hypothesis,
+                "factor_expressions": exprs,
+                "code_hash": t.code_hash,
+                "captured": True,
+                "has_factor_representation": bool(exprs),
+                "coder_result_observed": "coder_result" in tags,
+                "runner_result_observed": "runner_result" in tags,
+                "implementation_artifact_present": (
+                    implementation_artifact_present
+                ),
+                "evaluation_spec_present": evaluation_spec_present,
+                "strict_replay_ready": strict_replay_ready,
+                # Backward-compatible execution gate.
+                "evaluable": strict_replay_ready,
+                "strict_evaluator_required": True,
+                "reason_if_not_evaluable": replay_reason,
+            }
+        )
+
+        runtime_state = runtime_cumulative_state(t)
+
+        if runtime_state:
+            cumulative_exprs = runtime_state
+            cumulative_source = "runner_successful_factor_state"
+            runner_snapshot_observed = True
+        elif cumulative_exprs:
+            # Do NOT union proposal expressions from a failed/no-runner loop.
+            cumulative_source = "carried_forward_last_runner_state"
+            runner_snapshot_observed = False
+        else:
+            cumulative_source = "no_successful_runner_state_observed"
+            runner_snapshot_observed = False
+
+        # v3 deliberately refuses to call a library deterministically replayable
+        # until executable implementations and a complete evaluation spec are
+        # explicitly bound by the strict-evaluator contract.
+        library_replay_ready = False
+
+        cumulative_items.append(
+            {
+                "run_id": run_id,
+                "loop_k": t.trial_id,
+                "constructed_at_loop_k": t.trial_id,
+                "evaluation_unit": "cumulative_factor_library_at_loop_k",
+                "factor_expressions": list(cumulative_exprs),
+                "factor_count": len(cumulative_exprs),
+                "cumulative_state_source": cumulative_source,
+                "runner_snapshot_observed": runner_snapshot_observed,
+                "state_observed": bool(cumulative_exprs),
+                "strict_replay_ready": library_replay_ready,
+                # Backward-compatible execution gate.
+                "evaluable": library_replay_ready,
+                "strict_evaluator_required": True,
+                "reason_if_not_evaluable": (
+                    "implementation artifacts and complete evaluation spec "
+                    "not yet bound for cumulative-library replay"
+                    if cumulative_exprs
+                    else "no successful cumulative runner state observed yet"
+                ),
+            }
+        )
+
+    successful_runner_states = [
+        item
+        for item in cumulative_items
+        if item["cumulative_state_source"]
+        == "runner_successful_factor_state"
+    ]
+
+    primary = (
+        successful_runner_states[-1]
+        if successful_runner_states
+        else None
+    )
+
     manifest = {
-        "schema": "agent-alpha-audit.strict-eval-manifest.v2",
+        "schema": "agent-alpha-audit.strict-eval-manifest.v3",
         "run_id": run_id,
         "search_unit": "trial_experiment",
         "primary_outcome_unit": "cumulative_factor_library_at_loop_k",
-        "policy": "ALL captured trials are evaluation targets; cumulative factor-library states are evaluated separately for the primary outcome",
+        "policy": (
+            "ALL captured trials remain search-accounting targets; "
+            "strict replay readiness requires executable implementation "
+            "artifacts plus an explicit evaluation specification. "
+            "Cumulative state changes only on observed runner snapshots."
+        ),
         "raw_trials_lower_bound": len(trials),
+        "captured_trial_count": len(trials),
+        "trial_factor_representation_count": sum(
+            bool(x["has_factor_representation"])
+            for x in trial_items
+        ),
+        "strict_replay_ready_trial_count": sum(
+            bool(x["strict_replay_ready"])
+            for x in trial_items
+        ),
+        "observed_runner_snapshot_count": len(successful_runner_states),
+        "strict_replay_ready_cumulative_count": sum(
+            bool(x["strict_replay_ready"])
+            for x in cumulative_items
+        ),
         "trial_items": trial_items,
         "cumulative_library_items": cumulative_items,
         "primary_final_library": primary,
+        "primary_final_library_loop_k": (
+            primary["loop_k"] if primary else None
+        ),
         # Backward-compatible alias for callers that only know trial items.
         "items": trial_items,
     }
-    Path(out_path).write_text(json.dumps(manifest, indent=2, sort_keys=True), encoding="utf-8")
+
+    Path(out_path).write_text(
+        json.dumps(manifest, indent=2, sort_keys=True),
+        encoding="utf-8",
+    )
     return manifest
 
 
