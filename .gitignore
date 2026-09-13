@@ -15,3 +15,5 @@ pickle_cache/
 selector.log
 # Local audit outputs
 *.db
+outputs/
+*.egg-info/

@@ -1,2 +1,0 @@
-[console_scripts]
-agent-alpha-audit = agent_alpha_audit.cli:main
