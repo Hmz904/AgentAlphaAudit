@@ -46,9 +46,9 @@
       "sha256": "bbdc1572d8878e386c7cf7e9698baa5c6803285dfd9416c0d6b9bf7306945ff9"
     },
     {
-      "bytes": 2102,
+      "bytes": 4922,
       "path": "docs/ASHARE_EVALUATOR_CONTRACT.md",
-      "sha256": "5695f03810e73979924349031e17460dc0d879811bb530fc2cbd5146ca879529"
+      "sha256": "39ab45dda2498f163f97e18d94b79d8e891b05cfb7ef51fa815934907412e6d6"
     },
     {
       "bytes": 9628,
@@ -99,6 +99,11 @@
       "bytes": 824,
       "path": "pyproject.toml",
       "sha256": "3dacc011f60fb74e9834a77591462fbd00a121181605f2d6d48bc4fa808b0839"
+    },
+    {
+      "bytes": 1361,
+      "path": "scripts/build_rdagent_evaluation_spec.py",
+      "sha256": "8f4adfc8057db2092a35f041274d229d33e856c48e0204dc4f7491593f38be3e"
     },
     {
       "bytes": 108,
@@ -206,6 +211,11 @@
       "sha256": "7b659ad39b81b4b091f4ff90f8f408aaecb754117ce4eba3a9a8563faf02b120"
     },
     {
+      "bytes": 18634,
+      "path": "src/agent_alpha_audit/evaluation_spec.py",
+      "sha256": "1923b94dad8c51e00846674468231ecc0a786c54015c601e0cf3808dcc8068a1"
+    },
+    {
       "bytes": 49,
       "path": "src/agent_alpha_audit/integrations/__init__.py",
       "sha256": "5cbf3ce1bd407f7d983fc1257b8ccd4fbde2a9e0b82b12b7d6dcf716928289da"
@@ -284,6 +294,11 @@
       "bytes": 1810,
       "path": "tests/test_config_audit_rdagent_real_optional.py",
       "sha256": "377d75a1bebda7f4d65770a63f1da47e6ab520ecd43d6a06fa5608e34804ce31"
+    },
+    {
+      "bytes": 8500,
+      "path": "tests/test_evaluation_spec.py",
+      "sha256": "93478cf402722bdcf17f35c9f6ac3f56fcd73b14d2d0e284fcdc168d1ec4aa99"
     },
     {
       "bytes": 456,
