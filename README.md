@@ -296,11 +296,11 @@ Confirmatory runs first reconcile **all installed RD-Agent Qlib execution-templa
 
 ## Current status
 
-**Implemented and locally tested:** RD-Agent 0.8.0-compatible feedback capture, explicit Qlib `Experiment.result` metric capture, installed-template preflight plus observed workspace-config hashing/gating, physical provider-calendar holdout gate, trial ledger, lower-bound trial accounting, all-trial + cumulative-library strict-eval manifest, equal-window return assembly, coverage-gated effective-trial diagnostics, uncertainty-aware DSR sensitivity diagnostics, scorecard, waterfall, known-truth FDP tail module and synthetic end-to-end demo.
+- **Confirmatory search:** complete — 30/30 RD-Agent(Q) factor-mining loops finished.
+- **Evidence reconciliation:** complete — raw execution history has been reconciled into a logical trial ledger while preserving duplicate/resume provenance.
+- **Strict-evaluation export:** complete as an audit-target manifest; implementation/evaluation eligibility is being tightened before reruns.
+- **Strict deterministic reevaluation:** in progress.
+- **Frozen-OOS performance:** **not claimed yet**.
+- **Selection-adjusted / final audited performance:** **not claimed yet**.
 
-
-**Critical data-path requirement:** the real case study needs two distinct data views. The RD-Agent provider must be physically truncated before `frozen_oos_start`; the strict evaluator must have a separate full-history snapshot extending through the frozen OOS. RD-Agent v0.8.0 factor templates expose agent-visible `test` through 2020-08-01, so a post-2020 frozen tail requires extended CN data for the strict evaluator (or, alternatively, moving all agent-visible splits earlier).
-
-**Not claimed yet:** a real RD-Agent(Q) reproduction or audit result. That requires a working RD-Agent/QLib environment, market data and LLM API credentials. v0.5 intentionally does not fabricate those results.
-
-The next milestone is a 2-loop **factor-path** RD-Agent pilot. It must additionally prove that the confirmatory template/provider gate passes in dry-run form before any lock is finalized. Only then do we lock the 30-loop confirmatory run.
+The public case study therefore documents a completed autonomous-agent search and its captured audit evidence, not a completed frozen-OOS performance audit.
