@@ -1,0 +1,4336 @@
+{
+  "exact_duplicate_groups": 1,
+  "logical_event_count": 161,
+  "logical_trial_count": 30,
+  "policy": {
+    "attempt_boundary": "new distinct proposal payload within a trial starts a new execution attempt",
+    "canonical_attempt": "latest distinct proposal attempt",
+    "run_config": "all run_lock and normalized semantic run_config values must agree; resume_session/resume_checkout_path are provenance-only",
+    "same_attempt_conflict": "different payloads for the same tag hard-fail",
+    "same_attempt_duplicate": "identical payloads collapse logically but all observations remain in execution history"
+  },
+  "raw_event_count": 169,
+  "reconciliation": [
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 2,
+          "payload_sha256": "4222b7f7d183c8e9233cee1e51f44228c13dd69819ba334902cd1490b5b9e282",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T13:47:16.410032+00:00"
+        }
+      ],
+      "selected": {
+        "line": 2,
+        "payload_sha256": "4222b7f7d183c8e9233cee1e51f44228c13dd69819ba334902cd1490b5b9e282",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T13:47:16.410032+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "0"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 3,
+          "payload_sha256": "e964995399c6bdcf31efac82e4d7a81525d651cf99fa27f8fe6f87768034b634",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T13:47:25.241612+00:00"
+        }
+      ],
+      "selected": {
+        "line": 3,
+        "payload_sha256": "e964995399c6bdcf31efac82e4d7a81525d651cf99fa27f8fe6f87768034b634",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T13:47:25.241612+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "0"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 4,
+          "payload_sha256": "26d6e04cca1bc9cc7966c76e16b427d7fe68587335dff3b73c886bb9226383aa",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T13:49:55.673974+00:00"
+        }
+      ],
+      "selected": {
+        "line": 4,
+        "payload_sha256": "26d6e04cca1bc9cc7966c76e16b427d7fe68587335dff3b73c886bb9226383aa",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T13:49:55.673974+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "0"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 5,
+          "payload_sha256": "fb3a1e0402344ae7f8f46357a73a70bea071c0de64548786281f8c5e95f25881",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T13:50:13.466760+00:00"
+        }
+      ],
+      "selected": {
+        "line": 5,
+        "payload_sha256": "fb3a1e0402344ae7f8f46357a73a70bea071c0de64548786281f8c5e95f25881",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T13:50:13.466760+00:00"
+      },
+      "tag": "runtime_qlib_config",
+      "trial_id": "0"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 6,
+          "payload_sha256": "a3696827a6ceca9fd98257a95b572670e5c234cc770409eaec4d9bbabc0be0d7",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T13:50:54.116107+00:00"
+        }
+      ],
+      "selected": {
+        "line": 6,
+        "payload_sha256": "a3696827a6ceca9fd98257a95b572670e5c234cc770409eaec4d9bbabc0be0d7",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T13:50:54.116107+00:00"
+      },
+      "tag": "runner_result",
+      "trial_id": "0"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 7,
+          "payload_sha256": "c4bbaaa78a9d0202c6e1d21bbba23d28f483a0b003931239de416b35eed09eb6",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T13:51:04.467529+00:00"
+        }
+      ],
+      "selected": {
+        "line": 7,
+        "payload_sha256": "c4bbaaa78a9d0202c6e1d21bbba23d28f483a0b003931239de416b35eed09eb6",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T13:51:04.467529+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "0"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 8,
+          "payload_sha256": "0c763b9c2e781f1fcd36375592c52cb9065c508d6cfb13d0bebccf98eed4b4ee",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T13:51:11.869617+00:00"
+        }
+      ],
+      "selected": {
+        "line": 8,
+        "payload_sha256": "0c763b9c2e781f1fcd36375592c52cb9065c508d6cfb13d0bebccf98eed4b4ee",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T13:51:11.869617+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "1"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 9,
+          "payload_sha256": "def683865ab4ad43ee8df94c512a88f769ce476e56140c48b9b9b692e76fd51a",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T13:51:24.960989+00:00"
+        }
+      ],
+      "selected": {
+        "line": 9,
+        "payload_sha256": "def683865ab4ad43ee8df94c512a88f769ce476e56140c48b9b9b692e76fd51a",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T13:51:24.960989+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "1"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 10,
+          "payload_sha256": "53b832bcde388b72bf885240d8cd53a3838e8df4323cbb5b520e50e0340c3b2b",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T13:53:58.842436+00:00"
+        }
+      ],
+      "selected": {
+        "line": 10,
+        "payload_sha256": "53b832bcde388b72bf885240d8cd53a3838e8df4323cbb5b520e50e0340c3b2b",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T13:53:58.842436+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "1"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 11,
+          "payload_sha256": "5eb69bcf852f014d6a1df3f57addb616e1ec0a4121aa4176ce0dcef6b93f947c",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T13:54:47.610556+00:00"
+        }
+      ],
+      "selected": {
+        "line": 11,
+        "payload_sha256": "5eb69bcf852f014d6a1df3f57addb616e1ec0a4121aa4176ce0dcef6b93f947c",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T13:54:47.610556+00:00"
+      },
+      "tag": "runtime_qlib_config",
+      "trial_id": "1"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 12,
+          "payload_sha256": "9d835c38ea61b9ab2c470580944b5a4b9ed4dc612178958427e9ac048ecbd607",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T13:55:29.420603+00:00"
+        }
+      ],
+      "selected": {
+        "line": 12,
+        "payload_sha256": "9d835c38ea61b9ab2c470580944b5a4b9ed4dc612178958427e9ac048ecbd607",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T13:55:29.420603+00:00"
+      },
+      "tag": "runner_result",
+      "trial_id": "1"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 13,
+          "payload_sha256": "a8b9c454433656d4b1f90e247c3de17e3a97a46094ef59e59e77a5f1c6b9c41e",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T13:55:42.664152+00:00"
+        }
+      ],
+      "selected": {
+        "line": 13,
+        "payload_sha256": "a8b9c454433656d4b1f90e247c3de17e3a97a46094ef59e59e77a5f1c6b9c41e",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T13:55:42.664152+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "1"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 14,
+          "payload_sha256": "0b5c2c66ea85547046626988b1a8778c9e104891272b1cb332bf95cbdb189f1b",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T13:57:34.686441+00:00"
+        }
+      ],
+      "selected": {
+        "line": 14,
+        "payload_sha256": "0b5c2c66ea85547046626988b1a8778c9e104891272b1cb332bf95cbdb189f1b",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T13:57:34.686441+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "2"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 15,
+          "payload_sha256": "248231c84ca4d3091de4bc6f3f18c759f93c070969203e6f8ffc2531f50c2383",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T13:58:15.281821+00:00"
+        }
+      ],
+      "selected": {
+        "line": 15,
+        "payload_sha256": "248231c84ca4d3091de4bc6f3f18c759f93c070969203e6f8ffc2531f50c2383",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T13:58:15.281821+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "2"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 16,
+          "payload_sha256": "a8854f4cc618f20dd515b76c006ef5b00fe49b4debfebd69c3659022aa40585f",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:02:42.952794+00:00"
+        }
+      ],
+      "selected": {
+        "line": 16,
+        "payload_sha256": "a8854f4cc618f20dd515b76c006ef5b00fe49b4debfebd69c3659022aa40585f",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:02:42.952794+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "2"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 17,
+          "payload_sha256": "3b57f96be018fe54b53f8c78a094188c43c4c9b16e2142383aed189f6ea45a10",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:03:50.337154+00:00"
+        }
+      ],
+      "selected": {
+        "line": 17,
+        "payload_sha256": "3b57f96be018fe54b53f8c78a094188c43c4c9b16e2142383aed189f6ea45a10",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:03:50.337154+00:00"
+      },
+      "tag": "runtime_qlib_config",
+      "trial_id": "2"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 18,
+          "payload_sha256": "cfaf72455e6ad2ae2136435512be5e9fadc6a5a224bccd3f039c385c8e88f767",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:04:30.194469+00:00"
+        }
+      ],
+      "selected": {
+        "line": 18,
+        "payload_sha256": "cfaf72455e6ad2ae2136435512be5e9fadc6a5a224bccd3f039c385c8e88f767",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:04:30.194469+00:00"
+      },
+      "tag": "runner_result",
+      "trial_id": "2"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 19,
+          "payload_sha256": "aabbe7303571993d9a70465fc0c141498fd11bf9808266a6792eb2073372e401",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:04:41.836314+00:00"
+        }
+      ],
+      "selected": {
+        "line": 19,
+        "payload_sha256": "aabbe7303571993d9a70465fc0c141498fd11bf9808266a6792eb2073372e401",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:04:41.836314+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "2"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 20,
+          "payload_sha256": "859333659ca97a77fe21c52226ca51558440ae832009f62c7cdd68cc67247d34",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:05:14.706006+00:00"
+        }
+      ],
+      "selected": {
+        "line": 20,
+        "payload_sha256": "859333659ca97a77fe21c52226ca51558440ae832009f62c7cdd68cc67247d34",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:05:14.706006+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "3"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 21,
+          "payload_sha256": "ea7913836a52f1123abec67fb3cceab2b396369c744c8792659aaf18d3107fa4",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:05:39.950220+00:00"
+        }
+      ],
+      "selected": {
+        "line": 21,
+        "payload_sha256": "ea7913836a52f1123abec67fb3cceab2b396369c744c8792659aaf18d3107fa4",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:05:39.950220+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "3"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 22,
+          "payload_sha256": "7b5f34df55eccf94724547c451c177797a4b42a078df1640f9ba439c227bdeaf",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:13:00.794911+00:00"
+        }
+      ],
+      "selected": {
+        "line": 22,
+        "payload_sha256": "7b5f34df55eccf94724547c451c177797a4b42a078df1640f9ba439c227bdeaf",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:13:00.794911+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "3"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 23,
+          "payload_sha256": "7dd0939b726403778b9a3e54148688d3165fdd1fe448d3989d74ac0df4a50300",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:14:31.947787+00:00"
+        }
+      ],
+      "selected": {
+        "line": 23,
+        "payload_sha256": "7dd0939b726403778b9a3e54148688d3165fdd1fe448d3989d74ac0df4a50300",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:14:31.947787+00:00"
+      },
+      "tag": "runtime_qlib_config",
+      "trial_id": "3"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 24,
+          "payload_sha256": "7cf6c97839d7709729b8282270f956222b98b591a5082545ee53030af72e2096",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:15:15.585558+00:00"
+        }
+      ],
+      "selected": {
+        "line": 24,
+        "payload_sha256": "7cf6c97839d7709729b8282270f956222b98b591a5082545ee53030af72e2096",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:15:15.585558+00:00"
+      },
+      "tag": "runner_result",
+      "trial_id": "3"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 25,
+          "payload_sha256": "e3712ed95d45d378c1289db89ab08a3b7ffda271cedc137245752f70f3430529",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:15:32.235595+00:00"
+        }
+      ],
+      "selected": {
+        "line": 25,
+        "payload_sha256": "e3712ed95d45d378c1289db89ab08a3b7ffda271cedc137245752f70f3430529",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:15:32.235595+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "3"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 26,
+          "payload_sha256": "8ca306bbb4b4143cf599099588ad7668345bdbc623980730c1954aa507beed05",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:16:04.428431+00:00"
+        }
+      ],
+      "selected": {
+        "line": 26,
+        "payload_sha256": "8ca306bbb4b4143cf599099588ad7668345bdbc623980730c1954aa507beed05",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:16:04.428431+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "4"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 27,
+          "payload_sha256": "0210189c54895237e8d40fa1d5104de72a5490db9f03355b27876211538bd1b6",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:16:35.121024+00:00"
+        }
+      ],
+      "selected": {
+        "line": 27,
+        "payload_sha256": "0210189c54895237e8d40fa1d5104de72a5490db9f03355b27876211538bd1b6",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:16:35.121024+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "4"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 28,
+          "payload_sha256": "1eeb2248efb6b16d3e0d48187283f5c5bf711bb1c5f5d28b88626c3488283dbc",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:30:16.252104+00:00"
+        }
+      ],
+      "selected": {
+        "line": 28,
+        "payload_sha256": "1eeb2248efb6b16d3e0d48187283f5c5bf711bb1c5f5d28b88626c3488283dbc",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:30:16.252104+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "4"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 29,
+          "payload_sha256": "88743a0fb0b1807b9eaa240169172bddd3d9002bed510c5ebfc7882736f39a6f",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:31:09.299959+00:00"
+        }
+      ],
+      "selected": {
+        "line": 29,
+        "payload_sha256": "88743a0fb0b1807b9eaa240169172bddd3d9002bed510c5ebfc7882736f39a6f",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:31:09.299959+00:00"
+      },
+      "tag": "runtime_qlib_config",
+      "trial_id": "4"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 30,
+          "payload_sha256": "fc0e2eb434c11caadeac4d2a8fca9bfd3550aa5a03fd14d3c0e018458e350fe8",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:31:47.475356+00:00"
+        }
+      ],
+      "selected": {
+        "line": 30,
+        "payload_sha256": "fc0e2eb434c11caadeac4d2a8fca9bfd3550aa5a03fd14d3c0e018458e350fe8",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:31:47.475356+00:00"
+      },
+      "tag": "runner_result",
+      "trial_id": "4"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 31,
+          "payload_sha256": "652b53068dc5d6516d54cc25265b8fbda6b8986754789ac6697f61bf9f5348c6",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:32:03.941694+00:00"
+        }
+      ],
+      "selected": {
+        "line": 31,
+        "payload_sha256": "652b53068dc5d6516d54cc25265b8fbda6b8986754789ac6697f61bf9f5348c6",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:32:03.941694+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "4"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 32,
+          "payload_sha256": "9864bd9f1a03167d671957d8d937a2c12891661c1b8bb223d6787268cddbe898",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:34:58.948679+00:00"
+        }
+      ],
+      "selected": {
+        "line": 32,
+        "payload_sha256": "9864bd9f1a03167d671957d8d937a2c12891661c1b8bb223d6787268cddbe898",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:34:58.948679+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "5"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 33,
+          "payload_sha256": "3733799e85b9323a312c17e84bfa745d79a29aa0e5cbfe52a1c15ac571b4dfcd",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:35:27.458355+00:00"
+        }
+      ],
+      "selected": {
+        "line": 33,
+        "payload_sha256": "3733799e85b9323a312c17e84bfa745d79a29aa0e5cbfe52a1c15ac571b4dfcd",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:35:27.458355+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "5"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 34,
+          "payload_sha256": "0583cf6ebd6cf1743b4e3da665e1d1a58c656933c1521c89826b82fde3b75131",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:41:29.252001+00:00"
+        }
+      ],
+      "selected": {
+        "line": 34,
+        "payload_sha256": "0583cf6ebd6cf1743b4e3da665e1d1a58c656933c1521c89826b82fde3b75131",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:41:29.252001+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "5"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 35,
+          "payload_sha256": "2ad86e57fbed475a9555674486524d418de8d6217bd342f195c93c6369f3adb5",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:42:31.330902+00:00"
+        }
+      ],
+      "selected": {
+        "line": 35,
+        "payload_sha256": "2ad86e57fbed475a9555674486524d418de8d6217bd342f195c93c6369f3adb5",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:42:31.330902+00:00"
+      },
+      "tag": "runtime_qlib_config",
+      "trial_id": "5"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 36,
+          "payload_sha256": "9619026db8473e2efd6809521d10c3fd3c51ee2510fe9fa4948d31809a9cc12a",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:43:09.868524+00:00"
+        }
+      ],
+      "selected": {
+        "line": 36,
+        "payload_sha256": "9619026db8473e2efd6809521d10c3fd3c51ee2510fe9fa4948d31809a9cc12a",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:43:09.868524+00:00"
+      },
+      "tag": "runner_result",
+      "trial_id": "5"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 37,
+          "payload_sha256": "9d837103e85c5a8803b87beda9b9523c63253f212c097ad7c1ecffad08e15173",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:43:28.196953+00:00"
+        }
+      ],
+      "selected": {
+        "line": 37,
+        "payload_sha256": "9d837103e85c5a8803b87beda9b9523c63253f212c097ad7c1ecffad08e15173",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:43:28.196953+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "5"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 38,
+          "payload_sha256": "5feb1ce83e4dcd7b284c7b6d2f53f44f55036cc0e349bf4559b19e52d32fd42a",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:44:26.934978+00:00"
+        }
+      ],
+      "selected": {
+        "line": 38,
+        "payload_sha256": "5feb1ce83e4dcd7b284c7b6d2f53f44f55036cc0e349bf4559b19e52d32fd42a",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:44:26.934978+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "6"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 39,
+          "payload_sha256": "c9b581dbf1af4790732c43b9dcaf37ae842df0d81213053dda353ccf783355a3",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:44:39.984004+00:00"
+        }
+      ],
+      "selected": {
+        "line": 39,
+        "payload_sha256": "c9b581dbf1af4790732c43b9dcaf37ae842df0d81213053dda353ccf783355a3",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:44:39.984004+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "6"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 40,
+          "payload_sha256": "c78a07c915c33d88c6995745695c3228321fafade5620c61f9115547491b6fcd",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:47:15.639554+00:00"
+        }
+      ],
+      "selected": {
+        "line": 40,
+        "payload_sha256": "c78a07c915c33d88c6995745695c3228321fafade5620c61f9115547491b6fcd",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:47:15.639554+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "6"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 41,
+          "payload_sha256": "ed2265df9d8243d592fac309f8db639be8b720e91888dd6c66ea72e44f1ffd78",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:48:05.112287+00:00"
+        }
+      ],
+      "selected": {
+        "line": 41,
+        "payload_sha256": "ed2265df9d8243d592fac309f8db639be8b720e91888dd6c66ea72e44f1ffd78",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:48:05.112287+00:00"
+      },
+      "tag": "runtime_qlib_config",
+      "trial_id": "6"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 42,
+          "payload_sha256": "7a107de35391bc086863da23954ba8c292cefddbf856ad6753c204496029bb62",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:48:43.235953+00:00"
+        }
+      ],
+      "selected": {
+        "line": 42,
+        "payload_sha256": "7a107de35391bc086863da23954ba8c292cefddbf856ad6753c204496029bb62",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:48:43.235953+00:00"
+      },
+      "tag": "runner_result",
+      "trial_id": "6"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 43,
+          "payload_sha256": "5a5e7e7ba9c5f07576b6b71cde9a449421ac9b357fb47001e418d9665f7fed6e",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:48:59.403541+00:00"
+        }
+      ],
+      "selected": {
+        "line": 43,
+        "payload_sha256": "5a5e7e7ba9c5f07576b6b71cde9a449421ac9b357fb47001e418d9665f7fed6e",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:48:59.403541+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "6"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 44,
+          "payload_sha256": "6b542cf21486440800e65ae255902f2ca9ca046f4f515ef28fbe2304d9454303",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:50:23.873725+00:00"
+        }
+      ],
+      "selected": {
+        "line": 44,
+        "payload_sha256": "6b542cf21486440800e65ae255902f2ca9ca046f4f515ef28fbe2304d9454303",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:50:23.873725+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "7"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 45,
+          "payload_sha256": "7ec25fea73238e12326c693057ae7e31b465ade8df35d3c6e4d3759cf4ef5f4b",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:50:46.229441+00:00"
+        }
+      ],
+      "selected": {
+        "line": 45,
+        "payload_sha256": "7ec25fea73238e12326c693057ae7e31b465ade8df35d3c6e4d3759cf4ef5f4b",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:50:46.229441+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "7"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 46,
+          "payload_sha256": "132c0299bc2a4aa937b05d9dd8eec39ac3058c70b2bf717c94c7d90e64073241",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:53:42.006309+00:00"
+        }
+      ],
+      "selected": {
+        "line": 46,
+        "payload_sha256": "132c0299bc2a4aa937b05d9dd8eec39ac3058c70b2bf717c94c7d90e64073241",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:53:42.006309+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "7"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 47,
+          "payload_sha256": "f3c6e75619ff67edcf30db329fac942821a04bf9bc47ef5240aca67cb5121d33",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:55:32.701822+00:00"
+        }
+      ],
+      "selected": {
+        "line": 47,
+        "payload_sha256": "f3c6e75619ff67edcf30db329fac942821a04bf9bc47ef5240aca67cb5121d33",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:55:32.701822+00:00"
+      },
+      "tag": "runtime_qlib_config",
+      "trial_id": "7"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 48,
+          "payload_sha256": "f7b7109c3b31db86ca3e555adb5cf9996661ca5e147253593a800f0855a6e481",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:56:15.878085+00:00"
+        }
+      ],
+      "selected": {
+        "line": 48,
+        "payload_sha256": "f7b7109c3b31db86ca3e555adb5cf9996661ca5e147253593a800f0855a6e481",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:56:15.878085+00:00"
+      },
+      "tag": "runner_result",
+      "trial_id": "7"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 49,
+          "payload_sha256": "db58f0f40bea0e999f0b77a8096fc1e11378ce182a768a0f8430c9271c935472",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:56:35.032460+00:00"
+        }
+      ],
+      "selected": {
+        "line": 49,
+        "payload_sha256": "db58f0f40bea0e999f0b77a8096fc1e11378ce182a768a0f8430c9271c935472",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:56:35.032460+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "7"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 50,
+          "payload_sha256": "a4a08af4ab30daeef982570082a881b01db5bfd0b1cf872afd4ff93295e22fcf",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:57:13.049017+00:00"
+        }
+      ],
+      "selected": {
+        "line": 50,
+        "payload_sha256": "a4a08af4ab30daeef982570082a881b01db5bfd0b1cf872afd4ff93295e22fcf",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:57:13.049017+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "8"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 51,
+          "payload_sha256": "5d523299d229584b1e91c58aa940029e03b1c28397aa6a3c594c6a39de666e77",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T14:57:59.283824+00:00"
+        }
+      ],
+      "selected": {
+        "line": 51,
+        "payload_sha256": "5d523299d229584b1e91c58aa940029e03b1c28397aa6a3c594c6a39de666e77",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T14:57:59.283824+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "8"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 52,
+          "payload_sha256": "201ec8d33fad26cf8003170d5a41d5f327ad0486fce18dccabd9722500ddc273",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:20:07.536839+00:00"
+        }
+      ],
+      "selected": {
+        "line": 52,
+        "payload_sha256": "201ec8d33fad26cf8003170d5a41d5f327ad0486fce18dccabd9722500ddc273",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:20:07.536839+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "8"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 53,
+          "payload_sha256": "b569c84033cdba5d1ab7667e383c06d79c2e9f74b262f92b5010a5edb366f1a2",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:21:25.766803+00:00"
+        }
+      ],
+      "selected": {
+        "line": 53,
+        "payload_sha256": "b569c84033cdba5d1ab7667e383c06d79c2e9f74b262f92b5010a5edb366f1a2",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:21:25.766803+00:00"
+      },
+      "tag": "runtime_qlib_config",
+      "trial_id": "8"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 54,
+          "payload_sha256": "207e1d53e05e1e85cba915cb72b7d6e3fde49096ca206d3446556989b7bc387a",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:22:07.401150+00:00"
+        }
+      ],
+      "selected": {
+        "line": 54,
+        "payload_sha256": "207e1d53e05e1e85cba915cb72b7d6e3fde49096ca206d3446556989b7bc387a",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:22:07.401150+00:00"
+      },
+      "tag": "runner_result",
+      "trial_id": "8"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 55,
+          "payload_sha256": "919fe635f28a93cdc01151af2fc84987d5b02747be7e97a5d5afaaa5e9f388be",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:22:24.719037+00:00"
+        }
+      ],
+      "selected": {
+        "line": 55,
+        "payload_sha256": "919fe635f28a93cdc01151af2fc84987d5b02747be7e97a5d5afaaa5e9f388be",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:22:24.719037+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "8"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 56,
+          "payload_sha256": "157576d4edbdeb659db10d07b4b77afe03d5844a65ba67b613af5abf80f50f5b",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:23:40.158000+00:00"
+        }
+      ],
+      "selected": {
+        "line": 56,
+        "payload_sha256": "157576d4edbdeb659db10d07b4b77afe03d5844a65ba67b613af5abf80f50f5b",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:23:40.158000+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "9"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 57,
+          "payload_sha256": "5aa4ad70268e66a9f8f89c0ff40a43acc4fe2ec609f4d8be04634fca2dc3cf6a",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:24:02.162224+00:00"
+        }
+      ],
+      "selected": {
+        "line": 57,
+        "payload_sha256": "5aa4ad70268e66a9f8f89c0ff40a43acc4fe2ec609f4d8be04634fca2dc3cf6a",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:24:02.162224+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "9"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 58,
+          "payload_sha256": "6c5e5bd419cc4bc5ae214080ae0db0827854c93a976b7006899f4e200ef8defb",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:25:24.059180+00:00"
+        }
+      ],
+      "selected": {
+        "line": 58,
+        "payload_sha256": "6c5e5bd419cc4bc5ae214080ae0db0827854c93a976b7006899f4e200ef8defb",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:25:24.059180+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "9"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 59,
+          "payload_sha256": "c6f8c97cad2b4a229594477d0e4be28ed5635424e8c2681a95264530a1c7c9a0",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:26:12.456579+00:00"
+        }
+      ],
+      "selected": {
+        "line": 59,
+        "payload_sha256": "c6f8c97cad2b4a229594477d0e4be28ed5635424e8c2681a95264530a1c7c9a0",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:26:12.456579+00:00"
+      },
+      "tag": "runtime_qlib_config",
+      "trial_id": "9"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 60,
+          "payload_sha256": "b9f59b18713d1c933a3d3607e7cc4a4fd307eb6d959c719af556f6b53cad4bb2",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:26:50.144704+00:00"
+        }
+      ],
+      "selected": {
+        "line": 60,
+        "payload_sha256": "b9f59b18713d1c933a3d3607e7cc4a4fd307eb6d959c719af556f6b53cad4bb2",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:26:50.144704+00:00"
+      },
+      "tag": "runner_result",
+      "trial_id": "9"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 61,
+          "payload_sha256": "5e158ecfe33d4ee52f56520bfa14789e82c96e1e58e96ce4c8ab1b2710026a4e",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:27:08.558253+00:00"
+        }
+      ],
+      "selected": {
+        "line": 61,
+        "payload_sha256": "5e158ecfe33d4ee52f56520bfa14789e82c96e1e58e96ce4c8ab1b2710026a4e",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:27:08.558253+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "9"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 62,
+          "payload_sha256": "61ead9b0715de1e104f7432704dc7f84e4c2a410a437333f2509a9c5d5475ca4",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:28:29.878250+00:00"
+        }
+      ],
+      "selected": {
+        "line": 62,
+        "payload_sha256": "61ead9b0715de1e104f7432704dc7f84e4c2a410a437333f2509a9c5d5475ca4",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:28:29.878250+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "10"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 63,
+          "payload_sha256": "164ca7f247b5d399ecd08e93de05c8b46e13d68bda4f413420c54b18e8f3208c",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:29:18.039381+00:00"
+        }
+      ],
+      "selected": {
+        "line": 63,
+        "payload_sha256": "164ca7f247b5d399ecd08e93de05c8b46e13d68bda4f413420c54b18e8f3208c",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:29:18.039381+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "10"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 64,
+          "payload_sha256": "83af07fc795ed87f54ad312d7f5cbd889bb626fb3d65f04184928ad3ca3a3a06",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:30:46.171051+00:00"
+        }
+      ],
+      "selected": {
+        "line": 64,
+        "payload_sha256": "83af07fc795ed87f54ad312d7f5cbd889bb626fb3d65f04184928ad3ca3a3a06",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:30:46.171051+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "10"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 65,
+          "payload_sha256": "1ca06fdf16ec3a218ea734982da1a5aad6230fb44a58d10023feb64d26d87dd9",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:31:30.775870+00:00"
+        }
+      ],
+      "selected": {
+        "line": 65,
+        "payload_sha256": "1ca06fdf16ec3a218ea734982da1a5aad6230fb44a58d10023feb64d26d87dd9",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:31:30.775870+00:00"
+      },
+      "tag": "runtime_qlib_config",
+      "trial_id": "10"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 66,
+          "payload_sha256": "a13538b4494f25605009d3d9cd08bbde90a38fccd06dcb2b7d7aa64fd06c6a90",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:32:07.825420+00:00"
+        }
+      ],
+      "selected": {
+        "line": 66,
+        "payload_sha256": "a13538b4494f25605009d3d9cd08bbde90a38fccd06dcb2b7d7aa64fd06c6a90",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:32:07.825420+00:00"
+      },
+      "tag": "runner_result",
+      "trial_id": "10"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 67,
+          "payload_sha256": "e68f531c9909b5115682bd73769a9ca452d0e47fb27b6834ea6c2602e819de52",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:32:27.219641+00:00"
+        }
+      ],
+      "selected": {
+        "line": 67,
+        "payload_sha256": "e68f531c9909b5115682bd73769a9ca452d0e47fb27b6834ea6c2602e819de52",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:32:27.219641+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "10"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 68,
+          "payload_sha256": "2241e708c991d4e1c11f0d1ef4a60521abb36481a92cd086634861b1772ce87a",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:33:38.580304+00:00"
+        }
+      ],
+      "selected": {
+        "line": 68,
+        "payload_sha256": "2241e708c991d4e1c11f0d1ef4a60521abb36481a92cd086634861b1772ce87a",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:33:38.580304+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "11"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 69,
+          "payload_sha256": "d217b5fc9d56816550d40c93ceac5eea3a9214059dad0bcd2469e330bbf1b07d",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:33:59.539737+00:00"
+        }
+      ],
+      "selected": {
+        "line": 69,
+        "payload_sha256": "d217b5fc9d56816550d40c93ceac5eea3a9214059dad0bcd2469e330bbf1b07d",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:33:59.539737+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "11"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 70,
+          "payload_sha256": "90fcf1610fb7a7d56cb5e0ccb9398d5147ab06c661956150fa9b87d1ef9e274d",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:48:02.336255+00:00"
+        }
+      ],
+      "selected": {
+        "line": 70,
+        "payload_sha256": "90fcf1610fb7a7d56cb5e0ccb9398d5147ab06c661956150fa9b87d1ef9e274d",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:48:02.336255+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "11"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 71,
+          "payload_sha256": "afd2338316504a85c133eb4aa61405f88c8822517d55067177f8f411fd6b3fae",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:49:00.445372+00:00"
+        }
+      ],
+      "selected": {
+        "line": 71,
+        "payload_sha256": "afd2338316504a85c133eb4aa61405f88c8822517d55067177f8f411fd6b3fae",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:49:00.445372+00:00"
+      },
+      "tag": "runtime_qlib_config",
+      "trial_id": "11"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 72,
+          "payload_sha256": "0c3772c6813f2de82360d5449213eebb4cc816b1e152f9a0b9ae0b34ecfe2ae3",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:49:41.948221+00:00"
+        }
+      ],
+      "selected": {
+        "line": 72,
+        "payload_sha256": "0c3772c6813f2de82360d5449213eebb4cc816b1e152f9a0b9ae0b34ecfe2ae3",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:49:41.948221+00:00"
+      },
+      "tag": "runner_result",
+      "trial_id": "11"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 73,
+          "payload_sha256": "299dd530343427e77247fa89729e7dff188fce32d782b2e7b45c90dc7288cd5c",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:49:54.510756+00:00"
+        }
+      ],
+      "selected": {
+        "line": 73,
+        "payload_sha256": "299dd530343427e77247fa89729e7dff188fce32d782b2e7b45c90dc7288cd5c",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:49:54.510756+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "11"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 74,
+          "payload_sha256": "9224bb757c0c0c9863337e12f0e35168900e559115c8c19fec3b209a032d55d8",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:50:35.655867+00:00"
+        }
+      ],
+      "selected": {
+        "line": 74,
+        "payload_sha256": "9224bb757c0c0c9863337e12f0e35168900e559115c8c19fec3b209a032d55d8",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:50:35.655867+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "12"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 75,
+          "payload_sha256": "093e076452c9f49223baa6cceba78d9b9bf075fb528f3630aeeaea1436152d2c",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T15:51:48.557741+00:00"
+        }
+      ],
+      "selected": {
+        "line": 75,
+        "payload_sha256": "093e076452c9f49223baa6cceba78d9b9bf075fb528f3630aeeaea1436152d2c",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T15:51:48.557741+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "12"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 76,
+          "payload_sha256": "f816104c4fdd12b65d51b2917db315d7579bf219239e93a04fc3395c78401778",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T16:13:03.689134+00:00"
+        }
+      ],
+      "selected": {
+        "line": 76,
+        "payload_sha256": "f816104c4fdd12b65d51b2917db315d7579bf219239e93a04fc3395c78401778",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T16:13:03.689134+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "12"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 77,
+          "payload_sha256": "395811546b52d72193b7a6760d96832e356525705b9966b8868c3c7fdcd9bd45",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T16:14:57.448586+00:00"
+        }
+      ],
+      "selected": {
+        "line": 77,
+        "payload_sha256": "395811546b52d72193b7a6760d96832e356525705b9966b8868c3c7fdcd9bd45",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T16:14:57.448586+00:00"
+      },
+      "tag": "runtime_qlib_config",
+      "trial_id": "12"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 78,
+          "payload_sha256": "366d435b34424e054095a2db0883d81d33e63220a0a180bb2152062e5b9abb67",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T16:15:35.070740+00:00"
+        }
+      ],
+      "selected": {
+        "line": 78,
+        "payload_sha256": "366d435b34424e054095a2db0883d81d33e63220a0a180bb2152062e5b9abb67",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T16:15:35.070740+00:00"
+      },
+      "tag": "runner_result",
+      "trial_id": "12"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 79,
+          "payload_sha256": "c4bfff53cdc0766cd176d4e3646d9dcb831b237d220d5fc445e36f7cfd370b98",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T16:15:49.052503+00:00"
+        }
+      ],
+      "selected": {
+        "line": 79,
+        "payload_sha256": "c4bfff53cdc0766cd176d4e3646d9dcb831b237d220d5fc445e36f7cfd370b98",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T16:15:49.052503+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "12"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 80,
+          "payload_sha256": "5a7d8672d4dcb29b638571566bb7b2df2cefc1f2a7dcc206e507a45dfa27d77f",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T16:17:01.700908+00:00"
+        }
+      ],
+      "selected": {
+        "line": 80,
+        "payload_sha256": "5a7d8672d4dcb29b638571566bb7b2df2cefc1f2a7dcc206e507a45dfa27d77f",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T16:17:01.700908+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "13"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 81,
+          "payload_sha256": "c321f83e27f557b857581ca6bc17ef006dee4ce68fec5c598ee5909208a10102",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T16:17:11.901733+00:00"
+        }
+      ],
+      "selected": {
+        "line": 81,
+        "payload_sha256": "c321f83e27f557b857581ca6bc17ef006dee4ce68fec5c598ee5909208a10102",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T16:17:11.901733+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "13"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 82,
+          "payload_sha256": "dfe17617216523d94e382a2d630e871890d0914056e41dfe64c7c0ef1cb61dbf",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T16:18:48.723132+00:00"
+        }
+      ],
+      "selected": {
+        "line": 82,
+        "payload_sha256": "dfe17617216523d94e382a2d630e871890d0914056e41dfe64c7c0ef1cb61dbf",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T16:18:48.723132+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "13"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 83,
+          "payload_sha256": "608ab22141be58f551221729f03f894255a49f20cbd943c8fef984a914bdbaa4",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T16:19:41.915369+00:00"
+        }
+      ],
+      "selected": {
+        "line": 83,
+        "payload_sha256": "608ab22141be58f551221729f03f894255a49f20cbd943c8fef984a914bdbaa4",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T16:19:41.915369+00:00"
+      },
+      "tag": "runtime_qlib_config",
+      "trial_id": "13"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 84,
+          "payload_sha256": "5a467fe701b1824b8db8f6c1c01c7b99b8b193313c6aa1c41ece02ed23c80be3",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T16:20:19.396050+00:00"
+        }
+      ],
+      "selected": {
+        "line": 84,
+        "payload_sha256": "5a467fe701b1824b8db8f6c1c01c7b99b8b193313c6aa1c41ece02ed23c80be3",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T16:20:19.396050+00:00"
+      },
+      "tag": "runner_result",
+      "trial_id": "13"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 85,
+          "payload_sha256": "170f321f07e3099cce260adfe4dadfbe1bf716ca139789aedf52267fef2d161b",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T16:20:35.507161+00:00"
+        }
+      ],
+      "selected": {
+        "line": 85,
+        "payload_sha256": "170f321f07e3099cce260adfe4dadfbe1bf716ca139789aedf52267fef2d161b",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T16:20:35.507161+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "13"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 86,
+          "payload_sha256": "54bac19a3defdd1acc452f5ed1ed7c5ddaa36fe44e065188e57010501b3e208c",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T16:21:29.620418+00:00"
+        }
+      ],
+      "selected": {
+        "line": 86,
+        "payload_sha256": "54bac19a3defdd1acc452f5ed1ed7c5ddaa36fe44e065188e57010501b3e208c",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T16:21:29.620418+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "14"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 87,
+          "payload_sha256": "86e85df982e72d8578d8ca1c9a23a1a3449bc2fd811b74c54e6e310dea960446",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T16:22:18.447411+00:00"
+        }
+      ],
+      "selected": {
+        "line": 87,
+        "payload_sha256": "86e85df982e72d8578d8ca1c9a23a1a3449bc2fd811b74c54e6e310dea960446",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T16:22:18.447411+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "14"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 88,
+          "payload_sha256": "6f621bb48c6625dd68232f515c4bd39ccce48547a50c693f9c77f6d483c64a46",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T16:34:50.149503+00:00"
+        }
+      ],
+      "selected": {
+        "line": 88,
+        "payload_sha256": "6f621bb48c6625dd68232f515c4bd39ccce48547a50c693f9c77f6d483c64a46",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T16:34:50.149503+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "14"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 89,
+          "payload_sha256": "8da137cfcc5d56b1a272b4cd29435ca5f6e95273ec3a188feb36cec7cefb7e25",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T16:36:20.147627+00:00"
+        }
+      ],
+      "selected": {
+        "line": 89,
+        "payload_sha256": "8da137cfcc5d56b1a272b4cd29435ca5f6e95273ec3a188feb36cec7cefb7e25",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T16:36:20.147627+00:00"
+      },
+      "tag": "runtime_qlib_config",
+      "trial_id": "14"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 90,
+          "payload_sha256": "1bd779ff79a13d1b2ae5141f1d2cfb4d1ef7129e30264a616f9c9483b49fe6a1",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T16:37:01.199200+00:00"
+        }
+      ],
+      "selected": {
+        "line": 90,
+        "payload_sha256": "1bd779ff79a13d1b2ae5141f1d2cfb4d1ef7129e30264a616f9c9483b49fe6a1",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T16:37:01.199200+00:00"
+      },
+      "tag": "runner_result",
+      "trial_id": "14"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 91,
+          "payload_sha256": "f0076bd4c76cd1dee11a1dc0385c5d740ffb61c63c318f0b25bbf58c14bc9e18",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T16:37:23.172307+00:00"
+        }
+      ],
+      "selected": {
+        "line": 91,
+        "payload_sha256": "f0076bd4c76cd1dee11a1dc0385c5d740ffb61c63c318f0b25bbf58c14bc9e18",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T16:37:23.172307+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "14"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 92,
+          "payload_sha256": "2a9ce9e44598171dc86798da742fff0c8da09b0e2e74da85e1b9805d2c6fb2d8",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T16:37:39.215066+00:00"
+        }
+      ],
+      "selected": {
+        "line": 92,
+        "payload_sha256": "2a9ce9e44598171dc86798da742fff0c8da09b0e2e74da85e1b9805d2c6fb2d8",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T16:37:39.215066+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "15"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 93,
+          "payload_sha256": "e58e2757dbbeae4ef1eb1e9fad8c1bc30ca9c0dabfee73816fbafdbba3844d0c",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T16:38:33.890578+00:00"
+        }
+      ],
+      "selected": {
+        "line": 93,
+        "payload_sha256": "e58e2757dbbeae4ef1eb1e9fad8c1bc30ca9c0dabfee73816fbafdbba3844d0c",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T16:38:33.890578+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "15"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 94,
+          "payload_sha256": "2884c03502628f9a9ed3bd3ce28bc6c3ad95b47ae248ad124a819e8873ce2bd1",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T18:24:09.774929+00:00"
+        }
+      ],
+      "selected": {
+        "line": 94,
+        "payload_sha256": "2884c03502628f9a9ed3bd3ce28bc6c3ad95b47ae248ad124a819e8873ce2bd1",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T18:24:09.774929+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "15"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 95,
+          "payload_sha256": "bc81acb1262f5b15a8e805f67043b58148c1c4b673ac37192ae5d8fbcad2f620",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T18:26:20.340442+00:00"
+        }
+      ],
+      "selected": {
+        "line": 95,
+        "payload_sha256": "bc81acb1262f5b15a8e805f67043b58148c1c4b673ac37192ae5d8fbcad2f620",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T18:26:20.340442+00:00"
+      },
+      "tag": "runtime_qlib_config",
+      "trial_id": "15"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 96,
+          "payload_sha256": "180e3c3abf40dadb9bdefd505a48ee2f7b8c811d9bf26938ad6eeaf1357f37f7",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T18:26:57.170727+00:00"
+        }
+      ],
+      "selected": {
+        "line": 96,
+        "payload_sha256": "180e3c3abf40dadb9bdefd505a48ee2f7b8c811d9bf26938ad6eeaf1357f37f7",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T18:26:57.170727+00:00"
+      },
+      "tag": "runner_result",
+      "trial_id": "15"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 97,
+          "payload_sha256": "daa6ab0fc7a267ff183f54a29a32559ea21e50519e1b4c9fd3b86e6065dfd4be",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T18:27:12.468712+00:00"
+        }
+      ],
+      "selected": {
+        "line": 97,
+        "payload_sha256": "daa6ab0fc7a267ff183f54a29a32559ea21e50519e1b4c9fd3b86e6065dfd4be",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T18:27:12.468712+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "15"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 98,
+          "payload_sha256": "788cf47223e83fb4c7d2cdcf8e34be340249122f26dc1534932632113a289344",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T18:27:54.997256+00:00"
+        }
+      ],
+      "selected": {
+        "line": 98,
+        "payload_sha256": "788cf47223e83fb4c7d2cdcf8e34be340249122f26dc1534932632113a289344",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T18:27:54.997256+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "16"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 99,
+          "payload_sha256": "f7f0f5e0cae4f4027c643911f5f9420309e993fc7f95b4cc9799c29adb136689",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T18:28:43.275670+00:00"
+        }
+      ],
+      "selected": {
+        "line": 99,
+        "payload_sha256": "f7f0f5e0cae4f4027c643911f5f9420309e993fc7f95b4cc9799c29adb136689",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T18:28:43.275670+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "16"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 100,
+          "payload_sha256": "272922645355658327e0fa80001bd57bc0de1dcbf0b11c886a75ec0c4cfa8dc8",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T20:00:11.931173+00:00"
+        }
+      ],
+      "selected": {
+        "line": 100,
+        "payload_sha256": "272922645355658327e0fa80001bd57bc0de1dcbf0b11c886a75ec0c4cfa8dc8",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T20:00:11.931173+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "16"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 101,
+          "payload_sha256": "c68350f7f75fac0673a6e1bd2d9f97109d97a1a18dffc7ac780ff528735ba0c8",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T20:01:08.252733+00:00"
+        }
+      ],
+      "selected": {
+        "line": 101,
+        "payload_sha256": "c68350f7f75fac0673a6e1bd2d9f97109d97a1a18dffc7ac780ff528735ba0c8",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T20:01:08.252733+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "17"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 102,
+          "payload_sha256": "00977cf33f231535ceb665ca9485cfe20ab728dc1fa42201bb19e53db27ddc96",
+          "source": "rdagent_events.jsonl",
+          "timestamp": "2026-09-11T20:02:16.421585+00:00"
+        }
+      ],
+      "selected": {
+        "line": 102,
+        "payload_sha256": "00977cf33f231535ceb665ca9485cfe20ab728dc1fa42201bb19e53db27ddc96",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T20:02:16.421585+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "17"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 2,
+          "payload_sha256": "26cf9248aa6546265dd04bbee476af4df10984f231b8efb4d82b63635aa613dc",
+          "source": "continuation_20260912_122921/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T05:27:39.986558+00:00"
+        }
+      ],
+      "selected": {
+        "line": 2,
+        "payload_sha256": "26cf9248aa6546265dd04bbee476af4df10984f231b8efb4d82b63635aa613dc",
+        "source": "continuation_20260912_122921/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T05:27:39.986558+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "17"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "exact_duplicate",
+      "observation_count": 2,
+      "observations": [
+        {
+          "line": 2,
+          "payload_sha256": "a57d9cae27ab95d40178f23b90d95f74ced183549c3fc927d8b9e20812d1464f",
+          "source": "continuation_20260912_143933/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T06:39:50.419226+00:00"
+        },
+        {
+          "line": 2,
+          "payload_sha256": "a57d9cae27ab95d40178f23b90d95f74ced183549c3fc927d8b9e20812d1464f",
+          "source": "continuation_20260912_145454/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T06:55:07.403629+00:00"
+        }
+      ],
+      "selected": {
+        "line": 2,
+        "payload_sha256": "a57d9cae27ab95d40178f23b90d95f74ced183549c3fc927d8b9e20812d1464f",
+        "source": "continuation_20260912_143933/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T06:39:50.419226+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "17"
+    },
+    {
+      "attempt_index": 1,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 2,
+          "payload_sha256": "f6658beecfab5e26c44cc6b1191df9196a524294a5eda169b2af45d04f9d7f28",
+          "source": "continuation_20260912_153613/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T07:37:26.493785+00:00"
+        }
+      ],
+      "selected": {
+        "line": 2,
+        "payload_sha256": "f6658beecfab5e26c44cc6b1191df9196a524294a5eda169b2af45d04f9d7f28",
+        "source": "continuation_20260912_153613/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T07:37:26.493785+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "18"
+    },
+    {
+      "attempt_index": 1,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 3,
+          "payload_sha256": "73871028b1a2ac8b3b7677f5a130fb8875c82529768fd7385e4d218bd8c1b44c",
+          "source": "continuation_20260912_153613/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T07:37:43.423777+00:00"
+        }
+      ],
+      "selected": {
+        "line": 3,
+        "payload_sha256": "73871028b1a2ac8b3b7677f5a130fb8875c82529768fd7385e4d218bd8c1b44c",
+        "source": "continuation_20260912_153613/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T07:37:43.423777+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "18"
+    },
+    {
+      "attempt_index": 1,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 4,
+          "payload_sha256": "1419d5ce1bea676badb74e0f2dbfadd450871d46a7f6215bc67784c1067aae90",
+          "source": "continuation_20260912_153613/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T08:16:51.069655+00:00"
+        }
+      ],
+      "selected": {
+        "line": 4,
+        "payload_sha256": "1419d5ce1bea676badb74e0f2dbfadd450871d46a7f6215bc67784c1067aae90",
+        "source": "continuation_20260912_153613/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T08:16:51.069655+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "18"
+    },
+    {
+      "attempt_index": 1,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 5,
+          "payload_sha256": "f1d6f31daa44e7210d2df9d55f5ae3e49ceb9fbf3499306a60531f362487eb86",
+          "source": "continuation_20260912_153613/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T08:38:09.272786+00:00"
+        }
+      ],
+      "selected": {
+        "line": 5,
+        "payload_sha256": "f1d6f31daa44e7210d2df9d55f5ae3e49ceb9fbf3499306a60531f362487eb86",
+        "source": "continuation_20260912_153613/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T08:38:09.272786+00:00"
+      },
+      "tag": "runtime_qlib_config",
+      "trial_id": "18"
+    },
+    {
+      "attempt_index": 1,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 6,
+          "payload_sha256": "3fcf52a2488eb278b875523dfd1f61b22664e9039f8841f01639246829ef8ad3",
+          "source": "continuation_20260912_153613/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T08:38:55.363292+00:00"
+        }
+      ],
+      "selected": {
+        "line": 6,
+        "payload_sha256": "3fcf52a2488eb278b875523dfd1f61b22664e9039f8841f01639246829ef8ad3",
+        "source": "continuation_20260912_153613/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T08:38:55.363292+00:00"
+      },
+      "tag": "runner_result",
+      "trial_id": "18"
+    },
+    {
+      "attempt_index": 1,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 7,
+          "payload_sha256": "4e402abff1317703b84f7c16285f5408fdbec75e238ef6dc09aeb2a1ee804e29",
+          "source": "continuation_20260912_153613/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T08:39:04.230246+00:00"
+        }
+      ],
+      "selected": {
+        "line": 7,
+        "payload_sha256": "4e402abff1317703b84f7c16285f5408fdbec75e238ef6dc09aeb2a1ee804e29",
+        "source": "continuation_20260912_153613/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T08:39:04.230246+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "18"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 8,
+          "payload_sha256": "659c0cad1a7cb829f28075d4444541cde8a1ee5d94e2679c955ee9c9423ad961",
+          "source": "continuation_20260912_153613/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T08:39:48.480132+00:00"
+        }
+      ],
+      "selected": {
+        "line": 8,
+        "payload_sha256": "659c0cad1a7cb829f28075d4444541cde8a1ee5d94e2679c955ee9c9423ad961",
+        "source": "continuation_20260912_153613/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T08:39:48.480132+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "19"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 9,
+          "payload_sha256": "d71e62bca59554bf4eba30eba28f0a1a030c9d38a91afcaf56c379f84c5f1fee",
+          "source": "continuation_20260912_153613/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T08:40:22.467187+00:00"
+        }
+      ],
+      "selected": {
+        "line": 9,
+        "payload_sha256": "d71e62bca59554bf4eba30eba28f0a1a030c9d38a91afcaf56c379f84c5f1fee",
+        "source": "continuation_20260912_153613/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T08:40:22.467187+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "19"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 10,
+          "payload_sha256": "48f2edf0bab2b44eec16e189156cc2bf5629b7355b23bf2211621df5acfcfb13",
+          "source": "continuation_20260912_153613/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T09:38:26.199942+00:00"
+        }
+      ],
+      "selected": {
+        "line": 10,
+        "payload_sha256": "48f2edf0bab2b44eec16e189156cc2bf5629b7355b23bf2211621df5acfcfb13",
+        "source": "continuation_20260912_153613/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T09:38:26.199942+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "19"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 2,
+          "payload_sha256": "ced823421fab033135388e043af62aec4bd23a76a32c70b854a74d922f8de9b7",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T10:40:04.580740+00:00"
+        }
+      ],
+      "selected": {
+        "line": 2,
+        "payload_sha256": "ced823421fab033135388e043af62aec4bd23a76a32c70b854a74d922f8de9b7",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T10:40:04.580740+00:00"
+      },
+      "tag": "runtime_qlib_config",
+      "trial_id": "19"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 3,
+          "payload_sha256": "7deea955c62c22a9c83d2bb8b5ef95e4723184be2a5ab32ed66f04000d0b93ee",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T10:40:48.220802+00:00"
+        }
+      ],
+      "selected": {
+        "line": 3,
+        "payload_sha256": "7deea955c62c22a9c83d2bb8b5ef95e4723184be2a5ab32ed66f04000d0b93ee",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T10:40:48.220802+00:00"
+      },
+      "tag": "runner_result",
+      "trial_id": "19"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 4,
+          "payload_sha256": "11bebd566487ebea3b6adb5555b3b4fa30d9d91d17cdc4b26b44359db93ce9cc",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T10:40:58.428220+00:00"
+        }
+      ],
+      "selected": {
+        "line": 4,
+        "payload_sha256": "11bebd566487ebea3b6adb5555b3b4fa30d9d91d17cdc4b26b44359db93ce9cc",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T10:40:58.428220+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "19"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 5,
+          "payload_sha256": "10342994e820130870c1c37958478ecbbf65e08d9811f523f799989068212fbf",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T10:42:02.558423+00:00"
+        }
+      ],
+      "selected": {
+        "line": 5,
+        "payload_sha256": "10342994e820130870c1c37958478ecbbf65e08d9811f523f799989068212fbf",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T10:42:02.558423+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "20"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 6,
+          "payload_sha256": "32a631dd689b7559d7ee20d28cb44a7f911ae83a4c98567ccaa45d618c5e8d5b",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T10:42:27.136974+00:00"
+        }
+      ],
+      "selected": {
+        "line": 6,
+        "payload_sha256": "32a631dd689b7559d7ee20d28cb44a7f911ae83a4c98567ccaa45d618c5e8d5b",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T10:42:27.136974+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "20"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 7,
+          "payload_sha256": "8a9552cbf6549f6707b73c9d3f5d7ce560cf129a8d94b45e9ce8dfa8c77ddefb",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T11:29:15.212751+00:00"
+        }
+      ],
+      "selected": {
+        "line": 7,
+        "payload_sha256": "8a9552cbf6549f6707b73c9d3f5d7ce560cf129a8d94b45e9ce8dfa8c77ddefb",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T11:29:15.212751+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "20"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 8,
+          "payload_sha256": "153faf0e2dbd1a46a9de931687f7df3c7cf182d545a9c89002f9ea079f353115",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T12:50:01.572303+00:00"
+        }
+      ],
+      "selected": {
+        "line": 8,
+        "payload_sha256": "153faf0e2dbd1a46a9de931687f7df3c7cf182d545a9c89002f9ea079f353115",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T12:50:01.572303+00:00"
+      },
+      "tag": "runtime_qlib_config",
+      "trial_id": "20"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 9,
+          "payload_sha256": "e442dca25ad1278203808a3ef7acb725bf840583edb3a9d40a965e2c4ae22bac",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T12:50:43.931279+00:00"
+        }
+      ],
+      "selected": {
+        "line": 9,
+        "payload_sha256": "e442dca25ad1278203808a3ef7acb725bf840583edb3a9d40a965e2c4ae22bac",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T12:50:43.931279+00:00"
+      },
+      "tag": "runner_result",
+      "trial_id": "20"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 10,
+          "payload_sha256": "f65ba53b72a75c0ee53bdef36c51aef82a37526ea04b33141eb555e51e149767",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T12:50:53.519100+00:00"
+        }
+      ],
+      "selected": {
+        "line": 10,
+        "payload_sha256": "f65ba53b72a75c0ee53bdef36c51aef82a37526ea04b33141eb555e51e149767",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T12:50:53.519100+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "20"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 11,
+          "payload_sha256": "fbd7c2a871b05638a49ac25948ccc430c2ddececf41f457055ec8bc2aad60309",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T12:51:25.923025+00:00"
+        }
+      ],
+      "selected": {
+        "line": 11,
+        "payload_sha256": "fbd7c2a871b05638a49ac25948ccc430c2ddececf41f457055ec8bc2aad60309",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T12:51:25.923025+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "21"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 12,
+          "payload_sha256": "446cd722b6acdade616229c0db9b0eafb52c9fb36d7b2e917b43bfacc7e739f3",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T12:51:58.104306+00:00"
+        }
+      ],
+      "selected": {
+        "line": 12,
+        "payload_sha256": "446cd722b6acdade616229c0db9b0eafb52c9fb36d7b2e917b43bfacc7e739f3",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T12:51:58.104306+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "21"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 13,
+          "payload_sha256": "62a0c2f2a92a8c2c1cac2e73036e59221920eef13b25812093435c0871b0639d",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T14:10:38.450447+00:00"
+        }
+      ],
+      "selected": {
+        "line": 13,
+        "payload_sha256": "62a0c2f2a92a8c2c1cac2e73036e59221920eef13b25812093435c0871b0639d",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T14:10:38.450447+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "21"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 14,
+          "payload_sha256": "90f59cbb73a18dd9ee925d804abd4b5cd086b24ee6e3e10bcad1e742676f9d3b",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T15:10:45.594847+00:00"
+        }
+      ],
+      "selected": {
+        "line": 14,
+        "payload_sha256": "90f59cbb73a18dd9ee925d804abd4b5cd086b24ee6e3e10bcad1e742676f9d3b",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T15:10:45.594847+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "21"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 15,
+          "payload_sha256": "e6855bce35e793447b58e6e18e17a1d7c98016052e8e38f7ef4ebecdda70e1cc",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T15:11:05.832583+00:00"
+        }
+      ],
+      "selected": {
+        "line": 15,
+        "payload_sha256": "e6855bce35e793447b58e6e18e17a1d7c98016052e8e38f7ef4ebecdda70e1cc",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T15:11:05.832583+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "22"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 16,
+          "payload_sha256": "f48f651be6fcd70df72bb2f9725db286b94c3a325998dc33bafc507110526a5a",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T15:11:25.123486+00:00"
+        }
+      ],
+      "selected": {
+        "line": 16,
+        "payload_sha256": "f48f651be6fcd70df72bb2f9725db286b94c3a325998dc33bafc507110526a5a",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T15:11:25.123486+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "22"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 17,
+          "payload_sha256": "1c33d814856579ef7f5097545ab94dbce37ad1e75c9a577d6b9f93f02f583c15",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T17:18:28.457249+00:00"
+        }
+      ],
+      "selected": {
+        "line": 17,
+        "payload_sha256": "1c33d814856579ef7f5097545ab94dbce37ad1e75c9a577d6b9f93f02f583c15",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T17:18:28.457249+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "22"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 18,
+          "payload_sha256": "e2a66dcf49b3e1b4224ca079a3daeeb6aef7fe36dff71e1dcb0d31e6a2f37df7",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T17:18:39.629187+00:00"
+        }
+      ],
+      "selected": {
+        "line": 18,
+        "payload_sha256": "e2a66dcf49b3e1b4224ca079a3daeeb6aef7fe36dff71e1dcb0d31e6a2f37df7",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T17:18:39.629187+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "23"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 19,
+          "payload_sha256": "7febb4ed2ce3d96791eeca349723828936eb0d1e9b4d73751af3c5fc48960d84",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T17:19:03.989351+00:00"
+        }
+      ],
+      "selected": {
+        "line": 19,
+        "payload_sha256": "7febb4ed2ce3d96791eeca349723828936eb0d1e9b4d73751af3c5fc48960d84",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T17:19:03.989351+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "23"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 20,
+          "payload_sha256": "ea2e3331ffa77ef42afa74df152a523d4fd18106f6845b176757c2a5300ae414",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T18:30:54.321992+00:00"
+        }
+      ],
+      "selected": {
+        "line": 20,
+        "payload_sha256": "ea2e3331ffa77ef42afa74df152a523d4fd18106f6845b176757c2a5300ae414",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T18:30:54.321992+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "23"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 21,
+          "payload_sha256": "b5ce98eb76942b570201903b0ce8aa308b8ef44d5be5b26a3c5fc44931a8f2c9",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T20:31:08.575176+00:00"
+        }
+      ],
+      "selected": {
+        "line": 21,
+        "payload_sha256": "b5ce98eb76942b570201903b0ce8aa308b8ef44d5be5b26a3c5fc44931a8f2c9",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T20:31:08.575176+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "23"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 22,
+          "payload_sha256": "3fc35d5b13ae1690ecf7530ab99169a715cb0124bfa7cc2f62cb81e238dbc1c5",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T20:32:02.262878+00:00"
+        }
+      ],
+      "selected": {
+        "line": 22,
+        "payload_sha256": "3fc35d5b13ae1690ecf7530ab99169a715cb0124bfa7cc2f62cb81e238dbc1c5",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T20:32:02.262878+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "24"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 23,
+          "payload_sha256": "311b394e253b6893bac23b6ef3c47b4632b7fba1ee861e3d9128c5499a6bdd04",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T20:32:23.507545+00:00"
+        }
+      ],
+      "selected": {
+        "line": 23,
+        "payload_sha256": "311b394e253b6893bac23b6ef3c47b4632b7fba1ee861e3d9128c5499a6bdd04",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T20:32:23.507545+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "24"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 24,
+          "payload_sha256": "620c0e49da5c15f668ae366159abf426ba358c77ef85b4a415e110b4769ec837",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T21:00:09.697538+00:00"
+        }
+      ],
+      "selected": {
+        "line": 24,
+        "payload_sha256": "620c0e49da5c15f668ae366159abf426ba358c77ef85b4a415e110b4769ec837",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T21:00:09.697538+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "24"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 25,
+          "payload_sha256": "b5ce98eb76942b570201903b0ce8aa308b8ef44d5be5b26a3c5fc44931a8f2c9",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T23:00:28.357992+00:00"
+        }
+      ],
+      "selected": {
+        "line": 25,
+        "payload_sha256": "b5ce98eb76942b570201903b0ce8aa308b8ef44d5be5b26a3c5fc44931a8f2c9",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T23:00:28.357992+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "24"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 26,
+          "payload_sha256": "33505cabb2335856910f0124af90d90662f17f79ef97fc355708d5590cbe7e3d",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T23:01:37.117005+00:00"
+        }
+      ],
+      "selected": {
+        "line": 26,
+        "payload_sha256": "33505cabb2335856910f0124af90d90662f17f79ef97fc355708d5590cbe7e3d",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T23:01:37.117005+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "25"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 27,
+          "payload_sha256": "845e7e87702bcbf02af5a84919226601bf705b2a1b195d4767414d558e4957fa",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T23:02:07.025467+00:00"
+        }
+      ],
+      "selected": {
+        "line": 27,
+        "payload_sha256": "845e7e87702bcbf02af5a84919226601bf705b2a1b195d4767414d558e4957fa",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T23:02:07.025467+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "25"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 28,
+          "payload_sha256": "b8a8577a41bbcb693bbacf0695a64abc1c98ddc50d0a46aa71b437922113f977",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T23:23:41.511835+00:00"
+        }
+      ],
+      "selected": {
+        "line": 28,
+        "payload_sha256": "b8a8577a41bbcb693bbacf0695a64abc1c98ddc50d0a46aa71b437922113f977",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T23:23:41.511835+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "25"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 29,
+          "payload_sha256": "096940d4282c877db54ba1a88e6f56b9753beb7812b44fd0f1f5ec9ef62d8361",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T23:47:31.947364+00:00"
+        }
+      ],
+      "selected": {
+        "line": 29,
+        "payload_sha256": "096940d4282c877db54ba1a88e6f56b9753beb7812b44fd0f1f5ec9ef62d8361",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T23:47:31.947364+00:00"
+      },
+      "tag": "runtime_qlib_config",
+      "trial_id": "25"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 30,
+          "payload_sha256": "150397b4e9ace6d247e78f1f813e70430176bf8d3e1679c4609b2519f39c97c9",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T23:48:18.086193+00:00"
+        }
+      ],
+      "selected": {
+        "line": 30,
+        "payload_sha256": "150397b4e9ace6d247e78f1f813e70430176bf8d3e1679c4609b2519f39c97c9",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T23:48:18.086193+00:00"
+      },
+      "tag": "runner_result",
+      "trial_id": "25"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 31,
+          "payload_sha256": "52f980016192653af5b20b3718d5a61b7f2bed45cf2273d879652f0e9f43caa1",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T23:48:37.645663+00:00"
+        }
+      ],
+      "selected": {
+        "line": 31,
+        "payload_sha256": "52f980016192653af5b20b3718d5a61b7f2bed45cf2273d879652f0e9f43caa1",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T23:48:37.645663+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "25"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 32,
+          "payload_sha256": "93b0da7b689d261de077e7f01913911220f2c158b6df4133f81ecc3cc0119ac2",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T23:49:10.082367+00:00"
+        }
+      ],
+      "selected": {
+        "line": 32,
+        "payload_sha256": "93b0da7b689d261de077e7f01913911220f2c158b6df4133f81ecc3cc0119ac2",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T23:49:10.082367+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "26"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 33,
+          "payload_sha256": "a9de98b865244ff33904f61e7a46eebe4d167ce376c80c87e2f2026ec719f544",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-12T23:49:41.877743+00:00"
+        }
+      ],
+      "selected": {
+        "line": 33,
+        "payload_sha256": "a9de98b865244ff33904f61e7a46eebe4d167ce376c80c87e2f2026ec719f544",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T23:49:41.877743+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "26"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 34,
+          "payload_sha256": "b2637b728a6f21bf4b66ff196d4a3a29b2e04b8d4fad2fa47f3a2e624cee465c",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-13T00:11:01.157873+00:00"
+        }
+      ],
+      "selected": {
+        "line": 34,
+        "payload_sha256": "b2637b728a6f21bf4b66ff196d4a3a29b2e04b8d4fad2fa47f3a2e624cee465c",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-13T00:11:01.157873+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "26"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 35,
+          "payload_sha256": "b5ce98eb76942b570201903b0ce8aa308b8ef44d5be5b26a3c5fc44931a8f2c9",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-13T02:11:08.389454+00:00"
+        }
+      ],
+      "selected": {
+        "line": 35,
+        "payload_sha256": "b5ce98eb76942b570201903b0ce8aa308b8ef44d5be5b26a3c5fc44931a8f2c9",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-13T02:11:08.389454+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "26"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 36,
+          "payload_sha256": "0dc9e66ef8ae2a80399524b5f49e36a6baf4ac19675bb63d599325406cd3bb07",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-13T02:12:00.295762+00:00"
+        }
+      ],
+      "selected": {
+        "line": 36,
+        "payload_sha256": "0dc9e66ef8ae2a80399524b5f49e36a6baf4ac19675bb63d599325406cd3bb07",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-13T02:12:00.295762+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "27"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 37,
+          "payload_sha256": "f4e52e594bbe9142ed920b4b74ed023767848240354ff1107cfeb054d6152040",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-13T02:12:25.316353+00:00"
+        }
+      ],
+      "selected": {
+        "line": 37,
+        "payload_sha256": "f4e52e594bbe9142ed920b4b74ed023767848240354ff1107cfeb054d6152040",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-13T02:12:25.316353+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "27"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 38,
+          "payload_sha256": "85050605df891e5cb2dcb7db13cad52fe6d0d6ce34ea4f01786fb2521975e06a",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-13T03:04:50.787478+00:00"
+        }
+      ],
+      "selected": {
+        "line": 38,
+        "payload_sha256": "85050605df891e5cb2dcb7db13cad52fe6d0d6ce34ea4f01786fb2521975e06a",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-13T03:04:50.787478+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "27"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 39,
+          "payload_sha256": "b5ce98eb76942b570201903b0ce8aa308b8ef44d5be5b26a3c5fc44931a8f2c9",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-13T05:05:11.328193+00:00"
+        }
+      ],
+      "selected": {
+        "line": 39,
+        "payload_sha256": "b5ce98eb76942b570201903b0ce8aa308b8ef44d5be5b26a3c5fc44931a8f2c9",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-13T05:05:11.328193+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "27"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 40,
+          "payload_sha256": "b9c7bd3492a8eda67ec2eba2e51cac169342b7e72093a0cfa1e5fda1cf617834",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-13T05:06:00.032751+00:00"
+        }
+      ],
+      "selected": {
+        "line": 40,
+        "payload_sha256": "b9c7bd3492a8eda67ec2eba2e51cac169342b7e72093a0cfa1e5fda1cf617834",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-13T05:06:00.032751+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "28"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 41,
+          "payload_sha256": "c152c12b8824c6847780b1de9d7598a851f298522cd074ead437ce75bd32c683",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-13T05:06:14.992741+00:00"
+        }
+      ],
+      "selected": {
+        "line": 41,
+        "payload_sha256": "c152c12b8824c6847780b1de9d7598a851f298522cd074ead437ce75bd32c683",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-13T05:06:14.992741+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "28"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 42,
+          "payload_sha256": "49a484613d19d97ecc9807b322c9a72f93b1fc518e2fff16b0950a18ffa2a60a",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-13T05:17:50.126830+00:00"
+        }
+      ],
+      "selected": {
+        "line": 42,
+        "payload_sha256": "49a484613d19d97ecc9807b322c9a72f93b1fc518e2fff16b0950a18ffa2a60a",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-13T05:17:50.126830+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "28"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 43,
+          "payload_sha256": "90f59cbb73a18dd9ee925d804abd4b5cd086b24ee6e3e10bcad1e742676f9d3b",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-13T06:18:05.644734+00:00"
+        }
+      ],
+      "selected": {
+        "line": 43,
+        "payload_sha256": "90f59cbb73a18dd9ee925d804abd4b5cd086b24ee6e3e10bcad1e742676f9d3b",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-13T06:18:05.644734+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "28"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 44,
+          "payload_sha256": "68716d559845582952e5b8d92f5677bebf9c92a46014463edfeaa3a1e046e1db",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-13T06:18:45.115314+00:00"
+        }
+      ],
+      "selected": {
+        "line": 44,
+        "payload_sha256": "68716d559845582952e5b8d92f5677bebf9c92a46014463edfeaa3a1e046e1db",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-13T06:18:45.115314+00:00"
+      },
+      "tag": "proposal",
+      "trial_id": "29"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 45,
+          "payload_sha256": "d25b05f8108b232ea52707ac7c17a04babf707bc5ac5e5d8fa68a3f851c7efb4",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-13T06:19:09.050972+00:00"
+        }
+      ],
+      "selected": {
+        "line": 45,
+        "payload_sha256": "d25b05f8108b232ea52707ac7c17a04babf707bc5ac5e5d8fa68a3f851c7efb4",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-13T06:19:09.050972+00:00"
+      },
+      "tag": "experiment_generation",
+      "trial_id": "29"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 46,
+          "payload_sha256": "3a30f8b896c74d7f68890c8cd3694c6b32c45c95e1639bcd870bfaff709b5881",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-13T06:38:05.771771+00:00"
+        }
+      ],
+      "selected": {
+        "line": 46,
+        "payload_sha256": "3a30f8b896c74d7f68890c8cd3694c6b32c45c95e1639bcd870bfaff709b5881",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-13T06:38:05.771771+00:00"
+      },
+      "tag": "coder_result",
+      "trial_id": "29"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 47,
+          "payload_sha256": "59a2f3950325f4b09308ca3c6d019c835193dd13faba472002c7de8828f5cd04",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-13T06:41:47.066892+00:00"
+        }
+      ],
+      "selected": {
+        "line": 47,
+        "payload_sha256": "59a2f3950325f4b09308ca3c6d019c835193dd13faba472002c7de8828f5cd04",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-13T06:41:47.066892+00:00"
+      },
+      "tag": "runtime_qlib_config",
+      "trial_id": "29"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 48,
+          "payload_sha256": "1f9c64fdf543a2d763fe0f6b0916b95011427d4520805bdfba7cf3978b7c36d8",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-13T06:43:40.218617+00:00"
+        }
+      ],
+      "selected": {
+        "line": 48,
+        "payload_sha256": "1f9c64fdf543a2d763fe0f6b0916b95011427d4520805bdfba7cf3978b7c36d8",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-13T06:43:40.218617+00:00"
+      },
+      "tag": "runner_result",
+      "trial_id": "29"
+    },
+    {
+      "attempt_index": 0,
+      "classification": "unique",
+      "observation_count": 1,
+      "observations": [
+        {
+          "line": 49,
+          "payload_sha256": "f47057dc546b7b006c1d67fb027c2df4c76cc5f87c99147922864ea5d6a8c1f9",
+          "source": "continuation_20260912_181746/rdagent_events.jsonl",
+          "timestamp": "2026-09-13T06:44:05.203306+00:00"
+        }
+      ],
+      "selected": {
+        "line": 49,
+        "payload_sha256": "f47057dc546b7b006c1d67fb027c2df4c76cc5f87c99147922864ea5d6a8c1f9",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-13T06:44:05.203306+00:00"
+      },
+      "tag": "feedback",
+      "trial_id": "29"
+    }
+  ],
+  "run_config_consistency": {
+    "normalized_run_config_sha256": "3745a8c1b2399848fb4743c70b41f7c67f89c30277cf160be355ab4831d0aa9b",
+    "observation_count": 7,
+    "observations": [
+      {
+        "line": 1,
+        "normalized_run_config_sha256": "3745a8c1b2399848fb4743c70b41f7c67f89c30277cf160be355ab4831d0aa9b",
+        "payload_sha256": "7da950998f64876774103546f9335c957a7580cd98b1862b53fe7abee829055b",
+        "resume_provenance_present": false,
+        "run_lock_sha256": "bc0a0420d7e204939d5d820fae86ccee258b39c459c9689dd44f43f1e7e2a734",
+        "source": "rdagent_events.jsonl",
+        "timestamp": "2026-09-11T13:47:09.307351+00:00"
+      },
+      {
+        "line": 1,
+        "normalized_run_config_sha256": "3745a8c1b2399848fb4743c70b41f7c67f89c30277cf160be355ab4831d0aa9b",
+        "payload_sha256": "cfef50b40ba2ac0cef56f363d77febeb1965558a32d6475591a35623e8dc04c2",
+        "resume_provenance_present": true,
+        "run_lock_sha256": "bc0a0420d7e204939d5d820fae86ccee258b39c459c9689dd44f43f1e7e2a734",
+        "source": "continuation_20260912_122921/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T04:29:25.824231+00:00"
+      },
+      {
+        "line": 1,
+        "normalized_run_config_sha256": "3745a8c1b2399848fb4743c70b41f7c67f89c30277cf160be355ab4831d0aa9b",
+        "payload_sha256": "d047ccb0ee4172e55f2b96b711b2c43b2aba994aa732bfda9597e0b730283a52",
+        "resume_provenance_present": true,
+        "run_lock_sha256": "bc0a0420d7e204939d5d820fae86ccee258b39c459c9689dd44f43f1e7e2a734",
+        "source": "continuation_20260912_143325/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T06:33:30.792659+00:00"
+      },
+      {
+        "line": 1,
+        "normalized_run_config_sha256": "3745a8c1b2399848fb4743c70b41f7c67f89c30277cf160be355ab4831d0aa9b",
+        "payload_sha256": "23d1fb263b15437350d524eb1acd504fa4851633f1d75d940a7d6ffc8ad61baa",
+        "resume_provenance_present": true,
+        "run_lock_sha256": "bc0a0420d7e204939d5d820fae86ccee258b39c459c9689dd44f43f1e7e2a734",
+        "source": "continuation_20260912_143933/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T06:39:43.117831+00:00"
+      },
+      {
+        "line": 1,
+        "normalized_run_config_sha256": "3745a8c1b2399848fb4743c70b41f7c67f89c30277cf160be355ab4831d0aa9b",
+        "payload_sha256": "9a8cb9aebee1d14e32fa892414342ed355c7bcd505dc7cd66a4b69ed457ddb22",
+        "resume_provenance_present": true,
+        "run_lock_sha256": "bc0a0420d7e204939d5d820fae86ccee258b39c459c9689dd44f43f1e7e2a734",
+        "source": "continuation_20260912_145454/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T06:55:00.079358+00:00"
+      },
+      {
+        "line": 1,
+        "normalized_run_config_sha256": "3745a8c1b2399848fb4743c70b41f7c67f89c30277cf160be355ab4831d0aa9b",
+        "payload_sha256": "44493d95c10a74e559cbe470cb0cfac6504080736622c9fed472480dfa6f94a4",
+        "resume_provenance_present": true,
+        "run_lock_sha256": "bc0a0420d7e204939d5d820fae86ccee258b39c459c9689dd44f43f1e7e2a734",
+        "source": "continuation_20260912_153613/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T07:36:18.065743+00:00"
+      },
+      {
+        "line": 1,
+        "normalized_run_config_sha256": "3745a8c1b2399848fb4743c70b41f7c67f89c30277cf160be355ab4831d0aa9b",
+        "payload_sha256": "e304788a5dd1b6d4cb0291213282e51107f89e37619ea969c421bd581c25a924",
+        "resume_provenance_present": true,
+        "run_lock_sha256": "bc0a0420d7e204939d5d820fae86ccee258b39c459c9689dd44f43f1e7e2a734",
+        "source": "continuation_20260912_181746/rdagent_events.jsonl",
+        "timestamp": "2026-09-12T10:17:55.375640+00:00"
+      }
+    ],
+    "run_lock_consistent": true,
+    "run_lock_sha256": "bc0a0420d7e204939d5d820fae86ccee258b39c459c9689dd44f43f1e7e2a734",
+    "semantic_run_config_consistent": true,
+    "volatile_fields_ignored_for_semantic_equality": [
+      "resume_checkout_path",
+      "resume_session"
+    ]
+  },
+  "schema": "agent-alpha-audit.reconciliation.v2",
+  "source_streams": [
+    {
+      "event_count": 2,
+      "sha256": "af6948cc6e565d45ca4a1775f3ae5e8d8af24cb0daf49fd1c8cc465f68681753",
+      "source": "continuation_20260912_122921/rdagent_events.jsonl"
+    },
+    {
+      "event_count": 1,
+      "sha256": "6f03bb429d1e2d71e5fdf75739f4a40d980b8e670fdb8ad5b44cb7534aee79e5",
+      "source": "continuation_20260912_143325/rdagent_events.jsonl"
+    },
+    {
+      "event_count": 3,
+      "sha256": "f67c20264ffd8bc4c63cf490b7536955889600497b39b7f29c6e2ff09935fec1",
+      "source": "continuation_20260912_143933/rdagent_events.jsonl"
+    },
+    {
+      "event_count": 2,
+      "sha256": "e8bb619ad98473f2a7598c054be74d21d2369db87a1f3ebda46b068016fe771c",
+      "source": "continuation_20260912_145454/rdagent_events.jsonl"
+    },
+    {
+      "event_count": 10,
+      "sha256": "376601b3d76af195d817af082d8bb5fb5deb43a05b3c45cc568ed592bf5118a6",
+      "source": "continuation_20260912_153613/rdagent_events.jsonl"
+    },
+    {
+      "event_count": 49,
+      "sha256": "a19bbe92658e97ae0d6101d84ffd20c43c842ca4a71d46baf6dfdae93fc27bb0",
+      "source": "continuation_20260912_181746/rdagent_events.jsonl"
+    },
+    {
+      "event_count": 102,
+      "sha256": "6106b4deaed8ba7f43844c9bd877720931ea97e4b69802b90604f80b50856d69",
+      "source": "rdagent_events.jsonl"
+    }
+  ],
+  "superseded_attempt_count": 1,
+  "trial_attempts": [
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-11T13:47:16.410032+00:00",
+          "last_timestamp": "2026-09-11T13:51:04.467529+00:00",
+          "observation_count": 6,
+          "proposal_sha256": "4222b7f7d183c8e9233cee1e51f44228c13dd69819ba334902cd1490b5b9e282",
+          "sources": [
+            "rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "runtime_qlib_config",
+            "runner_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "0"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-11T13:51:11.869617+00:00",
+          "last_timestamp": "2026-09-11T13:55:42.664152+00:00",
+          "observation_count": 6,
+          "proposal_sha256": "0c763b9c2e781f1fcd36375592c52cb9065c508d6cfb13d0bebccf98eed4b4ee",
+          "sources": [
+            "rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "runtime_qlib_config",
+            "runner_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "1"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-11T13:57:34.686441+00:00",
+          "last_timestamp": "2026-09-11T14:04:41.836314+00:00",
+          "observation_count": 6,
+          "proposal_sha256": "0b5c2c66ea85547046626988b1a8778c9e104891272b1cb332bf95cbdb189f1b",
+          "sources": [
+            "rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "runtime_qlib_config",
+            "runner_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "2"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-11T14:05:14.706006+00:00",
+          "last_timestamp": "2026-09-11T14:15:32.235595+00:00",
+          "observation_count": 6,
+          "proposal_sha256": "859333659ca97a77fe21c52226ca51558440ae832009f62c7cdd68cc67247d34",
+          "sources": [
+            "rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "runtime_qlib_config",
+            "runner_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "3"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-11T14:16:04.428431+00:00",
+          "last_timestamp": "2026-09-11T14:32:03.941694+00:00",
+          "observation_count": 6,
+          "proposal_sha256": "8ca306bbb4b4143cf599099588ad7668345bdbc623980730c1954aa507beed05",
+          "sources": [
+            "rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "runtime_qlib_config",
+            "runner_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "4"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-11T14:34:58.948679+00:00",
+          "last_timestamp": "2026-09-11T14:43:28.196953+00:00",
+          "observation_count": 6,
+          "proposal_sha256": "9864bd9f1a03167d671957d8d937a2c12891661c1b8bb223d6787268cddbe898",
+          "sources": [
+            "rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "runtime_qlib_config",
+            "runner_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "5"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-11T14:44:26.934978+00:00",
+          "last_timestamp": "2026-09-11T14:48:59.403541+00:00",
+          "observation_count": 6,
+          "proposal_sha256": "5feb1ce83e4dcd7b284c7b6d2f53f44f55036cc0e349bf4559b19e52d32fd42a",
+          "sources": [
+            "rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "runtime_qlib_config",
+            "runner_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "6"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-11T14:50:23.873725+00:00",
+          "last_timestamp": "2026-09-11T14:56:35.032460+00:00",
+          "observation_count": 6,
+          "proposal_sha256": "6b542cf21486440800e65ae255902f2ca9ca046f4f515ef28fbe2304d9454303",
+          "sources": [
+            "rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "runtime_qlib_config",
+            "runner_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "7"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-11T14:57:13.049017+00:00",
+          "last_timestamp": "2026-09-11T15:22:24.719037+00:00",
+          "observation_count": 6,
+          "proposal_sha256": "a4a08af4ab30daeef982570082a881b01db5bfd0b1cf872afd4ff93295e22fcf",
+          "sources": [
+            "rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "runtime_qlib_config",
+            "runner_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "8"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-11T15:23:40.158000+00:00",
+          "last_timestamp": "2026-09-11T15:27:08.558253+00:00",
+          "observation_count": 6,
+          "proposal_sha256": "157576d4edbdeb659db10d07b4b77afe03d5844a65ba67b613af5abf80f50f5b",
+          "sources": [
+            "rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "runtime_qlib_config",
+            "runner_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "9"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-11T15:28:29.878250+00:00",
+          "last_timestamp": "2026-09-11T15:32:27.219641+00:00",
+          "observation_count": 6,
+          "proposal_sha256": "61ead9b0715de1e104f7432704dc7f84e4c2a410a437333f2509a9c5d5475ca4",
+          "sources": [
+            "rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "runtime_qlib_config",
+            "runner_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "10"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-11T15:33:38.580304+00:00",
+          "last_timestamp": "2026-09-11T15:49:54.510756+00:00",
+          "observation_count": 6,
+          "proposal_sha256": "2241e708c991d4e1c11f0d1ef4a60521abb36481a92cd086634861b1772ce87a",
+          "sources": [
+            "rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "runtime_qlib_config",
+            "runner_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "11"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-11T15:50:35.655867+00:00",
+          "last_timestamp": "2026-09-11T16:15:49.052503+00:00",
+          "observation_count": 6,
+          "proposal_sha256": "9224bb757c0c0c9863337e12f0e35168900e559115c8c19fec3b209a032d55d8",
+          "sources": [
+            "rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "runtime_qlib_config",
+            "runner_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "12"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-11T16:17:01.700908+00:00",
+          "last_timestamp": "2026-09-11T16:20:35.507161+00:00",
+          "observation_count": 6,
+          "proposal_sha256": "5a7d8672d4dcb29b638571566bb7b2df2cefc1f2a7dcc206e507a45dfa27d77f",
+          "sources": [
+            "rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "runtime_qlib_config",
+            "runner_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "13"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-11T16:21:29.620418+00:00",
+          "last_timestamp": "2026-09-11T16:37:23.172307+00:00",
+          "observation_count": 6,
+          "proposal_sha256": "54bac19a3defdd1acc452f5ed1ed7c5ddaa36fe44e065188e57010501b3e208c",
+          "sources": [
+            "rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "runtime_qlib_config",
+            "runner_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "14"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-11T16:37:39.215066+00:00",
+          "last_timestamp": "2026-09-11T18:27:12.468712+00:00",
+          "observation_count": 6,
+          "proposal_sha256": "2a9ce9e44598171dc86798da742fff0c8da09b0e2e74da85e1b9805d2c6fb2d8",
+          "sources": [
+            "rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "runtime_qlib_config",
+            "runner_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "15"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-11T18:27:54.997256+00:00",
+          "last_timestamp": "2026-09-11T20:00:11.931173+00:00",
+          "observation_count": 3,
+          "proposal_sha256": "788cf47223e83fb4c7d2cdcf8e34be340249122f26dc1534932632113a289344",
+          "sources": [
+            "rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "16"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-11T20:01:08.252733+00:00",
+          "last_timestamp": "2026-09-12T06:55:07.403629+00:00",
+          "observation_count": 5,
+          "proposal_sha256": "c68350f7f75fac0673a6e1bd2d9f97109d97a1a18dffc7ac780ff528735ba0c8",
+          "sources": [
+            "rdagent_events.jsonl",
+            "continuation_20260912_122921/rdagent_events.jsonl",
+            "continuation_20260912_143933/rdagent_events.jsonl",
+            "continuation_20260912_145454/rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "17"
+    },
+    {
+      "attempt_count": 2,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": false,
+          "first_timestamp": "2026-09-12T06:40:20.628165+00:00",
+          "last_timestamp": "2026-09-12T06:40:20.628165+00:00",
+          "observation_count": 1,
+          "proposal_sha256": "0e5160b7499b65507dee0ca50a24369804dbcd44c481451eaefd865cda4a5970",
+          "sources": [
+            "continuation_20260912_143933/rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal"
+          ]
+        },
+        {
+          "attempt_index": 1,
+          "canonical": true,
+          "first_timestamp": "2026-09-12T07:37:26.493785+00:00",
+          "last_timestamp": "2026-09-12T08:39:04.230246+00:00",
+          "observation_count": 6,
+          "proposal_sha256": "f6658beecfab5e26c44cc6b1191df9196a524294a5eda169b2af45d04f9d7f28",
+          "sources": [
+            "continuation_20260912_153613/rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "runtime_qlib_config",
+            "runner_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 1,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 1,
+      "trial_id": "18"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-12T08:39:48.480132+00:00",
+          "last_timestamp": "2026-09-12T10:40:58.428220+00:00",
+          "observation_count": 6,
+          "proposal_sha256": "659c0cad1a7cb829f28075d4444541cde8a1ee5d94e2679c955ee9c9423ad961",
+          "sources": [
+            "continuation_20260912_153613/rdagent_events.jsonl",
+            "continuation_20260912_181746/rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "runtime_qlib_config",
+            "runner_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "19"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-12T10:42:02.558423+00:00",
+          "last_timestamp": "2026-09-12T12:50:53.519100+00:00",
+          "observation_count": 6,
+          "proposal_sha256": "10342994e820130870c1c37958478ecbbf65e08d9811f523f799989068212fbf",
+          "sources": [
+            "continuation_20260912_181746/rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "runtime_qlib_config",
+            "runner_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "20"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-12T12:51:25.923025+00:00",
+          "last_timestamp": "2026-09-12T15:10:45.594847+00:00",
+          "observation_count": 4,
+          "proposal_sha256": "fbd7c2a871b05638a49ac25948ccc430c2ddececf41f457055ec8bc2aad60309",
+          "sources": [
+            "continuation_20260912_181746/rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "21"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-12T15:11:05.832583+00:00",
+          "last_timestamp": "2026-09-12T17:18:28.457249+00:00",
+          "observation_count": 3,
+          "proposal_sha256": "e6855bce35e793447b58e6e18e17a1d7c98016052e8e38f7ef4ebecdda70e1cc",
+          "sources": [
+            "continuation_20260912_181746/rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "22"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-12T17:18:39.629187+00:00",
+          "last_timestamp": "2026-09-12T20:31:08.575176+00:00",
+          "observation_count": 4,
+          "proposal_sha256": "e2a66dcf49b3e1b4224ca079a3daeeb6aef7fe36dff71e1dcb0d31e6a2f37df7",
+          "sources": [
+            "continuation_20260912_181746/rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "23"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-12T20:32:02.262878+00:00",
+          "last_timestamp": "2026-09-12T23:00:28.357992+00:00",
+          "observation_count": 4,
+          "proposal_sha256": "3fc35d5b13ae1690ecf7530ab99169a715cb0124bfa7cc2f62cb81e238dbc1c5",
+          "sources": [
+            "continuation_20260912_181746/rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "24"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-12T23:01:37.117005+00:00",
+          "last_timestamp": "2026-09-12T23:48:37.645663+00:00",
+          "observation_count": 6,
+          "proposal_sha256": "33505cabb2335856910f0124af90d90662f17f79ef97fc355708d5590cbe7e3d",
+          "sources": [
+            "continuation_20260912_181746/rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "runtime_qlib_config",
+            "runner_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "25"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-12T23:49:10.082367+00:00",
+          "last_timestamp": "2026-09-13T02:11:08.389454+00:00",
+          "observation_count": 4,
+          "proposal_sha256": "93b0da7b689d261de077e7f01913911220f2c158b6df4133f81ecc3cc0119ac2",
+          "sources": [
+            "continuation_20260912_181746/rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "26"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-13T02:12:00.295762+00:00",
+          "last_timestamp": "2026-09-13T05:05:11.328193+00:00",
+          "observation_count": 4,
+          "proposal_sha256": "0dc9e66ef8ae2a80399524b5f49e36a6baf4ac19675bb63d599325406cd3bb07",
+          "sources": [
+            "continuation_20260912_181746/rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "27"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-13T05:06:00.032751+00:00",
+          "last_timestamp": "2026-09-13T06:18:05.644734+00:00",
+          "observation_count": 4,
+          "proposal_sha256": "b9c7bd3492a8eda67ec2eba2e51cac169342b7e72093a0cfa1e5fda1cf617834",
+          "sources": [
+            "continuation_20260912_181746/rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "28"
+    },
+    {
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt_index": 0,
+          "canonical": true,
+          "first_timestamp": "2026-09-13T06:18:45.115314+00:00",
+          "last_timestamp": "2026-09-13T06:44:05.203306+00:00",
+          "observation_count": 6,
+          "proposal_sha256": "68716d559845582952e5b8d92f5677bebf9c92a46014463edfeaa3a1e046e1db",
+          "sources": [
+            "continuation_20260912_181746/rdagent_events.jsonl"
+          ],
+          "tags_observed": [
+            "proposal",
+            "experiment_generation",
+            "coder_result",
+            "runtime_qlib_config",
+            "runner_result",
+            "feedback"
+          ]
+        }
+      ],
+      "canonical_attempt_index": 0,
+      "selection_rule": "latest_distinct_proposal_attempt; never mix downstream events across attempts",
+      "superseded_attempt_count": 0,
+      "trial_id": "29"
+    }
+  ]
+}

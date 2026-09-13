@@ -26,14 +26,19 @@
       "sha256": "081902bc6b1ab0df310efb909889565fd5fbec3055d3e9be8ffb2f2b5fc4d1f6"
     },
     {
-      "bytes": 15915,
+      "bytes": 16433,
       "path": "README.md",
-      "sha256": "a1ccb1782724c03583ef4ba6bde0487ce938bb8a2e36f34aadb1cbd7e58b53c6"
+      "sha256": "d60123ebb4234e3bb7d7480313382569c89211e8d6d7c7f1ab6f99bdea27c5e4"
     },
     {
-      "bytes": 1404,
+      "bytes": 144256,
+      "path": "case_studies/rdagent_q_30loop/reconciliation.json",
+      "sha256": "9e4abd141d61564f4ccc474ce115f8ba65b801f384471d529f80a5564484e8f4"
+    },
+    {
+      "bytes": 1841,
       "path": "case_studies/rdagent_q_30loop/summary.json",
-      "sha256": "05ebbbafec8b4722e7484e25de1da1105394fd3088a59ffee16976b3bc915c98"
+      "sha256": "a2b04b55be799ff1950138886521c8c71a4aa21a17b18e4026d25cf8f5c3f2bf"
     },
     {
       "bytes": 1167,
@@ -96,9 +101,9 @@
       "sha256": "3dacc011f60fb74e9834a77591462fbd00a121181605f2d6d48bc4fa808b0839"
     },
     {
-      "bytes": 6068,
+      "bytes": 108,
       "path": "scripts/reconcile_rdagent_events.py",
-      "sha256": "0b93df7f004b8281868712fd63e3449c673b8b1b89b2f06ab261627563aa6e83"
+      "sha256": "ed6cd107bc17a3474250e1e272b2a2a47a3d2f1ec6d8e7855caa68248d38faee"
     },
     {
       "bytes": 1059,
@@ -211,6 +216,11 @@
       "sha256": "1e81add444bb85fef13e573206c8e52734dc9ea495272e967a852a95f613efa1"
     },
     {
+      "bytes": 17102,
+      "path": "src/agent_alpha_audit/reconcile.py",
+      "sha256": "8fd2dab8593b90675e441fa3d8e214d28b5d0b21f3549fc922ac96a32710df1c"
+    },
+    {
       "bytes": 1469,
       "path": "src/agent_alpha_audit/runlock.py",
       "sha256": "d5d2e72338101b70d960f8defa8f8b265a65c06749754a94b6d710d5e36f7be7"
@@ -299,6 +309,11 @@
       "bytes": 1809,
       "path": "tests/test_rdagent_real_contract_optional.py",
       "sha256": "5d669619624990ce158cee76cdc0c862277e00719a0589fdad6a878d7da9292c"
+    },
+    {
+      "bytes": 6579,
+      "path": "tests/test_reconcile.py",
+      "sha256": "7508f6792692dfeb6845711f8667a2667611e438675a1ff4cd60eecdc8f67a77"
     },
     {
       "bytes": 1362,

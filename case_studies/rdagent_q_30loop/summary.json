@@ -7,11 +7,21 @@
     "confirmatory_loops": 30
   },
   "event_reconciliation": {
+    "schema": "agent-alpha-audit.reconciliation.v2",
+    "source_streams": 7,
     "raw_execution_events": 169,
+    "raw_run_config_observations": 7,
+    "raw_trial_event_observations": 162,
     "logical_events": 161,
+    "logical_trial_events": 160,
     "logical_trials": 30,
     "exact_duplicate_groups": 1,
-    "superseded_variant_groups": 1
+    "superseded_attempt_count": 1,
+    "run_lock_consistent": true,
+    "semantic_run_config_consistent": true,
+    "attempt_boundary": "new distinct proposal payload",
+    "canonical_attempt_policy": "latest distinct proposal attempt",
+    "public_artifact": "reconciliation.json"
   },
   "strict_eval_targets": {
     "manifest_schema": "agent-alpha-audit.strict-eval-manifest.v3",

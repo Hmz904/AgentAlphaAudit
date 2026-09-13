@@ -29,6 +29,8 @@ The first confirmatory case study audits a **30-loop Microsoft RD-Agent(Q) v0.8.
 - **169 raw execution events** captured across the original run and resumed continuations
 - reconciled into **161 logical events and 30 logical research trials**
 - preserved retry and failure provenance rather than silently treating resumes as new trials
+- reconciliation v2 validates the locked protocol across all **7** resume streams and reconstructs execution attempts by distinct proposal boundaries rather than independently choosing the latest event per tag
+- reconciliation arithmetic is explicit: **169 raw rows = 7 run-config observations + 162 trial-event observations; 162 trial observations -> 160 canonical trial events (one exact duplicate group and one superseded Trial 18 proposal attempt); + 1 canonical run-config = 161 logical events across 30 trials**
 - **21/30** loop states contain an observed runner snapshot; failed/no-runner loops carry the last successful cumulative state forward rather than adding unimplemented proposals
 - exported **30 trial** and **30 cumulative-library** audit targets; the v3 manifest explicitly separates captured evidence from deterministic replay readiness
 - recovered the final primary outcome directly from the **Loop 29 RD-Agent runner state**: a **12-factor cumulative library**
