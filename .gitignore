@@ -1,0 +1,17 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+*.sqlite
+.venv/
+.env
+outputs/*
+!outputs/.gitkeep
+git_ignore_folder/
+
+# Runtime / local artifacts
+.ruff_cache/
+log/
+pickle_cache/
+selector.log
+# Local audit outputs
+*.db

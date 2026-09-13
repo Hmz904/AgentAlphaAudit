@@ -1,0 +1,30 @@
+{
+  "schema": "agent-alpha-audit.real-case-study.v1",
+  "target": {
+    "agent": "Microsoft RD-Agent(Q)",
+    "rdagent_version": "0.8.0",
+    "workflow": "Qlib factor mining",
+    "confirmatory_loops": 30
+  },
+  "event_reconciliation": {
+    "raw_execution_events": 169,
+    "logical_events": 161,
+    "logical_trials": 30,
+    "exact_duplicate_groups": 1,
+    "superseded_variant_groups": 1
+  },
+  "strict_eval_targets": {
+    "trial_items": 30,
+    "cumulative_library_states": 30,
+    "evaluable_trials": 30,
+    "evaluable_cumulative_states": 30
+  },
+  "primary_outcome": {
+    "unit": "cumulative_factor_library_at_loop_k",
+    "state_source": "runner_successful_factor_state",
+    "factor_count": 12,
+    "evaluable": true
+  },
+  "audit_status": "STRICT_EVALUATION_PENDING",
+  "important_note": "Upstream RD-Agent metrics are not final audit results. Frozen-OOS, uniform-cost, all-trial and cumulative-library strict reevaluation remains pending."
+}

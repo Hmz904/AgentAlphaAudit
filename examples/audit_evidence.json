@@ -1,0 +1,23 @@
+{
+  "pit_verified": false,
+  "availability_lag_verified": false,
+  "frozen_oos": false,
+  "no_feedback_from_oos": false,
+  "all_trials_logged": true,
+  "prompt_code_hashes": true,
+  "trial_adjustment_reported": true,
+  "effective_trials_estimated": false,
+  "costs_included": true,
+  "turnover_reported": true,
+  "execution_constraints": false,
+  "subperiod_robustness": false,
+  "parameter_robustness": false,
+  "factor_redundancy_checked": true,
+  "pinned_versions": true,
+  "data_snapshot_hash": false,
+  "rerun_command": true,
+  "notes": {
+    "demo": "Synthetic and intentionally incomplete evidence package. Missing evidence scores zero.",
+    "score": "A low score is expected before PIT, holdout, robustness, and data-provenance evidence exist."
+  }
+}

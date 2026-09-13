@@ -1,0 +1,10 @@
+{
+  "sharpe": {
+    "agent_reported": 2.08,
+    "exact_reproduction": 2.02,
+    "pit": 1.81,
+    "availability_lag": 1.54,
+    "costs": 1.26,
+    "frozen_oos": 0.84
+  }
+}

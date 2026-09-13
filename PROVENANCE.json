@@ -1,0 +1,369 @@
+{
+  "audit_target": {
+    "primary_outcome_unit": "cumulative_factor_library_at_loop_k",
+    "project": "Microsoft RD-Agent",
+    "scenario": "factor",
+    "version": "0.8.0"
+  },
+  "design_changes": [
+    "installed template scan is preflight only; exact workspace config is observed and hashed immediately before qrun",
+    "runtime qrun config segments/provider are hard-gated against the run lock before execution",
+    "unknown future template families containing Qlib train/valid/test segments fail closed",
+    "holdout_access=no additionally requires all observed runtime configs to match",
+    "runtime config evidence is persisted per trial in ledger artifacts",
+    "real package CI contract now includes QlibFBWorkspace injected-workspace config inspection",
+    "audit plan explicitly requires separate truncated RD-Agent research data and full-history strict-evaluator data for frozen OOS"
+  ],
+  "files": [
+    {
+      "bytes": 536,
+      "path": ".github/workflows/ci.yml",
+      "sha256": "45cfcfe64cb6e2cba95bbf83170dca5ae5c4e0fd9eb74788eb6acc5bb084f522"
+    },
+    {
+      "bytes": 83,
+      "path": ".gitignore",
+      "sha256": "6822944091237c4e999938e35442ed7397c6a2d1c5b88bcd772db3babadcf851"
+    },
+    {
+      "bytes": 14773,
+      "path": "README.md",
+      "sha256": "52ae0816005f6c7b6ce8fb362bf12710bbe03833c2291041a264e42c178ca804"
+    },
+    {
+      "bytes": 1274,
+      "path": "TEST_REPORT.txt",
+      "sha256": "df737bef5bd4d322b07b0589802c9f4c802c16d79eca091f3db19b511e7f915f"
+    },
+    {
+      "bytes": 1167,
+      "path": "docs/AGENT_ALPHA_SCORECARD_SPEC.md",
+      "sha256": "bbdc1572d8878e386c7cf7e9698baa5c6803285dfd9416c0d6b9bf7306945ff9"
+    },
+    {
+      "bytes": 2102,
+      "path": "docs/ASHARE_EVALUATOR_CONTRACT.md",
+      "sha256": "5695f03810e73979924349031e17460dc0d879811bb530fc2cbd5146ca879529"
+    },
+    {
+      "bytes": 9628,
+      "path": "docs/AUDIT_PLAN_RDAGENT_V1.md",
+      "sha256": "76228fe3cae7453c02a5d6f9c50863e054991adf054d9e8829ed2282bb0b7d5c"
+    },
+    {
+      "bytes": 4132,
+      "path": "docs/AUDIT_PROTOCOL.md",
+      "sha256": "799366a2bef9809efe659b73cb63293c7f895a8700e2e75127293a56c6d19ba6"
+    },
+    {
+      "bytes": 2585,
+      "path": "docs/RDAGENT_INTEGRATION.md",
+      "sha256": "e39353256ed32df4e7119651baf78c669ec1dfdfac94a84ee7da68fa158c00fb"
+    },
+    {
+      "bytes": 2469,
+      "path": "docs/UPSTREAM_NOTES.md",
+      "sha256": "1dd475bbabd50c345d5a44e2614ea3abd694b0b378b9d886db44f52aa1d9d800"
+    },
+    {
+      "bytes": 882,
+      "path": "examples/RUN_LOCK_RDAGENT_V1.template.json",
+      "sha256": "74f974b98e49bffbab6bbb37ca8c0ed6b9faa6913aabd144a60351acf610d632"
+    },
+    {
+      "bytes": 760,
+      "path": "examples/audit_evidence.json",
+      "sha256": "62672a4e3404a262ac2f40d29534bd116219c4632ddc2fcad0efd40bd08431f1"
+    },
+    {
+      "bytes": 3444,
+      "path": "examples/rdagent_events.jsonl",
+      "sha256": "1f363495b879400105202b9b3c119b56009b88fc49d4cc498a49931754fecbb6"
+    },
+    {
+      "bytes": 170,
+      "path": "examples/stage_metrics.json",
+      "sha256": "17dc3eb72055549b349f5af2b7d6de13daa0d444065911f2cf1b474ed0947b14"
+    },
+    {
+      "bytes": 16457,
+      "path": "examples/trial_returns.csv",
+      "sha256": "dcb857117cdcf59fab6e5098015e4bf90e896955b3712bb72f13d9b619dbef84"
+    },
+    {
+      "bytes": 0,
+      "path": "outputs/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1546,
+      "path": "outputs/AGENT_ALPHA_SCORECARD_DEMO.md",
+      "sha256": "d3d226f56281444b639d85c11f955d9a92113567f1defc1e56ae277a94964a63"
+    },
+    {
+      "bytes": 37458,
+      "path": "outputs/audit_waterfall_demo.svg",
+      "sha256": "ef1643dd7da15f843c0f71dbd82701657b319b367cc4aff6c28f50b1d32ebb36"
+    },
+    {
+      "bytes": 16384,
+      "path": "outputs/demo.sqlite",
+      "sha256": "723846cc0d4bd7f91935d12b4dba8acb97bd1faafaf2ad15c3b605d5bb38f765"
+    },
+    {
+      "bytes": 5559,
+      "path": "outputs/demo_report.json",
+      "sha256": "59f0b5a53064786eafb0b09142b100af4ad09ae0872391ed403f948c050f1997"
+    },
+    {
+      "bytes": 5156,
+      "path": "outputs/strict_eval_manifest_demo.json",
+      "sha256": "b60558746f673dd39672f3c38d9b1ee3401490cc717814a041286cb40028e720"
+    },
+    {
+      "bytes": 742,
+      "path": "pyproject.toml",
+      "sha256": "f13412a07122d8cda0f422f1934590a47442496d73192e438a7b800e5cf9c042"
+    },
+    {
+      "bytes": 1059,
+      "path": "scripts/run_demo.sh",
+      "sha256": "cda84ca0c408cc3c2e1f76d3a5100f033c5168561035cdd82565a63566ee327d"
+    },
+    {
+      "bytes": 6832,
+      "path": "scripts/run_rdagent_audited.py",
+      "sha256": "91adb0dbe30cd0e6b3745eedb28eebf7a5c56342414f4eb6a4447bca968c9aed"
+    },
+    {
+      "bytes": 56,
+      "path": "src/agent_alpha_audit/__init__.py",
+      "sha256": "682e54db5545a5ef4a5dce7f8e703606334fdeb546113d0b0585b0548c1a47e2"
+    },
+    {
+      "bytes": 30,
+      "path": "src/agent_alpha_audit/__main__.py",
+      "sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279"
+    },
+    {
+      "bytes": 80,
+      "path": "src/agent_alpha_audit/adapters/__init__.py",
+      "sha256": "4286a0a9920d152d893f22055f423dbe4902c83e98d58e7b756ee48e6f7f2cc4"
+    },
+    {
+      "bytes": 285,
+      "path": "src/agent_alpha_audit/adapters/base.py",
+      "sha256": "fe0d433bc032ee27821105f75d4907ade768c8fff1df4c7e2ae8d424ee018773"
+    },
+    {
+      "bytes": 9031,
+      "path": "src/agent_alpha_audit/adapters/rdagent.py",
+      "sha256": "cd201b8b0bd473d03ec8ba411340ce4b84add6383f849b082a7bf8dcdc30a9cf"
+    },
+    {
+      "bytes": 470,
+      "path": "src/agent_alpha_audit/audit/__init__.py",
+      "sha256": "3c24c519d9605797c9d4878714283113f3085e1c1bbaf2413f89976c4f1635d1"
+    },
+    {
+      "bytes": 1064,
+      "path": "src/agent_alpha_audit/audit/fdp.py",
+      "sha256": "dbd6ba967ce5f4c6c35f28e69dd18cf4a544688a63f3e3f49c06db82a034097b"
+    },
+    {
+      "bytes": 10672,
+      "path": "src/agent_alpha_audit/audit/report.py",
+      "sha256": "e092aba0160227edc8ffa99a58cf3b0843ad4785e9535c095a32857754e7080e"
+    },
+    {
+      "bytes": 2142,
+      "path": "src/agent_alpha_audit/audit/scorecard.py",
+      "sha256": "688f05330b1726e532de1f6145012bde727bccc3c1c8ced5fd525a2a1f1f49a3"
+    },
+    {
+      "bytes": 7688,
+      "path": "src/agent_alpha_audit/audit/statistics.py",
+      "sha256": "646361cf33aa1be2c39dd13c7b2ebd2f84df34798c1ff5473a75a13370931301"
+    },
+    {
+      "bytes": 1419,
+      "path": "src/agent_alpha_audit/audit/trials.py",
+      "sha256": "a49a6967dbc48626452dfb9f85dc04f259b1fd4c2d203ef58a2d4ae7f2dc869b"
+    },
+    {
+      "bytes": 1081,
+      "path": "src/agent_alpha_audit/audit/waterfall.py",
+      "sha256": "cbb8a926655008f98e39f08052758c328b1fcca90f5e224bc9854b49e16beb59"
+    },
+    {
+      "bytes": 6008,
+      "path": "src/agent_alpha_audit/cli.py",
+      "sha256": "d4dec273484e5eb9bb738225d79bbb67a34e8772eff2b9d7fd7df66a5928def3"
+    },
+    {
+      "bytes": 8640,
+      "path": "src/agent_alpha_audit/config_audit.py",
+      "sha256": "67c9777f61f4d832e1f3401113cff76f2605c722277e3f6df80c0e6d8179f496"
+    },
+    {
+      "bytes": 49,
+      "path": "src/agent_alpha_audit/integrations/__init__.py",
+      "sha256": "5cbf3ce1bd407f7d983fc1257b8ccd4fbde2a9e0b82b12b7d6dcf716928289da"
+    },
+    {
+      "bytes": 11603,
+      "path": "src/agent_alpha_audit/integrations/rdagent_probe.py",
+      "sha256": "6dd3b200272de5153dbe8640096e148dc7df5b7a39167bb3e9dbd1a37e2e91bb"
+    },
+    {
+      "bytes": 4460,
+      "path": "src/agent_alpha_audit/ledger.py",
+      "sha256": "9fa345f60ebcfef4d9b2b3178f643d098ae3ec09592564c13983d9c3ad2e6f83"
+    },
+    {
+      "bytes": 1933,
+      "path": "src/agent_alpha_audit/models.py",
+      "sha256": "1e81add444bb85fef13e573206c8e52734dc9ea495272e967a852a95f613efa1"
+    },
+    {
+      "bytes": 1469,
+      "path": "src/agent_alpha_audit/runlock.py",
+      "sha256": "d5d2e72338101b70d960f8defa8f8b265a65c06749754a94b6d710d5e36f7be7"
+    },
+    {
+      "bytes": 10124,
+      "path": "src/agent_alpha_audit/strict_eval.py",
+      "sha256": "65cd9443d64700835ab6a97f30843a93bdd2dfcbc4fd5cd5e6acb9423b8d2ccb"
+    },
+    {
+      "bytes": 3962,
+      "path": "src/agent_alpha_audit/utils.py",
+      "sha256": "870712217f10696848d2d9e5ebcfcaa4fd6b433d0f1e0548d67565c94d69e741"
+    },
+    {
+      "bytes": 4428,
+      "path": "stress_tests/sequential_alpha_control/POSTHOC_V4_DIAGNOSIS.md",
+      "sha256": "2efe5050c22da61d5d0d6938e447c58b1fa604975774d0c57413f782ce2524db"
+    },
+    {
+      "bytes": 3331,
+      "path": "stress_tests/sequential_alpha_control/PREREGISTRATION_V4.md",
+      "sha256": "4c32a7f159d6958922df79c1d3f20893f8d545b25bc77b6a0aeb1c12e3137e84"
+    },
+    {
+      "bytes": 4653,
+      "path": "stress_tests/sequential_alpha_control/RESULTS_V4.md",
+      "sha256": "f52c863183a377634009409e5c7a5f9eecae73fa1a2697c66963108670a9bef7"
+    },
+    {
+      "bytes": 44453,
+      "path": "stress_tests/sequential_alpha_control/v4_saffron_A_deciles.svg",
+      "sha256": "83fb4bd1f4d83686445974ee818ec23c0a4db4ad941d9eb046221c166df474bb"
+    },
+    {
+      "bytes": 5754,
+      "path": "stress_tests/sequential_alpha_control/v4_summary.csv",
+      "sha256": "ca46a619789e5868a0561d3866588812848c41fa37fd415f61bfd1b82636fae0"
+    },
+    {
+      "bytes": 1487,
+      "path": "tests/test_config_audit.py",
+      "sha256": "c0e810fefb53f95aad0844304584c02aa2c1d0afb84ff80999280818e8130ec0"
+    },
+    {
+      "bytes": 1809,
+      "path": "tests/test_config_audit_rdagent_real_optional.py",
+      "sha256": "b4964bd7bb2ab9abcd0c6c8ee52de2e67e40032112ff740a6f537f734ed4b137"
+    },
+    {
+      "bytes": 456,
+      "path": "tests/test_fdp.py",
+      "sha256": "3ca8845b7cd96d9d61c89394b1c31bcb6dac49ab816d5fc85b1a6e78f81248b4"
+    },
+    {
+      "bytes": 1184,
+      "path": "tests/test_holdout_evidence.py",
+      "sha256": "6bda4c71f297a3e9af649a2231677443c0cb2ea55248afd10ea7509986072d13"
+    },
+    {
+      "bytes": 557,
+      "path": "tests/test_ledger.py",
+      "sha256": "48c8a846283a8b4a3dd0fc199ec98842574e74deb2e95c1a541616ee3b54de65"
+    },
+    {
+      "bytes": 10020,
+      "path": "tests/test_probe_runtime_fake.py",
+      "sha256": "356e81872a313c78fce0ca86f2bd886d113152dc8ba9de181dfc15b2af485c45"
+    },
+    {
+      "bytes": 2134,
+      "path": "tests/test_probe_serialization.py",
+      "sha256": "16b3d9ef3f301a6f00e5ec307db4a534428105acc013f50c440103634843da8b"
+    },
+    {
+      "bytes": 256,
+      "path": "tests/test_probe_trial_id.py",
+      "sha256": "6ad791c6841a8f70c86e39354df2ff8e16a0a11345870b87f5b5ff709e2be4fe"
+    },
+    {
+      "bytes": 469,
+      "path": "tests/test_rdagent_adapter.py",
+      "sha256": "06f1132747e483df300bf9ceb02853eea18a1abb36ed9560ba3f305e95ac7d64"
+    },
+    {
+      "bytes": 1809,
+      "path": "tests/test_rdagent_real_contract_optional.py",
+      "sha256": "5d669619624990ce158cee76cdc0c862277e00719a0589fdad6a878d7da9292c"
+    },
+    {
+      "bytes": 1362,
+      "path": "tests/test_report.py",
+      "sha256": "8fa03bd71b04d81740534797b001dc9c25736e85dbbd234de865c97cd60e1986"
+    },
+    {
+      "bytes": 1365,
+      "path": "tests/test_report_winner.py",
+      "sha256": "16a87d2bfc28612a7c2a815493e94d76071f4d8101126e17016b2908eedf3032"
+    },
+    {
+      "bytes": 632,
+      "path": "tests/test_runlock.py",
+      "sha256": "5d608c8930cda844a17aa8235a507151ed234ee4f38a682c01572e83b3c18f51"
+    },
+    {
+      "bytes": 1950,
+      "path": "tests/test_runtime_config_audit.py",
+      "sha256": "5cbc8c691a7c8fa192c72fb99686af2e9b4f6e257d91fdf988ed6def66390344"
+    },
+    {
+      "bytes": 269,
+      "path": "tests/test_scorecard.py",
+      "sha256": "7d3ba55b4fe84b03c51ad08f5f5a3b56ec01289514569ab79a24a02a74458ba0"
+    },
+    {
+      "bytes": 2000,
+      "path": "tests/test_statistics.py",
+      "sha256": "cd3a0c49218704ab480a0c0575a032db32426db8ec0df4ba2266dfed082872aa"
+    },
+    {
+      "bytes": 3576,
+      "path": "tests/test_strict_eval.py",
+      "sha256": "d73173c99dba027aba0b9b4dc96b8d1aa98711dbf526660eb5c2ee56e646014f"
+    },
+    {
+      "bytes": 273,
+      "path": "tests/test_waterfall.py",
+      "sha256": "e6db3629de9cbc78248abe3400e675894eac23d1b84f12689155b2279ee60dcf"
+    }
+  ],
+  "generated_at": "2026-09-11",
+  "local_validation": {
+    "compileall": "pass",
+    "pytest": "32 passed, 4 optional skipped",
+    "rdagent_optional_package": "not installed in this container; pinned CI job remains mandatory",
+    "ruff": "not run: executable unavailable in offline container",
+    "synthetic_demo": "pass"
+  },
+  "project": "AgentAlphaAudit",
+  "version": "0.5.0"
+}
