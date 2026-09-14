@@ -342,8 +342,8 @@ Confirmatory runs first reconcile **all installed RD-Agent Qlib execution-templa
 - **Composition binding:** complete — 21 runner-observed trial compositions and 21 observed cumulative-library snapshots are bound to immutable artifacts.
 - **Strict replay-input readiness:** complete — 21/30 trial experiments and 21/21 observed cumulative-library snapshots satisfy the v4 evidence gate.
 - **Selection calendar:** complete — 871 research-provider trading days, 2017-01-03 through 2020-07-31, are hash-bound to the evaluation contract.
-- Strict deterministic reevaluation: **complete** ? 20/21 replay-ready trials completed; Trial 20 timed out during factor execution.
-- Frozen-OOS performance: **complete** ? the final Loop 29 12-factor cumulative library was evaluated over 1,483 held-out trading days.
-- Selection-adjusted diagnostics: **complete** ? DSR is reported as a secondary trial-level diagnostic; the primary result is the cumulative-library frozen-OOS endpoint audit.
+- Strict deterministic reevaluation: **complete** 20/21 replay-ready trials completed; Trial 20 timed out during factor execution.
+- Frozen-OOS performance: **complete** the final Loop 29 12-factor cumulative library was evaluated over 1,483 held-out trading days.
+- Selection-adjusted diagnostics: **complete** DSR is reported as a secondary trial-level diagnostic; the primary result is the cumulative-library frozen-OOS endpoint audit.
 
 The public case study therefore documents a completed autonomous-agent search, exact replay-input evidence chain, strict selection replay, secondary search-adjustment diagnostic, and primary frozen-OOS evaluation. The final library retains positive OOS signal, but its selection-period performance materially overstates OOS strength.
