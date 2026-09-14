@@ -106,9 +106,9 @@
       "sha256": "dcb857117cdcf59fab6e5098015e4bf90e896955b3712bb72f13d9b619dbef84"
     },
     {
-      "bytes": 841,
+      "bytes": 858,
       "path": "pyproject.toml",
-      "sha256": "699f4a978f3506a46d3d52c3cd73bf5499bf5788e1e6afd8d9456468d9870db2"
+      "sha256": "c793d4e13f83c0762565eee365f05d99773af436702ec844988b1fa05717626c"
     },
     {
       "bytes": 1826,
@@ -344,6 +344,11 @@
       "bytes": 1810,
       "path": "tests/test_config_audit_rdagent_real_optional.py",
       "sha256": "377d75a1bebda7f4d65770a63f1da47e6ab520ecd43d6a06fa5608e34804ce31"
+    },
+    {
+      "bytes": 568,
+      "path": "tests/test_core_runtime_dependencies.py",
+      "sha256": "552a8c863830758e33960d3a279c62e58848a26c8b4d8360e89ea7753f8006b3"
     },
     {
       "bytes": 8500,

@@ -11,6 +11,7 @@ requires-python = ">=3.11,<3.12"
 authors = [{name = "Haoming Zhao"}]
 dependencies = [
   "tables>=3.9",
+  "pyarrow>=14",
   "numpy>=1.26",
   "pandas>=2.0",
   "scipy>=1.11",
